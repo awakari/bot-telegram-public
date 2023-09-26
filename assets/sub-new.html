@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0ed3ff">
+
+    <title>Awakari App</title>
+
+    <link rel="stylesheet" href="/spectre-icons.min.css">
+    <link href="/tailwind.output.css" rel="stylesheet">
+    <link rel="stylesheet" href="/sub-new.css">
+
+    <script src="/jsoneditor.min.js"></script>
+
+</head>
+<body class="bg-gray-100">
+
+<div id="sub_new" class="flex-1 flex flex-col w-[320px] mx-auto" style="display: flex">
+
+    <main>
+    <form class="space-y-2 py-2">
+        <span class="flex">
+            <label for="sub_descr" class="flex w-full">
+                Description
+                <input type="text" id="sub_descr" class="border w-full focus:shadow-md outline-none ml-2" />
+            </label>
+        </span>
+        <span class="flex" style="padding-bottom: 0.5rem">
+            <label for="sub_enabl">
+                Enabled
+                <input type="checkbox" id="sub_enabl" checked="checked" class="ml-7"/>
+            </label>
+        </span>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="sub_cond_editor"></div>
+                </div>
+            </div>
+        </div>
+        <script src="/sub-new.js"></script>
+        <span class="items-center flex ml-28 py-2">
+            <button type="button" title="Submit" class="h-8 w-24 focus:outline-none text-blue-700 rounded-md border border-blue-700 hover:bg-blue-200 flex text-center items-center" onclick="createSubTg()">
+                <p class="ml-5">Submit</p>
+            </button>
+        </span>
+    </form>
+    </main>
+</div>
+
+</body>
+</html>

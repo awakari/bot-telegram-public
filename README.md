@@ -1,2 +1,1 @@
-# bot-telegram-public
-Telegram Bot Public Assets
+# Telegram Bot Public Assets
