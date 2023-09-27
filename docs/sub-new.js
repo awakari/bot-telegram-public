@@ -168,5 +168,5 @@ function generateSub() {
         enabled: document.getElementById("sub_enabl").checked,
         cond: editor.getValue(0),
     }
-    window.Telegram.WebApp.sendData(payload);
+    window.Telegram.WebApp.sendData(JSON.stringify(payload));
 }
