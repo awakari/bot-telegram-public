@@ -162,34 +162,11 @@ editor.on('change', function () {
 
 window.Telegram.WebApp.expand();
 
-function createSub() {
-    let userEmail = sessionStorage.getItem("userEmail")
+function generateSub() {
     let payload = {
         description: document.getElementById("sub_descr").value,
         enabled: document.getElementById("sub_enabl").checked,
         cond: editor.getValue(0),
     }
-    let optsReq = {
-        method: "POST",
-        headers: {
-            "X-Awakari-User-Id": userEmail,
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload)
-    }
-    fetch("/v1/subscriptions", optsReq)
-        .then(resp => {
-            if (!resp.ok) {
-                resp.text().then(errMsg => console.error(errMsg))
-                throw new Error(`Request failed ${resp.status}`);
-            }
-            return resp.json();
-        })
-        .then(data => {
-            alert("Created subscription: " + data.id)
-            window.location.assign("/web/subs.html")
-        })
-        .catch(err => {
-            alert(err)
-        })
+    window.Telegram.WebApp.sendData(payload);
 }
