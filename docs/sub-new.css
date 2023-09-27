@@ -50,7 +50,7 @@ body {
     line-height: 16px;
     font-weight: 400;
     background-color: var(--block-bg-color);
-    color: var(--text-color);
+    color: var(--tg-theme-text-color);
     color-scheme: var(--tg-color-scheme);
     margin: 0;
     padding: 0;
