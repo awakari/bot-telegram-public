@@ -7,13 +7,10 @@ input[type=checkbox] {
     margin-left: 0.125rem;
 }
 input[type=text] {
-    border-width: 1px;
     min-width: 100px;
     height: 20px;
 }
 button[type=button] {
-    border-width: 1px;
-    border-radius: 0.375rem;
     color: var(--tg-theme-button-text-color);
     background-color: var(--tg-theme-button-color);
     height: 1.75rem;
@@ -27,6 +24,7 @@ button.json-editor-btn-edit,button.json-editor-btn-movedown,button.json-editor-b
 }
 div.form-control {
     display: flex;
+    padding: 0.25rem;
 }
 div label.required.je-form-input-label {
     font-weight: normal;
