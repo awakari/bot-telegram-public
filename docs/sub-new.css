@@ -43,7 +43,9 @@ select {
     outline: none;
     border-width: 1px;
 }
-
+.je-modal {
+    background-color: var(--tg-theme-bg-color);
+}
 body {
     font-family: var(--default-font);
     font-size: 13px;
