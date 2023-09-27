@@ -10,7 +10,7 @@ input[type=text] {
     border-width: 1px;
     min-width: 100px;
 }
-button {
+button[type=button] {
     border-width: 1px;
     border-radius: 0.375rem;
     color: var(--tg-theme-button-text-color);
