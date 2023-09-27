@@ -48,7 +48,7 @@ select {
 }
 body {
     font-family: var(--default-font);
-    font-size: 13px;
+    font-size: 14px;
     line-height: 16px;
     font-weight: 400;
     background-color: var(--block-bg-color);
