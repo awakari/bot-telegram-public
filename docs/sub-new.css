@@ -34,14 +34,14 @@ div label.required.je-form-input-label {
 div div[data-theme="html"] .je-indented-panel {
     margin: 0.25rem;
     padding: 0.25rem;
-    border-color: var(--tg-theme-secondary-bg-color);
+    border-color: var(--tg-theme-hint-color);
 }
 select {
     background-color: var(--tg-theme-bg-color);
     outline: none;
     border-width: 1px;
 }
-.je-modal {
+span.je-object__controls .je-modal {
     background-color: var(--tg-theme-bg-color);
 }
 body {
