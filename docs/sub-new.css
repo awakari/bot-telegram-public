@@ -39,7 +39,7 @@ div div[data-theme="html"] .je-indented-panel {
     padding: 0.25rem;
 }
 select {
-    background-color: white;
+    background-color: var(--tg-theme-bg-color);
     outline: none;
     border-width: 1px;
 }
