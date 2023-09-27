@@ -160,6 +160,8 @@ editor.on('change', function () {
     }
 });
 
+window.Telegram.WebApp.expand();
+
 function createSub() {
     let userEmail = sessionStorage.getItem("userEmail")
     let payload = {
