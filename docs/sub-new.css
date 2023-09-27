@@ -43,3 +43,12 @@ select {
     outline: none;
     border-width: 1px;
 }
+
+html.dark body {
+    --block-bg-color: var(--tg-theme-bg-color);
+    --bg-color: #0f0f0f;
+    --text-color: #fff;
+    --page-hint-color: #9b9ba1;
+    --hint-color: #64666d;
+    --placeholder-color: #5d6163;
+}
