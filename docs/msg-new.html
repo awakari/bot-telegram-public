@@ -8,12 +8,11 @@
 
     <title>Awakari App</title>
 
-    <link href="/tailwind.output.css" rel="stylesheet">
-    <!-- for local testing <link href="tailwind.output.css" rel="stylesheet"> -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-    <!-- for local testing <script src="login.js"></script> -->
-    <script src="/msg-new.js"></script>
-    <!-- for local testing <script src="msg-new.js"></script> -->
+    <link href="tailwind.output.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="msg-new.js"></script>
 
 </head>
 <body class="bg-gray-100" onload="loadForm()">
@@ -64,7 +63,7 @@
                 </label>
             </span>
             <span class="items-center flex ml-28 py-2">
-                <button type="button" title="Submit" onclick="submitMsg()" class="h-8 w-24 focus:outline-none text-blue-700 rounded-md border border-blue-700 hover:bg-blue-200 flex text-center items-center">
+                <button type="button" title="Submit" onclick="submitMsg()" class="submit h-8 w-24 focus:outline-none text-blue-700 rounded-md border border-blue-700 hover:bg-blue-200 flex text-center items-center">
                     <p class="ml-5">Submit</p>
                 </button>
             </span>

@@ -141,8 +141,9 @@ function deleteMessageAttribute(name) {
     document.getElementById(`msg_attr_${name}`).remove();
 }
 
+window.Telegram.WebApp.expand();
+
 function submitMsg() {
-    const userEmail = sessionStorage.getItem("userEmail");
     const payload = {
         id: document.getElementById("msg_id").value,
         specVersion: "1.0",
@@ -151,27 +152,5 @@ function submitMsg() {
         attributes: JSON.parse(document.getElementById("msg_attrs").value),
         text_data: document.getElementById("msg_txt_data").value,
     }
-    const optsReq = {
-        method: "POST",
-        headers: {
-            "X-Awakari-User-Id": userEmail,
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-    }
-    fetch("/v1/events", optsReq)
-        .then(resp => {
-            if (!resp.ok) {
-                resp.text().then(errMsg => console.error(errMsg));
-                throw new Error(`Request failed ${resp.status}`);
-            }
-            return resp.json();
-        })
-        .then(_ => {
-            alert("Message has been sent");
-            loadForm(); // reset
-        })
-        .catch(err => {
-            alert(err);
-        })
+    window.Telegram.WebApp.sendData(JSON.stringify(payload));
 }
