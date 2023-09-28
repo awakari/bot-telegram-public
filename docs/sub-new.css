@@ -29,6 +29,9 @@ div.form-control {
     display: flex;
     padding: 0.25rem;
 }
+div.form-control input[type=text] {
+    text-transform: lowercase;
+}
 div label.required.je-form-input-label {
     font-weight: normal;
     margin-right: 0.25rem;
