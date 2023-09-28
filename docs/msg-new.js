@@ -2,9 +2,7 @@ templateMsgAttr = (name, type, value, required) => ` <span id="msg_attr_${name}"
                         <input type="text" id="msg_attr_${name}_" value="${name}" disabled="disabled" class="w-[64px] min-w-[64px] truncate border focus:shadow-md outline-none"/>
                         <p id="msg_attr_${type}" class="w-[64px] min-w-[64px] px-1 truncate">${type}</p>
                         <input type="text" id="msg_attr_${value}" value="${value}" disabled="disabled" class="w-full font-mono truncate border focus:shadow-md outline-none text-slate-700"/>
-                        <button type="button" title="Add Attribute" onclick="deleteMessageAttribute('${name}');" class="ml-1 text-2xl font-mono focus:outline-none text-slate-500 hover:text-slate-700 flex items-center justify-center h-[24x] max-h-[24px]">
-                            ${required ? "" : "—" }
-                        </button>
+                        ${required ? "" : "<button type=\"button\" title=\"Add Attribute\" onclick=\"deleteMessageAttribute('${name}');\" class=\"ml-1 text-2xl font-mono focus:outline-none text-slate-500 hover:text-slate-700 flex items-center justify-center h-[24x] max-h-[24px]\">—</button>"}
                     </span>`
 
 function loadForm() {
