@@ -39,7 +39,7 @@
                 <p class="py-1">Attributes</p>
                 <div id="msg_attrs_form"></div>
                 <span class="flex w-full text-xs font-mono h-[24x] min-h-[24px] items-center">
-                    <input type="text" placeholder="name" id="msg_attr_name" class="w-[64px] min-w-[64px] truncate border focus:shadow-md outline-none"/>
+                    <input type="text" placeholder="name" id="msg_attr_name" class="msg-attr-name w-[64px] min-w-[64px] truncate border focus:shadow-md outline-none"/>
                     <select id="msg_attr_type" class="w-[64px] min-w-[64px] truncate focus:shadow-md outline-none">
                         <option>boolean</option>
                         <option>bytes</option>
@@ -63,7 +63,7 @@
                 </label>
             </span>
             <span class="items-center flex py-2 h-16">
-                <button type="button" title="Submit" class="submit h-full w-full flex text-center items-center" onclick="generateSub()">
+                <button type="button" title="Submit" class="submit h-full w-full flex text-center items-center" onclick="submitMsg()">
                     <p class="text-lg ml-32">Submit</p>
                 </button>
             </span>
