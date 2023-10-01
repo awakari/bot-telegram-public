@@ -51,7 +51,7 @@ function submitMsg() {
             "subCount": limitSubCount,
         },
         "price": {
-            "msgRage": pricePerMsg * timeDays * (limitMsgRate - 1),
+            "msgRate": pricePerMsg * timeDays * (limitMsgRate - 1),
             "subCount": pricePerSub * timeDays * (limitSubCount - 1),
             "total": parseFloat(document.getElementById("price_total").innerText),
             "unit": "EUR",
