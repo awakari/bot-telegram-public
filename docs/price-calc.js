@@ -1,5 +1,5 @@
-const pricePerMsg = 1;
-const pricePerSub = 1;
+const pricePerMsg = 1.0;
+const pricePerSub = 1.0;
 
 window.Telegram.WebApp.expand();
 
