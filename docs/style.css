@@ -12,6 +12,14 @@ input[type=text] {
     border-color: var(--tg-theme-hint-color);
     border-width: 1px;
 }
+input[type=number] {
+    border-color: var(--tg-theme-hint-color);
+    border-width: 1px;
+}
+fieldset{
+    border-color: var(--tg-theme-hint-color);
+    border-width: 1px;
+}
 button[type=button] {
     border-radius: 0.25rem;
     color: var(--tg-theme-button-text-color);

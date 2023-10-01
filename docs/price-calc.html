@@ -31,9 +31,9 @@
                 <legend>Time</legend>
                 <div class="grid grid-cols-4">
                     <label for="date_until" class="m-1">Until</label>
-                    <input type="date" id="date_until" class="col-span-3 border focus:shadow-md outline-none m-1 font-mono text-slate-700" onchange="refreshPrice('date_until')"/>
+                    <input type="date" id="date_until" class="col-span-3 border focus:shadow-md outline-none m-1" onchange="refreshPrice('date_until')"/>
                     <label for="days_total" class="m-1">Total Days</label>
-                    <input type="number" readonly="readonly" id="days_total" class="col-span-3 border focus:shadow-md outline-none m-1 font-mono text-slate-700"/>
+                    <input type="number" readonly="readonly" id="days_total" class="col-span-3 border focus:shadow-md outline-none m-1"/>
                 </div>
             </fieldset>
             <center class="text-xl">×</center>
@@ -42,22 +42,22 @@
                 <fieldset class="border p-2">
                     <legend>
                         Enabled Subscription Count
-                        <span class="col-span-1 text-sm text-slate-500 m-1">€ 1/item</span>
+                        <span class="col-span-1 text-sm text-slate-400 m-1">€ 1/item</span>
                     </legend>
                     <div class="grid grid-cols-4">
-                        <input type="number" id="count_limit_subs" min="1" max="100" value="1" onchange="refreshPrice('count_limit_subs')" class="border m-1 focus:shadow-md outline-none font-mono text-slate-700"/>
-                        <input type="range" id="count_limit_subs_range" min="1" max="100" value="1" onchange="refreshPrice('count_limit_subs_range')" class="col-span-3 m-1 border focus:shadow-md outline-none font-mono text-slate-700"/>
+                        <input type="number" id="count_limit_subs" min="1" max="100" value="1" onchange="refreshPrice('count_limit_subs')" class="border m-1 focus:shadow-md outline-none text-slate-700"/>
+                        <input type="range" id="count_limit_subs_range" min="1" max="100" value="1" onchange="refreshPrice('count_limit_subs_range')" class="col-span-3 m-1 border focus:shadow-md outline-none text-slate-700"/>
                     </div>
                 </fieldset>
                 <center class="text-xl col-span-4">+</center>
                 <fieldset class="border p-2">
                     <legend>
-                        Message Publication Rate
-                        <span class="col-span-1 text-sm text-slate-500 m-1">€ 1/item</span>
+                        Message Daily Publications
+                        <span class="col-span-1 text-sm text-slate-400 m-1">€ 1/item</span>
                     </legend>
                     <div class="grid grid-cols-4">
-                        <input type="number" id="count_limit_msgs" min="1" max="100" value="1" onchange="refreshPrice('count_limit_msgs')" class="border m-1 focus:shadow-md outline-none font-mono text-slate-700"/>
-                        <input type="range" id="count_limit_msgs_range" min="1" max="1000" onchange="refreshPrice('count_limit_msgs_range')" value="1" class="col-span-3 m-1 border focus:shadow-md outline-none font-mono text-slate-700"/>
+                        <input type="number" id="count_limit_msgs" min="1" max="100" value="1" onchange="refreshPrice('count_limit_msgs')" class="border m-1 focus:shadow-md outline-none text-slate-700"/>
+                        <input type="range" id="count_limit_msgs_range" min="1" max="1000" onchange="refreshPrice('count_limit_msgs_range')" value="1" class="col-span-3 m-1 border focus:shadow-md outline-none text-slate-700"/>
                     </div>
                 </fieldset>
             </fieldset>
