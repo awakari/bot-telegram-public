@@ -16,6 +16,10 @@ input[type=number] {
     border-color: var(--tg-theme-hint-color);
     border-width: 1px;
 }
+input[type=date] {
+    border-color: var(--tg-theme-hint-color);
+    border-width: 1px;
+}
 fieldset{
     border-color: var(--tg-theme-hint-color);
     border-width: 1px;
