@@ -9,19 +9,19 @@ input[type=checkbox] {
 input[type=text] {
     min-width: 100px;
     height: 20px;
-    border-color: var(--tg-theme-bg-color);
+    border-color: var(--tg-theme-hint-color);
     border-width: 1px;
 }
 input[type=number] {
-    border-color: var(--tg-theme-bg-color);
+    border-color: var(--tg-theme-hint-color);
     border-width: 1px;
 }
 input[type=date] {
-    border-color: var(--tg-theme-bg-color);
+    border-color: var(--tg-theme-hint-color);
     border-width: 1px;
 }
 textarea, select, fieldset  {
-    border-color: var(--tg-theme-bg-color);
+    border-color: var(--tg-theme-hint-color);
     border-width: 1px;
 }
 button[type=button] {
@@ -57,9 +57,8 @@ div label.required.je-form-input-label {
 div div[data-theme="html"] .je-indented-panel {
     margin: 0.25rem 0;
     padding: 0.25rem;
-    border-color: var(--tg-theme-bg-color);
+    border-color: var(--tg-theme-hint-color);
 }
-/////////////////////////////////////////////////////////////////////////
 select {
     background-color: var(--tg-theme-secondary-bg-color);
     outline: none;
