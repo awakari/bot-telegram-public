@@ -1,14 +1,14 @@
-templateMsgAttr = (name, type, value) => ` <span id="msg_attr_${name}" class="flex w-full text-xs font-mono h-[24x] min-h-[24px] items-center">
-                        <input type="text" id="msg_attr_${name}_" value="${name}" disabled="disabled" class="msg-attr-name w-[64px] min-w-[64px] truncate border focus:shadow-md outline-none"/>
-                        <p id="msg_attr_${type}" class="w-[64px] min-w-[64px] px-1 truncate">${type}</p>
-                        <input type="text" id="msg_attr_${value}" value="${value}" disabled="disabled" class="w-full font-mono truncate border focus:shadow-md outline-none"/>
-                        <button type=\"button\" title=\"Add Attribute\" onclick=\"deleteMessageAttribute('${name}');\" class=\"ml-1 text-2xl font-mono focus:outline-none flex items-center justify-center h-[24x] max-h-[24px]\">—</button>
+templateMsgAttr = (name, type, value) => `<span id="msg_attr_${name}" class="grid grid-cols-6 w-full text-sm font-mono h-[24x] min-h-[24px] items-center">
+                        <input type="text" id="msg_attr_${name}_" value="${name}" disabled="disabled" class="col-span-3 msg-attr-name truncate border focus:shadow-md outline-none"/>
+                        <p id="msg_attr_${type}" class="col-span-2 ml-1 truncate">${type}</p>
+                        <button type=\"button\" title=\"Add Attribute\" onclick=\"deleteMessageAttribute('${name}');\" class=\"attr row-span-2 m-2 text-3xl font-mono focus:outline-none flex items-center justify-center\">—</button>
+                        <input type="text" id="msg_attr_${value}" value="${value}" disabled="disabled" class="col-span-5 w-full font-mono truncate border focus:shadow-md outline-none"/>
                     </span>`
 
-templateMsgAttrRequired = (name, type, value) => ` <span id="msg_attr_${name}" class="flex w-full text-xs font-mono h-[24x] min-h-[24px] items-center">
-                        <input type="text" id="msg_attr_${name}_" value="${name}" disabled="disabled" class="msg-attr-name w-[64px] min-w-[64px] truncate border focus:shadow-md outline-none"/>
-                        <p id="msg_attr_${type}" class="w-[64px] min-w-[64px] px-1 truncate">${type}</p>
-                        <input type="text" id="msg_attr_${value}" value="${value}" disabled="disabled" class="w-full font-mono truncate border focus:shadow-md outline-none"/>
+templateMsgAttrRequired = (name, type, value) => ` <span id="msg_attr_${name}" class="grid grid-cols-6 w-full text-sm font-mono items-center space-y-1">
+                        <input type="text" id="msg_attr_${name}_" value="${name}" disabled="disabled" class="col-span-3 msg-attr-name truncate border focus:shadow-md outline-none"/>
+                        <p id="msg_attr_${type}" class="col-span-2 ml-1 truncate">${type}</p>
+                        <input type="text" id="msg_attr_${value}" value="${value}" disabled="disabled" class="col-span-5 font-mono truncate border focus:shadow-md outline-none"/>
                     </span>`
 
 function loadForm() {
