@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,22 +30,11 @@
             <div class="grid grid-cols-4">
                 <input type="number" id="count_limit_msgs" min="2" max="1440" value="10" onchange="refreshPrice('count_limit_msgs')" class="border m-1 focus:shadow-md outline-none"/>
                 <input type="range" id="count_limit_msgs_range" min="2" max="1440" value="10" onchange="refreshPrice('count_limit_msgs_range')" class="col-span-3 m-1 border focus:shadow-md outline-none"/>
+                <span class="m-1 col-span-2">Price per day:</span><span class="m-1" id="price_daily"></span><span class="m-1">€</span>
+                <span class="m-1 col-span-2">Period:</span><span id="period_days" class="m-1">30</span><span class="m-1">days</span>
+                <span class="m-1 col-span-2">Total:</span><span class="m-1" id="price_total"></span><span class="m-1">€</span>
+                <span class="m-1 col-span-2">Expires:</span><span class="m-1 col-span-2" id="date_until"></span>
             </div>
-            <center class="text-lg">
-                € <span id="price_daily">0</span> per day
-            </center>
-            <fieldset class="border p-2">
-                <legend>Time</legend>
-                <div class="grid grid-cols-4">
-                    <label for="date_until" class="m-1">Until</label>
-                    <input type="date" id="date_until" class="col-span-3 border focus:shadow-md outline-none m-1" onchange="refreshPrice('date_until')"/>
-                    <label for="days_total" class="m-1">Total Days</label>
-                    <input type="number" readonly="readonly" id="days_total" class="col-span-3 border focus:shadow-md outline-none m-1"/>
-                </div>
-            </fieldset>
-            <center class="text-lg">
-                € <span id="price_total">0</span> Total
-            </center>
             <span class="items-center flex py-2 h-16">
                 <button type="button" title="Submit" class="submit h-full w-full flex text-center items-center" onclick="submitMsg()">
                     <p class="text-lg ml-32">Submit</p>
