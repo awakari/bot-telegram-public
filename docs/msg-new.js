@@ -1,7 +1,7 @@
 templateMsgAttr = (name, type, value) => `<span id="msg_attr_${name}" class="grid grid-cols-6 w-full text-sm font-mono h-[24x] min-h-[24px] items-center">
                         <input type="text" id="msg_attr_${name}_" value="${name}" disabled="disabled" class="col-span-3 msg-attr-name truncate border focus:shadow-md outline-none"/>
                         <p id="msg_attr_${type}" class="col-span-2 ml-1 truncate">${type}</p>
-                        <button type=\"button\" title=\"Add Attribute\" onclick=\"deleteMessageAttribute('${name}');\" class=\"attr row-span-2 m-2 text-3xl font-mono focus:outline-none flex items-center justify-center\">—</button>
+                        <button type=\"button\" title=\"Add Attribute\" onclick=\"deleteMessageAttribute('${name}');\" class=\"attr row-span-2 m-2 text-3xl font-mono focus:outline-none flex items-center justify-center\">⨯</button>
                         <input type="text" id="msg_attr_${value}" value="${value}" disabled="disabled" class="col-span-5 w-full font-mono truncate border focus:shadow-md outline-none"/>
                     </span>`
 
