@@ -30,7 +30,8 @@ function refreshPrice(evtSrcId) {
     }
 
     let countLimitMsgs = document.getElementById("count_limit_msgs").valueAsNumber;
-    document.getElementById("price_total").innerText = `${daysTotal * pricePerMsg*(countLimitMsgs - 1)}`;
+    document.getElementById("price_daily").innerText = `${(pricePerMsg*(countLimitMsgs - 1)).toFixed(2)}`;
+    document.getElementById("price_total").innerText = `${(daysTotal * pricePerMsg*(countLimitMsgs - 1)).toFixed(2)}`;
 }
 
 function submitMsg() {

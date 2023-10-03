@@ -31,7 +31,9 @@
                 <input type="number" id="count_limit_subs" min="2" max="256" value="10" onchange="refreshPrice('count_limit_subs')" class="border m-1 focus:shadow-md outline-none"/>
                 <input type="range" id="count_limit_subs_range" min="2" max="256" value="10" onchange="refreshPrice('count_limit_subs_range')" class="col-span-3 m-1 border focus:shadow-md outline-none"/>
             </div>
-            <center class="text-xl">×</center>
+            <center class="text-lg">
+                € <span id="price_daily">0</span> per day
+            </center>
             <fieldset class="border p-2">
                 <legend>Time</legend>
                 <div class="grid grid-cols-4">
@@ -41,11 +43,8 @@
                     <input type="number" readonly="readonly" id="days_total" class="col-span-3 border focus:shadow-md outline-none m-1"/>
                 </div>
             </fieldset>
-            <center class="text-xl">
-                =
-            </center>
-            <center class="text-xl">
-                € <span id="price_total">0</span>
+            <center class="text-lg">
+                € <span id="price_total">0</span> Total
             </center>
             <span class="items-center flex py-2 h-16">
                 <button type="button" title="Submit" class="submit h-full w-full flex text-center items-center" onclick="submitMsg()">
