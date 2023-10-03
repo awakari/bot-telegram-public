@@ -56,7 +56,7 @@ function addMessageAttribute() {
         alert("empty attribute name")
         validationPassed = false;
     }
-    const type = document.getElementById("msg_attr_type").value;
+    let type = document.getElementById("msg_attr_type").value;
     const valStr = document.getElementById("msg_attr_value").value;
     let value;
     if (validationPassed) {
@@ -114,6 +114,7 @@ function addMessageAttribute() {
                 }
                 break
             default: // string
+                type = "string";
                 value = valStr;
         }
     }

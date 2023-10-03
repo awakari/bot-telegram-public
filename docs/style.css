@@ -27,7 +27,7 @@ textarea, select, fieldset  {
 button[type=button] {
     border-radius: 0.25rem;
     color: var(--tg-theme-button-text-color);
-    background-color: rgb(123, 148, 167);
+    background-color: var(--tg-theme-hint-color);
     height: 1.75rem;
     padding: 0 0.25rem;
 }
