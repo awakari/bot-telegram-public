@@ -30,11 +30,10 @@ function refreshPrice(evtSrcId) {
 }
 
 function submitMsg() {
-    const timeDays = document.getElementById("days_total").valueAsNumber;
     const limitMsgRate = document.getElementById("count_limit_msgs").valueAsNumber;
     const payload = {
         "limit": {
-            "timeDays": timeDays,
+            "timeDays": periodDays,
             "count": limitMsgRate,
             "subject": usageSubjMsg,
         },
