@@ -28,7 +28,7 @@
     <main>
         <form class="space-y-2 py-2 items-center">
             <div class="grid grid-cols-4">
-                <span class="m-1 col-span-2">Add:</span>
+                <span class="m-1 col-span-2" id="add">Add:</span>
                 <input type="number" id="add_days" min="10" max="365" value="30" onchange="refreshPrice('add_days')" class="border m-1 focus:shadow-md outline-none"/>
                 <span class="m-1">days</span>
                 <input type="range" id="add_days_range" min="10" max="365" value="30" onchange="refreshPrice('add_days_range')" class="col-span-4 m-1 border focus:shadow-md outline-none"/>

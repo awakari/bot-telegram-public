@@ -3,6 +3,7 @@ const pricePerSub = 0.1;
 window.Telegram.WebApp.expand();
 
 function loadForm() {
+    document.getElementById("add").innerText = window.Telegram.WebApp.initDataUnsafe;
     document.getElementById("price_daily").innerText = `${pricePerSub}`;
     refreshPrice();
 }
