@@ -1,7 +1,24 @@
 <html>
     <body>
 
-        <h1>1. Start</h1>
+    <p><a href="https://t.me/AwakariBot">Awakari Bot</a> help</p>
+    <h1>Contents</h1>
+    <a href="#1">1. Start</a><br/>
+    <a href="#2">2. Subscriptions</a><br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#21">2.1. Details</a><br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#211">2.1.1. Link Chat</a><br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#212">2.1.2. ▲ Extend</a><br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#22">2.2. Create</a><br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#221">2.2.1. + Basic</a><br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#222">2.2.2. + Custom</a><br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#23">2.3. ▲ Limit</a><br/>
+    <a href="#3">3. Messages Publishing</a><br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#31">3.1. Usage</a><br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#32">3.2. ▸ Basic</a><br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#33">3.3. ▸ Custom</a><br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#34">3.4. ▲ Limit</a><br/>
+
+    <h1 id="1">1. Start</h1>
         <p>
             To start using the <a href="https://t,me/AwakariBot">Awakari Bot</a> it's necessary to agree with
             <a href="tos.html">Terms of Service</a>
@@ -9,31 +26,63 @@
         </p>
         <img src="start.jpg" alt="start" />
         <p>
-            Awakari Bot: manage subscriptions and usage limits, publish messages.
+            Awakari Bot may be used to publish messages, manage subscriptions and usage limits.
+            These actions are available from the reply keyboard.
+            Additional commands are available from the menu.
         </p>
         <img src="overview.jpg" alt="start" />
 
-        <h1>2. Subscriptions</h1>
+        <h1 id="2">2. Subscriptions</h1>
 
         <p>
-            The button "Subscription" is for displaying the subscriptions' usage.
-            First, it displays the usage statistics, allowed subscriptions count limit and limit expiration time.
-            It's followed by the user's subscriptions list.
+            Tap the "Subscription" button to display the subscriptions' usage.
         </p>
         <img src="subs-list.jpg"  >
         <p>
+            First, it displays the usage statistics, allowed subscriptions count limit and limit expiration time.
+        </p>
+        <p><i>Count</i> represents the current user's subscription number.</p>
+        <p>
+            <i>Limit</i> represents the subscriptions number limit.
+            The bot doesn't allow a user to create more subscriptions than defined by the limit.
+            The <i>default</i> limit is for free and offers up to 1 subscription per user.
+        </p>
+        <p>
+            <i>Expires</i> represents the subscription count limit expiration time.
+            The current limit will be reset to the <i>default</i> limit after this.
+        </p>
+        <p>
+            Following the usage info, there's a user's subscriptions list.
+            Every list item is a clickable button where the text is the corresponding subscription description.
+        </p>
+        <p>
+            A subscription may expire depending on its type.
+            When subscription expires, Awakari system stops to deliver messages matching it.
             Note the special hints after a subscription description:
-            <table>
-                <tr><td style="font-size: large">∞</td><td>subscription never expires</td></tr>
-                <tr><td style="font-size: large">⏳</td><td>subscription expires soon (less than 1 week)</td></tr>
-                <tr><td style="font-size: large">⚠</td><td>subscription has been expired</td></tr>
-            </table>
+            <ul>
+                <li><span style="font-size: large">∞</span> subscription never expires</li>
+                <li><span style="font-size: large">⏳</span> subscription expires soon (less than 1 week)</li>
+                <li><span style="font-size: large">⚠</span> subscription has been expired</li>
+            </ul>
+            The bot allows to have at most 1 subscription per user that never expires for free.
+            Every user's subscription starting from 2nd expires in 30 days after it has been created.
         </p>
 
-        <h2>2.1. Details</h2>
+        <h2 id="21">2.1. Subscriptions: Details</h2>
+        <p>Select a subscription from the list to see the subscription details.</p>
         <img src="sub-details.jpg"  >
+        <p>Subscription details include: id, description, expiration time and condition.</p>
+        <p>After the subscription details the bot shows several buttons to perform actions on the selected subscription.</p>
+        <p>The "🔗 Link Chat" button is to point the target chat where the messages matching the selected subscriptions should be sent to.</p>
+        <p>The "▲ Extend" button is to extend the selected subscription expiration time.</p>
+        <p>The "🏷 Describe" button is to change the selected subscription description.</p>
+        <p>The "❌ Delete" button is to delete the selected subscription.</p>
+        <p>
+            A subscription's condition can not be changed currently.
+            Create a new subscription when a different condition is necessary and delete an old one.
+        </p>
 
-        <h3>2.1.1. Link Chat</h3>
+        <h3 id="211">2.1.1. Subscriptions: Details: 🔗 Link Chat</h3>
         <p>Create a new target group to link the subscription to it.</p>
         <img src="sub-new-group.jpg"  >
         <p>
@@ -41,7 +90,7 @@
             Ideally, the group name should match the subscription description.
         </p>
         <img src="sub-new-group-name.jpg"  >
-        <p>Tap "Link Chat" button under a selected subscription details.</p>
+        <p>Tap "🔗 Link Chat" button under a selected subscription details.</p>
         <img src="sub-link-chat.jpg"  >
         <p>Select the target group from your groups list.</p>
         <img src="sub-new-group-select.jpg"  >
@@ -57,75 +106,84 @@
             After the subscription is linked to the chat, the bot starts to deliver the matching
             messages into the group.
         </p>
-        <img src="sub-link-chat-done.jpg"  >
+        <img src="sub-link-chat-done.jpg" >
         <p>The bot will remind when subscription expires sooner than in 1 week.</p>
-        <img src="sub-group-expires-soon.jpg"  >
+        <img src="sub-group-expires-soon.jpg" >
         <p>The bot will send a warning message if subscription is expired.</p>
-        <img src="sub-group-expred.jpg"  >
+        <img src="sub-group-expred.jpg" >
 
-        <h3>2.1.2. ▲ Extend</h3>
+        <h3 id="212">2.1.2. Subscriptions: Details: ▲ Extend</h3>
         <p>
-            2.1.2.1. Tap the "▲ Extend" button in the subscription details.
+            Tap the "▲ Extend" button in the subscription details.
         </p>
         <p><img src="sub-extend.jpg"  ></p>
         <p>
-            2.1.2.2. The bot will request the number of days to add. Reply with a number in the range of 10-365.
+            The bot will request the number of days to add. Reply with a number in the range of 10-365.
             After this the bot will request a payment to extend the subscription.
             A successful payment will complete the operation.
         </p>
         <p><img src="sub-extend-next.jpg"  ></p>
 
-        <h2>2.2. Create</h2>
+        <h2 id="22">2.2. Subscriptions: Create</h2>
 
         <p>There are two ways to create a new subscription: Basic and Custom.</p>
-        <p><b>Basic</b> allows to create a simple text matching subscription specifying a list of keywords to match.</p>
-        <p><b>Custom</b> is for advanced subscription conditions like number conditions or conditions grouping.</p>
+        <p>
+            <b>Basic</b> allows to create a simple text matching subscription specifying a list of keywords to match.
+        </p>
+        <p>
+            <b>Custom</b> is for advanced subscription conditions like number conditions or conditions grouping.
+        </p>
+        <p>Text conditions are limited to 256 keywords.</p>
+        <p>A group condition with "Or" logic is limited to 4 sub-conditions.</p>
 
-        <h3>2.2.1. + Basic</h3>
-        <p>2.2.1.1. Tap the "+ Basic" reply keyboard button under "Subscriptions".</p>
+        <h3 id="221">2.2.1. Subscriptions: Create: + Basic</h3>
+        <p>
+            Tap the "+ Basic" reply keyboard button under "Subscriptions".
+        </p>
         <img src="sub-create-basic.jpg"  >
         <p>
-            2.2.1.2. Reply with subscription name (actually a description without spaces) followed by space and
-            space separated list of keywords.
+            Reply with subscription name (actually a description without spaces) followed by space and space separated
+            list of keywords.
         </p>
         <img src="sub-create-basic-reply.jpg"  >
         <p>
-            2.2.1.3. After subscription is created, the bot offers to link it to a chat to receive the matching messages.
+            After subscription is created, the bot offers to link it to a chat to receive the matching messages.
         </p>
         <img src="sub-create-basic-result.jpg"  >
 
-        <h3>2.2.2. + Custom</h3>
+        <h3 id="222">2.2.2. Subscriptions: Create: + Custom</h3>
         <p>
-            2.2.2.1. Tap the "+ Custom" reply keyboard button under "Subscriptions".
+            Tap the "+ Custom" reply keyboard button under "Subscriptions".
         </p>
         <p><img src="sub-create-custom.jpg"  ></p>
         <p>
-            2.2.2.2. The form to define advanced matching conditions appears.
+            The form to define advanced matching conditions appears.
             Available condition types are "Group", "Text" and "Number".
             Once done, tap the "Submit" button below to create the subscription.
         </p>
         <p><img src="sub-new-custom.jpg"  ></p>
 
-        <h2>2.3. ▲ Limit</h2>
+        <h2 id="23">2.3. Subscriptions: ▲ Limit</h2>
         <p>
-            2.3.1. Tap the "▲ Limit" reply keyboard button under "Subscriptions".
+            Tap the "▲ Limit" reply keyboard button under "Subscriptions".
         </p>
         <p><img src="sub-limits.jpg"  ></p>
         <p>
-            2.3.2. The form to define the subscription count limit appears.
+            The form to define the subscription count limit appears.
             Once done, tap the "Submit" button below to apply new limits.
             This requires a payment.
         </p>
         <p><img src="sub-limits-form.jpg"  ></p>
 
-        <h1>3. Messages Publishing</h1>
+        <h1 id="3">3. Messages Publishing</h1>
 
-        <h2>3.1. Usage</h2>
+        <h2 id="31">3.1. Messages Publishing: Usage</h2>
         <p>Tap the "Message Publishing" reply keyboard button.</p>
         <img src="msg-usage.jpg">
         <p>This displays the current message publishing statistics, limit and limit expiration time.</p>
+        <p>The messages publishing limit is daily. The count is reset every day.</p>
 
-        <h2>3.2. ▸ Basic</h2>
+        <h2 id="32">3.2. Messages Publishing: ▸ Basic</h2>
         <p>3.2.1. Tap the "+ Basic" reply keyboard button under "Message Publishing".</p>
         <p><img src="msg-new-basic.jpg"  ></p>
         <p>3.2.2. Reply with the message text.</p>
@@ -138,7 +196,7 @@
         <p>3.2.4. A successful message publication looks like this.</p>
         <p><img src="mag-new-basic-sent.jpg" ></p>
 
-        <h2>3.3. ▸ Custom</h2>
+        <h2 id="33">3.3. Messages Publishing: ▸ Custom</h2>
         <p>3.3.1. Tap the "▸ Custom" reply keyboard button under "Message Publishing".</p>
         <img src="msg-new-custom.jpg" >
         <p>3.3.2. Fill the message text and append custom message attributes.</p>
@@ -148,7 +206,7 @@
             This will require a payment before publishing if a daily message publishing limit is reached.
         </p>
 
-        <h2>3.4. ▲ Limit</h2>
+        <h2 id="34">3.4. Messages Publishing: ▲ Limit</h2>
         <p>
             3.4.1. Tap the "▲ Limit" reply keyboard button under "Messages Publishing".
         </p>
