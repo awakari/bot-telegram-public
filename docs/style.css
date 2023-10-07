@@ -64,6 +64,8 @@ div[data-schemaid="cond"] {
     border-width: 1px;
     border-color: var(--tg-theme-hint-color);
     padding: 0.25rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
 }
 select {
     background-color: var(--tg-theme-secondary-bg-color);
