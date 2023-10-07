@@ -34,9 +34,7 @@
 
         <h1 id="2">2. Subscriptions</h1>
 
-        <p>
-            Tap the "Subscription" button to display the subscriptions' usage.
-        </p>
+        <p>Tap the "Subscription" button to display the subscriptions' usage.</p>
         <img src="subs-list.jpg"  >
         <p>
             First, it displays the usage statistics, allowed subscriptions count limit and limit expiration time.
@@ -110,7 +108,9 @@
         <p>The bot will remind when subscription expires sooner than in 1 week.</p>
         <img src="sub-group-expires-soon.jpg" >
         <p>The bot will send a warning message if subscription is expired.</p>
-        <img src="sub-group-expred.jpg" >
+        <img src="sub-group-expired.jpg" >
+        <p>An incoming message in the group chat will look like this:</p>
+        <img src="msg-delivery.jpg">
 
         <h3 id="212">2.1.2. Subscriptions: Details: ▲ Extend</h3>
         <p>
@@ -178,10 +178,18 @@
         <h1 id="3">3. Messages Publishing</h1>
 
         <h2 id="31">3.1. Messages Publishing: Usage</h2>
-        <p>Tap the "Message Publishing" reply keyboard button.</p>
+        <p>Tap the "Messages Publishing" button to display the corresponding usage.</p>
         <img src="msg-usage.jpg">
-        <p>This displays the current message publishing statistics, limit and limit expiration time.</p>
-        <p>The messages publishing limit is daily. The count is reset every day.</p>
+        <p><i>Count</i> represents the count of messages published. It's been reset daily.</p>
+        <p>
+            <i>Limit</i> represents the max number of message publications per day.
+            The bot doesn't allow a user to publish more messages than defined by the limit.
+            The <i>default</i> limit is for free and offers up to 1 message publication per day.
+        </p>
+        <p>
+            <i>Expires</i> represents the message publishing limit expiration time.
+            The current limit will be reset to the <i>default</i> limit after this.
+        </p>
 
         <h2 id="32">3.2. Messages Publishing: ▸ Basic</h2>
         <p>3.2.1. Tap the "+ Basic" reply keyboard button under "Message Publishing".</p>
