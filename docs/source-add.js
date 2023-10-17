@@ -74,7 +74,7 @@ function submitMsg() {
             "total": parseFloat(document.getElementById("price_total").innerText),
             "unit": "EUR",
         },
-        "source": {
+        "src": {
             "addr": srcAddr,
             "type": srcType,
         }
