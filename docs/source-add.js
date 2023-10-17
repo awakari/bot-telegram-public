@@ -67,8 +67,9 @@ function submitMsg() {
     }
     const payload = {
         "limit": {
-            "timeDays": periodDays,
+            "time": periodDays,
             "count": limitMsgsDailyCount,
+            "freq": parseInt(document.getElementById("feed_upd_freq").value),
         },
         "price": {
             "total": parseFloat(document.getElementById("price_total").innerText),
