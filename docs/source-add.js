@@ -18,12 +18,12 @@ function loadForm() {
 function showSrcDetails() {
     let opt = document.getElementById("src_type").value
     switch (opt) {
-        case "chan":
-            document.getElementById("chan").style.display = "grid";
+        case "tgch":
+            document.getElementById("tgch").style.display = "grid";
             document.getElementById("feed").style.display = "none";
             break
         case "feed":
-            document.getElementById("chan").style.display = "none";
+            document.getElementById("tgch").style.display = "none";
             document.getElementById("feed").style.display = "grid";
             break
     }
@@ -58,7 +58,7 @@ function submitMsg() {
     const srcType = document.getElementById("src_type").value;
     let srcAddr;
     switch (srcType) {
-        case "chan":
+        case "tgch":
             srcAddr = document.getElementById("chan_name").value;
             break
         case "feed":
