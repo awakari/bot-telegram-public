@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0ed3ff">
+
+    <title>Awakari App</title>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <link href="tailwind.output.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="source-add.js"></script>
+
+</head>
+<body onload="loadForm()">
+
+<div id="msg_new" class="flex-1 flex flex-col w-[320px] mx-auto" style="display: flex">
+    <!-- section body top nav -->
+    <nav class="flex-none justify-between h-10 w-[320px] py-2">
+        <span class="text-lg">
+            <center><b>Add Own Source</b></center>
+        </span>
+    </nav>
+
+    <main>
+        <form class="space-y-2 py-2 items-center">
+            <div class="grid grid-cols-3">
+
+                <span class="m-1 col-span-3">Message Daily Count Limit</span>
+                <input type="number" id="count_limit_msgs_daily" min="1" max="1440" value="96" onchange="refreshPrice('count_limit_msgs_daily')" class="border col-span-1 m-1 focus:shadow-md outline-none"/>
+                <input type="range" id="count_limit_msgs_daily_range" min="1" max="1440" value="96" onchange="refreshPrice('count_limit_msgs_daily_range')" class="col-span-2 m-1 border focus:shadow-md outline-none"/>
+
+                <span class="m-1 col-span-1">Type:</span>
+                <select id="src_type" class="col-span-2">
+                    <option value="chan" selected>Channel: Telegram</option>
+                    <option value="feed">Feed: RSS or Atom</option>
+                </select>
+
+                <div id="chan" hidden="hidden" class="m-1 col-span-3 grid grid-cols-3">
+                    <span>Channel: @</span>
+                    <input type="text" id="chan_name" placeholder="evopublikk" class="col-span-2"/>
+                </div>
+                <div id="feed" hidden="hidden" class="m-1 col-span-3 grid grid-cols-3">
+                    <span class="my-1">Feed URL:</span>
+                    <input type="text" id="feed_url" placeholder="https://lifehacker.com/rss" class="col-span-2 my-1"/>
+                    <span class="my-1">Update Every:</span>
+                    <select id="feed_upd_freq" class="col-span-2 my-1">
+                        <option value="1440">1 min</option>
+                        <option value="288">5 min</option>
+                        <option value="96">15 min</option>
+                        <option value="24" selected="selected">1 hour</option>
+                        <option value="4">6 hours</option>
+                        <option value="1">24 hours</option>
+                    </select>
+                </div>
+
+                <span class="m-1 col-span-1">Price per day:</span><span class="m-1" id="price_daily"></span><span class="m-1">€</span>
+                <span class="m-1 col-span-1">Period:</span><span id="period_days" class="m-1">30</span><span class="m-1">days</span>
+                <span class="m-1 col-span-1">Total:</span><span class="m-1" id="price_total"></span><span class="m-1">€</span>
+                <span class="m-1 col-span-1">Expires:</span><span class="m-1 col-span-2" id="date_until"></span>
+            </div>
+            <span class="items-center flex py-2 h-16">
+                <button type="button" title="Submit" class="submit h-full w-full flex text-center items-center" onclick="submitMsg()">
+                    <p class="text-lg ml-32">Submit</p>
+                </button>
+            </span>
+        </form>
+    </main>
+</div>
+
+</body>
+</html>

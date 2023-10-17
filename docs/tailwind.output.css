@@ -588,16 +588,16 @@ video {
   position: sticky;
 }
 
+.col-span-1 {
+  grid-column: span 1 / span 1;
+}
+
 .col-span-2 {
   grid-column: span 2 / span 2;
 }
 
 .col-span-3 {
   grid-column: span 3 / span 3;
-}
-
-.col-span-4 {
-  grid-column: span 4 / span 4;
 }
 
 .col-span-5 {
@@ -687,10 +687,6 @@ video {
 
 .ml-32 {
   margin-left: 8rem;
-}
-
-.ml-7 {
-  margin-left: 1.75rem;
 }
 
 .mr-1 {
@@ -812,8 +808,8 @@ video {
   resize: both;
 }
 
-.grid-cols-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .grid-cols-6 {
