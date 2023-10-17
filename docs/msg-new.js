@@ -51,7 +51,7 @@ function isValidUriReference(uri) {
 
 function addMessageAttribute() {
     let validationPassed = true;
-    const name = document.getElementById("msg_attr_name").value;
+    const name = document.getElementById("msg_attr_name").value.toLowerCase();
     if (name === "") {
         alert("empty attribute name")
         validationPassed = false;

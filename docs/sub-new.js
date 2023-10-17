@@ -165,7 +165,7 @@ window.Telegram.WebApp.expand();
 function generateSub() {
     let payload = {
         description: document.getElementById("sub_descr").value,
-        enabled: document.getElementById("sub_enabl").checked,
+        enabled: true,
         cond: editor.getValue(0),
     }
     window.Telegram.WebApp.sendData(JSON.stringify(payload));
