@@ -30,8 +30,8 @@
             <div class="grid grid-cols-3">
 
                 <span class="m-1 col-span-3">Message Daily Count Limit</span>
-                <input type="number" id="count_limit_msgs_daily" min="1" max="1440" value="24" onchange="refreshPrice('count_limit_msgs_daily')" class="border col-span-1 m-1 focus:shadow-md outline-none"/>
-                <input type="range" id="count_limit_msgs_daily_range" min="1" max="1440" value="24" onchange="refreshPrice('count_limit_msgs_daily_range')" class="col-span-2 m-1 border focus:shadow-md outline-none"/>
+                <input type="number" id="count_limit_msgs_daily" min="10" max="1440" value="10" onchange="refreshPrice('count_limit_msgs_daily')" class="border col-span-1 m-1 focus:shadow-md outline-none"/>
+                <input type="range" id="count_limit_msgs_daily_range" min="10" max="1440" value="10" onchange="refreshPrice('count_limit_msgs_daily_range')" class="col-span-2 m-1 border focus:shadow-md outline-none"/>
 
                 <span class="m-1 col-span-1">Type:</span>
                 <select id="src_type" class="col-span-2">

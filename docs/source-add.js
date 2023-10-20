@@ -1,3 +1,4 @@
+const minMsgCountDaily = 10;
 const pricePerMsgDaily = 0.04;
 const pricePerUpdDaily = 0.01;
 const periodDays = 30;
@@ -44,11 +45,11 @@ function refreshPrice(evtSrcId) {
 
     let countLimitMsgsDaily = document.getElementById("count_limit_msgs_daily").valueAsNumber;
     let srcType = document.getElementById("src_type").value;
-    let updatesDaily = 0;
+    let updatesDaily = 1;
     if (srcType === "feed") {
         updatesDaily = parseInt(document.getElementById("feed_upd_freq").value);
     }
-    const pricePerDay = pricePerMsgDaily*countLimitMsgsDaily + pricePerUpdDaily*updatesDaily;
+    const pricePerDay = pricePerMsgDaily*(countLimitMsgsDaily - minMsgCountDaily) + pricePerUpdDaily*(updatesDaily - 1);
     document.getElementById("price_daily").innerText = `${pricePerDay.toFixed(2)}`;
     document.getElementById("price_total").innerText = `${(periodDays*pricePerDay).toFixed(2)}`;
 }
