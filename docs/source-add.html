@@ -51,9 +51,9 @@
                         <option value="1440">1 min</option>
                         <option value="288">5 min</option>
                         <option value="96">15 min</option>
-                        <option value="24" selected="selected">1 hour</option>
+                        <option value="24">1 hour</option>
                         <option value="4">6 hours</option>
-                        <option value="1">24 hours</option>
+                        <option value="1" selected="selected">24 hours</option>
                     </select>
                 </div>
 
@@ -67,6 +67,24 @@
                     <p class="text-lg ml-32">Submit</p>
                 </button>
             </span>
+            <div class="hint_color text-xs">
+                <p>Notes:</p>
+                <p>
+                    1. Any source feed is being added <i>forever</i> by default.
+                    The only way to delete it later is to request <a href="mailto://awakari@awakari.com">support</a>.
+                </p>
+                <p>
+                    2. Any source feed remains existing and <i>active</i> after it expires.
+                </p>
+                <p>
+                    3. When a source feed expires, its limit is being reset to <i>free level</i>.
+                    Specifically, the message day count limit is being reset to 10 and update period is being reset to 1 (once) per day.
+                </p>
+                <p>
+                    4. Any user (including non-owner) is allowed to replace an expired feed with the same URL and
+                    different limits.
+                </p>
+            </div>
         </form>
     </main>
 </div>
