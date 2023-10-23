@@ -66,6 +66,9 @@ const subCondSchema = {
                                 id: "key",
                                 type: "string",
                                 required: true,
+                                minLength: 1,
+                                maxLength: 20,
+                                pattern: "^[a-z0-9]+$",
                                 options: {
                                     inputAttributes: {
                                         placeholder: "e.g. price, revenue, time, ...",
@@ -103,6 +106,9 @@ const subCondSchema = {
                                 id: "key",
                                 type: "string",
                                 required: true,
+                                minLength: 1,
+                                maxLength: 20,
+                                pattern: "^[a-z0-9]+$",
                                 options: {
                                     inputAttributes: {
                                         placeholder: "e.g. language, source, title, ...",
