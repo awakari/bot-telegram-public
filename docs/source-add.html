@@ -36,11 +36,16 @@
                 <span class="m-1 col-span-1">Type:</span>
                 <select id="src_type" class="col-span-2">
                     <option value="feed" selected="selected">Feed: RSS or Atom</option>
-<!--                    <option value="tgch">Channel: Telegram</option>-->
+                    <option value="tgch">Channel: Telegram</option>
                 </select>
 
                 <div id="tgch" hidden="hidden" class="m-1 col-span-3 grid grid-cols-3">
-                    <span>Channel:</span>
+                    <span class="col-span-3 my-1 text-sm" style="color: var(--tg-theme-hint-color)">
+                        <b>Currently cannot be added automatically.</b>
+                        Submit to request support to add it.
+                        Payment will be skipped until the channel is approved.
+                    </span>
+                    <span class="my-1">Channel:</span>
                     <input type="text" id="chan_name" placeholder="@proxymtproto" class="col-span-2"/>
                 </div>
                 <div id="feed" hidden="hidden" class="m-1 col-span-3 grid grid-cols-3">
