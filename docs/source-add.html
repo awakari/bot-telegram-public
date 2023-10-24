@@ -30,29 +30,26 @@
             <div class="grid grid-cols-3">
 
                 <span class="m-1 col-span-3">Message Daily Count Limit</span>
-                <input type="number" id="count_limit_msgs_daily" min="10" max="1440" value="10" onchange="refreshPrice('count_limit_msgs_daily')" class="border col-span-1 m-1 focus:shadow-md outline-none"/>
-                <input type="range" id="count_limit_msgs_daily_range" min="10" max="1440" value="10" onchange="refreshPrice('count_limit_msgs_daily_range')" class="col-span-2 m-1 border focus:shadow-md outline-none"/>
 
                 <span class="m-1 col-span-1">Type:</span>
-                <select id="src_type" class="col-span-2">
+                <select id="src_type" class="col-span-2 m-1">
                     <option value="feed" selected="selected">Feed: RSS or Atom</option>
                     <option value="tgch">Channel: Telegram</option>
                 </select>
 
                 <div id="tgch" hidden="hidden" class="m-1 col-span-3 grid grid-cols-3">
+                    <span class="my-1">Channel:</span>
+                    <input type="text" id="chan_name" placeholder="@proxymtproto" class="col-span-2 m-1"/>
                     <span class="col-span-3 my-1 text-sm" style="color: var(--tg-theme-hint-color)">
                         A telegram channel currently <b>cannot be added automatically.</b>
                         Press "Submit" to request support to review the channel contents and system capacity.
-                        The generated invoice can not be paid until the support comes back to you and confirms the channel is approved.
+                        If approved, support will register the channel and notify you.
                     </span>
-                    <span class="my-1">Channel:</span>
-                    <input type="text" id="chan_name" placeholder="@proxymtproto" class="col-span-2"/>
                 </div>
                 <div id="feed" hidden="hidden" class="m-1 col-span-3 grid grid-cols-3">
-                    <span class="my-1">Feed URL:</span>
-                    <input type="text" id="feed_url" placeholder="https://lifehacker.com/rss" class="col-span-2 my-1"/>
+                    <span class="my-1">Feed URL:</span><input type="text" id="feed_url" placeholder="https://lifehacker.com/rss" class="col-span-2 m-1"/>
                     <span class="my-1">Update Every:</span>
-                    <select id="feed_upd_freq" class="col-span-2 my-1">
+                    <select id="feed_upd_freq" class="col-span-2 m-1">
                         <option value="1440">1 min</option>
                         <option value="288">5 min</option>
                         <option value="96">15 min</option>
@@ -60,12 +57,14 @@
                         <option value="4">6 hours</option>
                         <option value="1" selected="selected">24 hours</option>
                     </select>
+                    <input type="number" id="count_limit_msgs_daily" min="10" max="1440" value="10" onchange="refreshPrice('count_limit_msgs_daily')" class="border col-span-1 my-1 focus:shadow-md outline-none"/>
+                    <input type="range" id="count_limit_msgs_daily_range" min="10" max="1440" value="10" onchange="refreshPrice('count_limit_msgs_daily_range')" class="col-span-2 m-1 border focus:shadow-md outline-none"/>
+                    <span class="my-1 col-span-1">Price per day:</span><span class="m-1" id="price_daily"></span><span class="m-1">€</span>
+                    <span class="my-1 col-span-1">Period:</span><span id="period_days" class="m-1">30</span><span class="m-1">days</span>
+                    <span class="my-1 col-span-1">Total:</span><span class="m-1" id="price_total"></span><span class="m-1">€</span>
+                    <span class="my-1 col-span-1">Expires:</span><span class="m-1 col-span-2" id="date_until"></span>
                 </div>
 
-                <span class="m-1 col-span-1">Price per day:</span><span class="m-1" id="price_daily"></span><span class="m-1">€</span>
-                <span class="m-1 col-span-1">Period:</span><span id="period_days" class="m-1">30</span><span class="m-1">days</span>
-                <span class="m-1 col-span-1">Total:</span><span class="m-1" id="price_total"></span><span class="m-1">€</span>
-                <span class="m-1 col-span-1">Expires:</span><span class="m-1 col-span-2" id="date_until"></span>
             </div>
             <span class="items-center flex py-2 h-16">
                 <button type="button" title="Submit" class="submit h-full w-full flex text-center items-center" onclick="submitMsg()">
