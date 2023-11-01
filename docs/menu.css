@@ -27,4 +27,4 @@
 }
 
 /* Show the dropdown menu on hover */
-.dropdown:active .pub-list-dropdown-content {display: block;}
+.dropdown:hover .pub-list-dropdown-content {display: block;}
