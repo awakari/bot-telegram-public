@@ -26,8 +26,5 @@
     display: block;
 }
 
-/* Change color of dropdown links on hover */
-.pub-list-dropdown-content a:hover {background-color: #ddd;}
-
 /* Show the dropdown menu on hover */
-.dropdown:hover .pub-list-dropdown-content {display: block;}
+.dropdown:active .pub-list-dropdown-content {display: block;}

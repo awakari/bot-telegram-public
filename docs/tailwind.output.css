@@ -756,10 +756,6 @@ video {
   height: 2.5rem;
 }
 
-.h-12 {
-  height: 3rem;
-}
-
 .h-16 {
   height: 4rem;
 }
@@ -1002,6 +998,11 @@ video {
   padding-right: 0.25rem;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .py-0 {
   padding-top: 0px;
   padding-bottom: 0px;
@@ -1176,9 +1177,9 @@ video {
   top: 0px;
 }
 
-.before\:h-12::before {
+.before\:h-16::before {
   content: var(--tw-content);
-  height: 3rem;
+  height: 4rem;
 }
 
 .before\:w-6::before {
