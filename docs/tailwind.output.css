@@ -756,6 +756,10 @@ video {
   height: 2.5rem;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
 .h-16 {
   height: 4rem;
 }
@@ -998,11 +1002,6 @@ video {
   padding-right: 0.25rem;
 }
 
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
 .py-0 {
   padding-top: 0px;
   padding-bottom: 0px;
@@ -1030,8 +1029,8 @@ video {
   padding-right: 0.25rem;
 }
 
-.pt-4 {
-  padding-top: 1rem;
+.pt-1 {
+  padding-top: 0.25rem;
 }
 
 .text-left {
@@ -1056,11 +1055,6 @@ video {
 
 .font-mono {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 .text-3xl {
@@ -1177,9 +1171,9 @@ video {
   top: 0px;
 }
 
-.before\:h-16::before {
+.before\:h-12::before {
   content: var(--tw-content);
-  height: 4rem;
+  height: 3rem;
 }
 
 .before\:w-6::before {
