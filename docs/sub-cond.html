@@ -16,13 +16,14 @@
     <script src="jsoneditor.min.js"></script>
 
 </head>
-<body>
+<body onload="loadCond()">
 
 <div id="sub_new" class="flex-1 flex flex-col w-[320px] mx-auto" style="display: flex">
 
     <nav class="flex-none justify-between h-10 w-[320px] py-2">
         <span class="flex space-x-2">
             <p class="text-lg"><b>Condition</b></p>
+            <p id="cond_raw"></p>
         </span>
     </nav>
 
@@ -35,7 +36,7 @@
                     </div>
                 </div>
             </div>
-            <script src="sub-new.js"></script>
+            <script src="sub-cond.js"></script>
             <span class="items-center flex py-2 h-16">
             <button type="button" title="Submit" class="submit h-full w-full flex text-center items-center" onclick="generateSub()">
                 <p class="text-lg ml-32">Submit</p>
