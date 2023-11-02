@@ -108,7 +108,7 @@ const subCondSchema = {
                                 required: true,
                                 minLength: 1,
                                 maxLength: 20,
-                                pattern: "^[a-z0-9]+$",
+                                pattern: "^[a-z0-9]*$",
                                 options: {
                                     inputAttributes: {
                                         placeholder: "e.g. language, source, title, ...",

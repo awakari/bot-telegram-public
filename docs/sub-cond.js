@@ -7,17 +7,15 @@ editor.on('change', function () {
     // Get an array of errors from the validator
     var errors = editor.validate();
 
-    var indicator = document.getElementById('valid_indicator');
-
     // Not valid
     if (errors.length) {
-        document.getElementById("btn_submit").disabled = true;
-        document.getElementById("btn_submit_txt").innerText = "Not valid";
+        document.getElementById("btn_submit").style.display = "none";
+        document.getElementById("invalid_indicator").style.display = "block";
     }
     // Valid
     else {
-        document.getElementById("btn_submit").disabled = false;
-        document.getElementById("btn_submit_txt").innerText = "Submit";
+        document.getElementById("btn_submit").style.display = "block";
+        document.getElementById("invalid_indicator").style.display = "none";
     }
 });
 
