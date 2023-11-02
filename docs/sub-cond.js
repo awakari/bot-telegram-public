@@ -31,7 +31,8 @@ function loadCond() {
     const condEncB64Url = urlParams.get("cond");
     const condMap = JSON.parse(base64UrlDecode(condEncB64Url));
     editor.setValue(condMap);
-    console.log(editor.getValue(0));
+    document.getElementById("btn_submit").style.display = "none";
+    document.getElementById("invalid_indicator").style.display = "flex";
 }
 
 function base64UrlDecode(base64Url) {
