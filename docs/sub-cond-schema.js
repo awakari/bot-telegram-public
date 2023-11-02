@@ -106,7 +106,7 @@ const subCondSchema = {
                                 id: "key",
                                 type: "string",
                                 required: false,
-                                minLength: 1,
+                                minLength: 0,
                                 maxLength: 20,
                                 pattern: "^[a-z0-9]*$",
                                 options: {
