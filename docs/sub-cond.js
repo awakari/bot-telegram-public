@@ -179,8 +179,8 @@ function loadCond() {
     const urlParams = new URLSearchParams(window.location.search);
     const condEncB64Url = urlParams.get("cond");
     const condMap = JSON.parse(base64UrlDecode(condEncB64Url));
-    console.log(condMap);
     editor.setValue({cond: condMap});
+    console.log(editor.getValue(0));
 }
 
 function base64UrlDecode(base64Url) {
