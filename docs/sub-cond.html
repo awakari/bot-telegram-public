@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -23,32 +22,26 @@
 
     <nav class="flex-none justify-between h-10 w-[320px] py-2">
         <span class="flex space-x-2">
-            <p class="text-lg"><b>Create Subscription: Advanced</b></p>
+            <p class="text-lg"><b>Condition</b></p>
         </span>
     </nav>
 
     <main>
-    <form class="space-y-2 py-2">
-        <span class="flex">
-            <label for="sub_descr" class="flex w-full">
-                Name
-                <input type="text" id="sub_descr" class="w-full focus:shadow-md outline-none ml-2" placeholder="e.g. Star Wars"/>
-            </label>
-        </span>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div id="sub_cond_editor"></div>
+        <form class="space-y-2 py-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="sub_cond_editor"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <script src="sub-new.js"></script>
-        <span class="items-center flex py-2 h-16">
+            <script src="sub-new.js"></script>
+            <span class="items-center flex py-2 h-16">
             <button type="button" title="Submit" class="submit h-full w-full flex text-center items-center" onclick="generateSub()">
                 <p class="text-lg ml-32">Submit</p>
             </button>
         </span>
-    </form>
+        </form>
     </main>
 </div>
 
