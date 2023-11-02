@@ -177,5 +177,15 @@ function generateSub() {
 
 function loadCond() {
     const urlParams = new URLSearchParams(window.location.search);
-    document.getElementById("cond_raw").innerHTML = atob(urlParams.get("cond"));
+    const condEncB64Url = urlParams.get("cond");
+    document.getElementById("cond_raw").innerHTML = base64UrlDecode(condEncB64Url);
+}
+
+function base64UrlDecode(base64Url) {
+    // Replace URL-safe characters with Base64 standard characters
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    // Pad the string with '=' to make its length a multiple of 4
+    const paddedBase64 = base64.padEnd(base64.length + (4 - base64.length % 4) % 4, '=');
+    // Decode the Base64 string
+    return atob(paddedBase64);
 }
