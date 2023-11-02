@@ -179,7 +179,13 @@ function loadCond() {
     const urlParams = new URLSearchParams(window.location.search);
     const condEncB64Url = urlParams.get("cond");
     const condMap = JSON.parse(base64UrlDecode(condEncB64Url));
-    editor.setValue({cond: condMap});
+    const condEditor = editor.getEditor("root.cond")
+    if (condEditor) {
+        const x = condEditor.setValue(condMap)
+        console.log(x);
+    } else {
+        alert("noooo");
+    }
     console.log(editor.getValue(0));
 }
 
