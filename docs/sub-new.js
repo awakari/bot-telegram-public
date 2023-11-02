@@ -7,17 +7,15 @@ editor.on('change', function () {
     // Get an array of errors from the validator
     var errors = editor.validate();
 
-    var indicator = document.getElementById('valid_indicator');
-
     // Not valid
     if (errors.length) {
-        indicator.className = 'label label-danger'
-        indicator.textContent = "not valid";
+        document.getElementById("btn_submit").disabled = true;
+        document.getElementById("btn_submit_txt").innerText = "Not valid";
     }
     // Valid
     else {
-        indicator.className = 'label label-success'
-        indicator.textContent = "valid";
+        document.getElementById("btn_submit").disabled = false;
+        document.getElementById("btn_submit_txt").innerText = "Submit";
     }
 });
 
