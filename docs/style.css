@@ -32,7 +32,7 @@ button[type=button] {
     padding: 0 0.25rem;
 }
 button[type=button].submit{
-    background-color: var(--tg-theme-button-color);
+    background-color: #10b981;
     height: 2.5rem;
 }
 button.json-editor-btn-edit,button.json-editor-btn-movedown,button.json-editor-btn-moveup,button.json-editor-btn-subtract,button.json-editor-btntype-deleteall {
