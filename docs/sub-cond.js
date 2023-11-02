@@ -178,7 +178,8 @@ function generateSub() {
 function loadCond() {
     const urlParams = new URLSearchParams(window.location.search);
     const condEncB64Url = urlParams.get("cond");
-    document.getElementById("cond_raw").innerHTML = base64UrlDecode(condEncB64Url);
+    const condMap = JSON.parse(base64UrlDecode(condEncB64Url));
+    editor.setValue({cond: condMap});
 }
 
 function base64UrlDecode(base64Url) {
