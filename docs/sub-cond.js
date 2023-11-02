@@ -177,5 +177,5 @@ function generateSub() {
 
 function loadCond() {
     const urlParams = new URLSearchParams(window.location.search);
-    document.getElementById("cond_raw").innerHTML = urlParams.get("cond");
+    document.getElementById("cond_raw").innerHTML = atob(urlParams.get("cond"));
 }
