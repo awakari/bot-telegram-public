@@ -10,11 +10,11 @@ editor.on('change', function () {
     // Not valid
     if (errors.length) {
         document.getElementById("btn_submit").style.display = "none";
-        document.getElementById("invalid_indicator").style.display = "block";
+        document.getElementById("invalid_indicator").style.display = "flex";
     }
     // Valid
     else {
-        document.getElementById("btn_submit").style.display = "block";
+        document.getElementById("btn_submit").style.display = "flex";
         document.getElementById("invalid_indicator").style.display = "none";
     }
 });
