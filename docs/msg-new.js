@@ -151,7 +151,6 @@ function deleteMessageAttribute(name) {
 }
 
 window.Telegram.WebApp.expand();
-
 window.Telegram.WebApp.MainButton.setText("▷ Publish")
 window.Telegram.WebApp.MainButton.show();
 window.Telegram.WebApp.MainButton.onClick(() => {

@@ -18,15 +18,9 @@
 <body onload="loadForm()">
 
 <div id="msg_new" class="flex-1 flex flex-col w-[320px] mx-auto" style="display: flex">
-    <!-- section body top nav -->
-    <nav class="flex-none justify-between h-10 w-[320px] py-2">
-        <span class="text-lg">
-            <center><b>Add Own Source</b></center>
-        </span>
-    </nav>
-
     <main>
-        <form class="space-y-2 py-2 items-center">
+        <p class="text-lg py-2">New Publishing Source:</p>
+        <form class="space-y-2 items-center">
             <div class="grid grid-cols-3">
 
                 <span class="m-1 col-span-1">Type:</span>
@@ -58,11 +52,7 @@
                 </div>
 
             </div>
-            <span class="items-center flex py-2 h-16">
-                <button type="button" title="Submit" class="submit h-full w-full flex text-center items-center" onclick="submitMsg()">
-                    <p class="text-lg ml-32">Submit</p>
-                </button>
-            </span>
+            <hr/>
             <div class="text-sm" style="color: var(--tg-theme-hint-color)">
                 <p>Note:</p>
                 <p>
