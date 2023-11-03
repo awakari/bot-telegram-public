@@ -33,6 +33,8 @@ function loadCond() {
     editor.setValue(condMap);
     document.getElementById("btn_submit").style.display = "none";
     document.getElementById("invalid_indicator").style.display = "flex";
+    window.Telegram.WebApp.MainButton.show();
+    window.Telegram.WebApp.MainButton.onclick = generateCond;
 }
 
 function base64UrlDecode(base64Url) {
