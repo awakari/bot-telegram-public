@@ -32,12 +32,14 @@ window.Telegram.WebApp.expand();
 window.Telegram.WebApp.MainButton.show();
 window.Telegram.WebApp.MainButton.onClick(() => {
     let payload = editor.getValue(0);
+    payload.id = document.getElementById("subId").innerHTML;
     window.Telegram.WebApp.sendData(JSON.stringify(payload));
     window.Telegram.WebApp.close();
 });
 
 function loadCond() {
     const urlParams = new URLSearchParams(window.location.search);
+    document.getElementById("subId").innerHTML = urlParams.get("id");
     const condEncB64Url = urlParams.get("cond");
     const condMap = JSON.parse(base64UrlDecode(condEncB64Url));
     editor.setValue(condMap);
