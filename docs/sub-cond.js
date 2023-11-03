@@ -18,15 +18,15 @@ editor.on('change', function () {
 
 function disableMainButton() {
     const mainButton = window.Telegram.WebApp.MainButton;
-    mainButton.disable();
-    mainButton.setBackgroundColor("gray");
+    mainButton.color = "#6b7280";
     mainButton.setText("⊘ Save Changes");
+    mainButton.disable();
 }
 
 function enableMainButton() {
     const mainButton = window.Telegram.WebApp.MainButton;
-    mainButton.enable();
     mainButton.setText("✓ Save Changes");
+    mainButton.enable();
 }
 
 window.Telegram.WebApp.expand();
