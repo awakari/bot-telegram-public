@@ -6,19 +6,28 @@ var editor = new JSONEditor(document.getElementById("sub_cond_editor"), subCondS
 editor.on('change', function () {
     // Get an array of errors from the validator
     var errors = editor.validate();
-    const mainButton = window.Telegram.WebApp.MainButton;
-
     // Not valid
     if (errors.length) {
-        mainButton.disable();
-        mainButton.setText("⊘ Not valid");
+        disableMainButton();
     }
     // Valid
     else {
-        mainButton.enable();
-        mainButton.setText("✅ Update");
+        enableMainButton();
     }
 });
+
+function disableMainButton() {
+    const mainButton = window.Telegram.WebApp.MainButton;
+    mainButton.disable();
+    mainButton.setBackgroundColor("gray");
+    mainButton.setText("⊘ Save Changes");
+}
+
+function enableMainButton() {
+    const mainButton = window.Telegram.WebApp.MainButton;
+    mainButton.enable();
+    mainButton.setText("✓ ✔ 🗸 Save Changes");
+}
 
 window.Telegram.WebApp.expand();
 window.Telegram.WebApp.MainButton.show();
@@ -33,8 +42,7 @@ function loadCond() {
     const condEncB64Url = urlParams.get("cond");
     const condMap = JSON.parse(base64UrlDecode(condEncB64Url));
     editor.setValue(condMap);
-    document.getElementById("btn_submit").style.display = "none";
-    document.getElementById("invalid_indicator").style.display = "flex";
+    disableMainButton(); // no change yet
 }
 
 function base64UrlDecode(base64Url) {
