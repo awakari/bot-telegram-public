@@ -18,13 +18,13 @@ editor.on('change', function () {
 
 function disableMainButton() {
     const mainButton = window.Telegram.WebApp.MainButton;
-    mainButton.setText("⊘ Save Changes");
+    mainButton.setText("⊘ SAVE CHANGES");
     mainButton.disable();
 }
 
 function enableMainButton() {
     const mainButton = window.Telegram.WebApp.MainButton;
-    mainButton.setText("✓ Save Changes");
+    mainButton.setText("✓ SAVE CHANGES");
     mainButton.enable();
 }
 
@@ -41,7 +41,6 @@ function loadCond() {
     const condEncB64Url = urlParams.get("cond");
     const condMap = JSON.parse(base64UrlDecode(condEncB64Url));
     editor.setValue(condMap);
-    disableMainButton(); // no change yet
 }
 
 function base64UrlDecode(base64Url) {

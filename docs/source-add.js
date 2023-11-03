@@ -20,7 +20,7 @@ function showSrcDetails() {
 }
 
 window.Telegram.WebApp.expand();
-window.Telegram.WebApp.MainButton.setText("✓ Submit")
+window.Telegram.WebApp.MainButton.setText("✓ SUBMIT")
 window.Telegram.WebApp.MainButton.show();
 window.Telegram.WebApp.MainButton.onClick(() => {
     const srcType = document.getElementById("src_type").value;

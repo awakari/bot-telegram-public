@@ -18,13 +18,13 @@ editor.on('change', function () {
 
 function disableMainButton() {
     const mainButton = window.Telegram.WebApp.MainButton;
-    mainButton.setText("⊘ Create");
+    mainButton.setText("⊘ CREATE");
     mainButton.disable();
 }
 
 function enableMainButton() {
     const mainButton = window.Telegram.WebApp.MainButton;
-    mainButton.setText("✓ Create");
+    mainButton.setText("✓ CREATE");
     mainButton.enable();
 }
 
