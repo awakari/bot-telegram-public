@@ -18,15 +18,10 @@
 <body onload="loadForm()">
 
 <div id="msg_new" class="flex-1 flex flex-col w-[320px] mx-auto" style="display: flex">
-    <!-- section body top nav -->
-    <nav class="flex-none justify-between h-4 w-[320px] pt-2">
-        <p>Advanced message publication with custom attributes:</p>
-    </nav>
-
     <main>
         <form class="space-y-2 py-2">
             <label for="msg_txt_data">
-                Text
+                Message Text
                 <textarea
                         id="msg_txt_data"
                         rows="5"
@@ -34,7 +29,7 @@
                         placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..."></textarea>
             </label>
             <span>
-                <p class="py-2">Attributes</p>
+                <p class="py-2">Custom Attributes</p>
                 <div id="msg_attrs_form" class="space-y-2"></div>
                 <span class="grid grid-cols-6 w-full text-sm font-mono items-center mt-2">
                     <input type="text" placeholder="name" id="msg_attr_name" class="col-span-3 msg-attr-name truncate border focus:shadow-md outline-none"/>
