@@ -21,15 +21,8 @@
 <body>
 
 <div id="sub_new" class="flex-1 flex flex-col w-[320px] mx-auto" style="display: flex">
-
-    <nav class="flex-none justify-between h-10 w-[320px] py-2">
-        <span class="flex space-x-2">
-            <p class="text-lg"><b>Create Subscription: Advanced</b></p>
-        </span>
-    </nav>
-
-    <main>
-    <form class="space-y-2 py-2">
+    <p class="py-2">New subscription with advanced condition:</p>
+    <form class="space-y-2">
         <span class="flex">
             <label for="sub_descr" class="flex w-full">
                 Name
@@ -44,14 +37,7 @@
             </div>
         </div>
         <script src="sub-new.js"></script>
-        <span class="items-center flex py-2 h-16">
-            <button id="btn_submit" type="button" title="Submit" class="submit h-full w-full flex text-center items-center" style="display: none" onclick="generateSub()">
-                <p class="text-lg" style="margin-left: 7rem">✅ Submit</p>
-            </button>
-            <p id="invalid_indicator" class="text-lg ml-28 text-center items-center" style="display: flex; margin-left: 7rem">⊘ Not valid</p>
-        </span>
     </form>
-    </main>
 </div>
 
 </body>

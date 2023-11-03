@@ -6,26 +6,36 @@ var editor = new JSONEditor(document.getElementById("sub_cond_editor"), subCondS
 editor.on('change', function () {
     // Get an array of errors from the validator
     var errors = editor.validate();
-
     // Not valid
     if (errors.length) {
-        document.getElementById("btn_submit").style.display = "none";
-        document.getElementById("invalid_indicator").style.display = "flex";
+        disableMainButton();
     }
     // Valid
     else {
-        document.getElementById("btn_submit").style.display = "flex";
-        document.getElementById("invalid_indicator").style.display = "none";
+        enableMainButton();
     }
 });
 
-window.Telegram.WebApp.expand();
+function disableMainButton() {
+    const mainButton = window.Telegram.WebApp.MainButton;
+    mainButton.setText("⊘ Create");
+    mainButton.disable();
+}
 
-function generateSub() {
+function enableMainButton() {
+    const mainButton = window.Telegram.WebApp.MainButton;
+    mainButton.setText("✓ Create");
+    mainButton.enable();
+}
+
+window.Telegram.WebApp.expand();
+window.Telegram.WebApp.MainButton.show();
+window.Telegram.WebApp.MainButton.onClick(() => {
     let payload = {
         description: document.getElementById("sub_descr").value,
         enabled: true,
         cond: editor.getValue(0),
     }
     window.Telegram.WebApp.sendData(JSON.stringify(payload));
-}
+    window.Telegram.WebApp.close();
+});
