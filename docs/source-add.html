@@ -23,25 +23,25 @@
         <form class="space-y-2 items-center">
             <div class="grid grid-cols-3">
 
-                <span class="m-1 col-span-1">Type:</span>
-                <select id="src_type" class="col-span-2 m-1">
+                <span class="col-span-1">Type:</span>
+                <select id="src_type" class="col-span-2">
                     <option value="feed" selected="selected">Feed: RSS/Atom/JSON</option>
                     <option value="tgch">Channel: Telegram</option>
                 </select>
 
-                <div id="tgch" hidden="hidden" class="m-1 col-span-3 grid grid-cols-3">
+                <div id="tgch" hidden="hidden" class="col-span-3 grid grid-cols-3">
                     <span class="my-1">Channel:</span>
-                    <input type="text" id="chan_name" placeholder="@proxymtproto" class="col-span-2 m-1"/>
-                    <span class="col-span-3 my-1 text-sm" style="color: var(--tg-theme-hint-color)">
+                    <input type="text" id="chan_name" placeholder="@proxymtproto" class="col-span-2"/>
+                    <span class="col-span-3 my-1" style="color: var(--tg-theme-hint-color)">
                         A telegram channel currently <b>cannot be added automatically.</b>
                         Press "Submit" to request support to review the channel contents and system capacity.
                         If approved, support will register the channel and notify you.
                     </span>
                 </div>
-                <div id="feed" hidden="hidden" class="m-1 col-span-3 grid grid-cols-3">
+                <div id="feed" hidden="hidden" class="col-span-3 grid grid-cols-3">
                     <span class="my-1">Feed URL:</span><input type="text" id="feed_url" placeholder="https://time.com/feed" class="col-span-2 m-1"/>
                     <span class="my-1">Update Every:</span>
-                    <select id="feed_upd_freq" class="col-span-2 m-1">
+                    <select id="feed_upd_freq" class="col-span-2">
                         <option value="288">5 min</option>
                         <option value="96">15 min</option>
                         <option value="24">1 hour</option>
@@ -52,14 +52,10 @@
                 </div>
 
             </div>
-            <hr/>
-            <div class="text-sm" style="color: var(--tg-theme-hint-color)">
-                <p>Note:</p>
-                <p>
-                    The system will publish new messages from the added source <b>on behalf</b> of the current user.
-                    This will also utilize the current user's messages publishing quota.
-                </p>
-            </div>
+            <p style="color: var(--tg-theme-hint-color)">
+                The system will publish new messages from the added source <b>on behalf</b> of the current user.
+                This will also utilize the current user's messages publishing quota.
+            </p>
         </form>
     </main>
 </div>
