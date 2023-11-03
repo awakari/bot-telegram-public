@@ -21,9 +21,10 @@ editor.on('change', function () {
 
 window.Telegram.WebApp.expand();
 
-function generateCond() {
+function submitCond() {
     let payload = editor.getValue(0);
     window.Telegram.WebApp.sendData(JSON.stringify(payload));
+    window.Telegram.WebApp.close();
 }
 
 function loadCond() {
@@ -34,7 +35,7 @@ function loadCond() {
     document.getElementById("btn_submit").style.display = "none";
     document.getElementById("invalid_indicator").style.display = "flex";
     window.Telegram.WebApp.MainButton.show();
-    window.Telegram.WebApp.MainButton.onclick = generateCond;
+    window.Telegram.WebApp.MainButton.onclick = submitCond;
 }
 
 function base64UrlDecode(base64Url) {
