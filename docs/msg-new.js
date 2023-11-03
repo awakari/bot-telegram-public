@@ -152,7 +152,9 @@ function deleteMessageAttribute(name) {
 
 window.Telegram.WebApp.expand();
 
-function submitMsg() {
+window.Telegram.WebApp.MainButton.setText("▷ Publish")
+window.Telegram.WebApp.MainButton.show();
+window.Telegram.WebApp.MainButton.onClick(() => {
     const payload = {
         id: document.getElementById("msg_id").value,
         specVersion: "1.0",
@@ -162,4 +164,5 @@ function submitMsg() {
         text_data: document.getElementById("msg_txt_data").value,
     }
     window.Telegram.WebApp.sendData(JSON.stringify(payload));
-}
+    window.Telegram.WebApp.close();
+});
