@@ -35,6 +35,7 @@ function loadCond() {
     document.getElementById("btn_submit").style.display = "none";
     document.getElementById("invalid_indicator").style.display = "flex";
     window.Telegram.WebApp.MainButton.show();
+    window.Telegram.WebApp.MainButton.text = "Update";
     window.Telegram.WebApp.MainButton.onclick = submitCond;
 }
 
