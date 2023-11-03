@@ -18,7 +18,6 @@ editor.on('change', function () {
 
 function disableMainButton() {
     const mainButton = window.Telegram.WebApp.MainButton;
-    mainButton.color = "#6b7280";
     mainButton.setText("⊘ Save Changes");
     mainButton.disable();
 }
