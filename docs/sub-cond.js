@@ -26,7 +26,7 @@ function disableMainButton() {
 function enableMainButton() {
     const mainButton = window.Telegram.WebApp.MainButton;
     mainButton.enable();
-    mainButton.setText("✓ ✔ 🗸 Save Changes");
+    mainButton.setText("✓ Save Changes");
 }
 
 window.Telegram.WebApp.expand();
