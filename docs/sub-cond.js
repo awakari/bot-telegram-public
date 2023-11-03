@@ -32,7 +32,7 @@ window.Telegram.WebApp.expand();
 window.Telegram.WebApp.MainButton.show();
 window.Telegram.WebApp.MainButton.onClick(() => {
     let payload = editor.getValue(0);
-    console.log(JSON.stringify(payload));
+    window.Telegram.WebApp.sendData(JSON.stringify(payload));
     window.Telegram.WebApp.close();
 });
 
