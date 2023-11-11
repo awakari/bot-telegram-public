@@ -11,10 +11,17 @@ function showSrcDetails() {
         case "tgch":
             document.getElementById("tgch").style.display = "grid";
             document.getElementById("feed").style.display = "none";
+            document.getElementById("site").style.display = "none";
             break
         case "feed":
             document.getElementById("tgch").style.display = "none";
             document.getElementById("feed").style.display = "grid";
+            document.getElementById("site").style.display = "none";
+            break
+        case "site":
+            document.getElementById("tgch").style.display = "none";
+            document.getElementById("feed").style.display = "none";
+            document.getElementById("site").style.display = "grid";
             break
     }
 }
@@ -31,6 +38,9 @@ window.Telegram.WebApp.MainButton.onClick(() => {
             break
         case "feed":
             srcAddr = document.getElementById("feed_url").value;
+            break
+        case "site":
+            srcAddr = document.getElementById("site_addr").value;
             break
     }
     const payload = {

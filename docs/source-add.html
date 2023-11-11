@@ -27,6 +27,7 @@
                 <select id="src_type" class="col-span-2">
                     <option value="feed" selected="selected">Feed: RSS/Atom/JSON</option>
                     <option value="tgch">Channel: Telegram</option>
+                    <option value="site">Web Site</option>
                 </select>
 
                 <div id="tgch" hidden="hidden" class="col-span-3 grid grid-cols-3">
@@ -48,11 +49,17 @@
                         <option value="1" selected="selected">24 hours</option>
                     </select>
                 </div>
+                <div id="site" hidden="hidden" class="col-span-3 grid grid-cols-3">
+                    <span class="my-1">Site:</span><input type="text" id="site_addr" placeholder="walmart.com/browse/" class="col-span-2 my-1"/>
+                    <span class="col-span-3 my-1" style="color: var(--tg-theme-hint-color)">
+                        Sites are checked for a new content once a day.
+                    </span>
+                </div>
 
             </div>
             <p style="color: var(--tg-theme-hint-color)">
-                The system will publish new messages from the added source <b>on behalf</b> of the current user.
-                This will also utilize the current user's messages publishing quota.
+                The current user's <i>messages publishing quota</i> will be used to publish messages from the added source.
+                Ensure the quota is enough for this.
             </p>
         </form>
     </main>
