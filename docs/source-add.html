@@ -19,28 +19,27 @@
 
 <div id="msg_new" class="flex-1 flex flex-col w-[320px] mx-auto" style="display: flex">
     <main>
-        <p class="text-lg py-2">New Publishing Source:</p>
+        <p class="text-xl py-2">New Publishing Source:</p>
         <form class="space-y-2 items-center">
             <div class="grid grid-cols-3">
 
-                <span class="col-span-1">Type:</span>
-                <select id="src_type" class="col-span-2">
+                <span class="col-span-1 text-lg">Type:</span>
+                <select id="src_type" class="col-span-2 min-h-[24px]">
                     <option value="tgch" selected="selected">Channel: Telegram</option>
                     <option value="feed">Feed: RSS/Atom/JSON</option>
                     <option value="site">Web Site</option>
                 </select>
 
-                <div id="tgch" hidden="hidden" class="col-span-3 grid grid-cols-3">
-                    <span class="my-1">Channel:</span>
-                    <input type="text" id="chan_name" placeholder="@proxymtproto" class="col-span-2 my-1"/>
-                    <span class="col-span-3 my-1" style="color: var(--tg-theme-hint-color)">
+                <div id="tgch" hidden="hidden" class="col-span-3 grid grid-cols-3 my-1">
+                    <span class="my-1 text-lg">Channel:</span>
+                    <input type="text" id="chan_name" placeholder="@proxymtproto" class="col-span-3 min-h-[24px]"/>
+                    <span class="col-span-3 mt-2" style="color: var(--tg-theme-hint-color)">
                         It may take up to 5 minutes before the system starts to receive new messages from the added channel.
                     </span>
                 </div>
-                <div id="feed" hidden="hidden" class="col-span-3 grid grid-cols-3">
-                    <span class="my-1">Feed URL:</span><input type="text" id="feed_url" placeholder="https://time.com/feed" class="col-span-2 my-1"/>
-                    <span class="my-1">Update Every:</span>
-                    <select id="feed_upd_freq" class="col-span-2 my-1">
+                <div id="feed" hidden="hidden" class="col-span-3 grid grid-cols-3 my-1">
+                    <span class="my-1 text-lg col-span-2">Update Every:</span>
+                    <select id="feed_upd_freq" class="col-span-1 my-1 min-h-[24px]">
                         <option value="288">5 min</option>
                         <option value="96">15 min</option>
                         <option value="24">1 hour</option>
@@ -48,10 +47,11 @@
                         <option value="2">12 hours</option>
                         <option value="1" selected="selected">24 hours</option>
                     </select>
+                    <span class="my-1 text-lg">Feed URL:</span><input type="text" id="feed_url" placeholder="https://time.com/feed" class="col-span-3 min-h-[24px]"/>
                 </div>
-                <div id="site" hidden="hidden" class="col-span-3 grid grid-cols-3">
-                    <span class="my-1">Site:</span><input type="text" id="site_addr" placeholder="walmart.com/browse/" class="col-span-2 my-1"/>
-                    <span class="col-span-3 my-1" style="color: var(--tg-theme-hint-color)">
+                <div id="site" hidden="hidden" class="col-span-3 grid grid-cols-3 my-1">
+                    <span class="my-1 text-lg">Site:</span><input type="text" id="site_addr" placeholder="walmart.com/browse/" class="col-span-3 min-h-[24px]"/>
+                    <span class="col-span-3 mt-2" style="color: var(--tg-theme-hint-color)">
                         Web sites are checked for a new content once a day.
                     </span>
                 </div>
