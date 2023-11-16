@@ -16,6 +16,7 @@ function loadForm() {
     document.getElementById("msg_attrs_form").innerHTML = "";
     document.getElementById("msg_id").value = uuidv4();
     putMessageAttribute("time", "timestamp", new Date().toISOString(), true);
+    document.getElementById("awkcategory").onchange = showWizardCategory;
 }
 
 function uuidv4() {
@@ -150,9 +151,22 @@ function deleteMessageAttribute(name) {
     document.getElementById(`msg_attr_${name}`).remove();
 }
 
+function showAdvanced() {
+    document.getElementById("advanced").style.display = "block";
+    document.getElementById("wizard").style.display = "none";
+}
+
 function showWizard() {
     document.getElementById("advanced").style.display = "none";
     document.getElementById("wizard").style.display = "block";
+}
+
+function showWizardCategory() {
+    const category = document.getElementById("awkcategory").value;
+    for(const c of document.getElementById("wizard_categories").children) {
+        c.style.display = "none";
+    }
+    document.getElementById(category).style.display = "block";
 }
 
 window.Telegram.WebApp.expand();

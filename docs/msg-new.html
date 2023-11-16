@@ -20,31 +20,81 @@
 <div id="msg_new" class="flex-1 flex flex-col w-[320px] mx-auto" style="display: flex">
     <main>
 
-        <form class="py-2" style="display: block">
+        <form class="py-2">
 
             <div id="wizard" style="display: none">
-                <select id="awkcategory" class="col-span-2 min-h-[24px]">
-                    <optgroup label="Commerce">
-                        <option value="ad">Advertise</option>
-                        <option value="sell">Sell</option>
-                    </optgroup>
-                    <optgroup label="Employment">
-                        <option value="cv">Find Job</option>
-                        <option value="employ">Hire</option>
-                    </optgroup>
-                    <optgroup label="Media">
-                        <option value="post" selected="selected">Post</option>
-                    </optgroup>
-                    <optgroup label="People">
-                        <option value="date">Date</option>
-                        <option value="date">Follow</option>
-                    </optgroup>
-                </select>
+                <span class="flex content-between">
+                    <select id="awkcategory" class="text-lg">
+                        <optgroup label="Commerce">
+                            <option value="com_ad">Advertise</option>
+                            <option value="com_buy">Buy</option>
+                            <option value="com_sell">Sell</option>
+                        </optgroup>
+                        <optgroup label="Employment">
+                            <option value="job_find">Find</option>
+                            <option value="job_hire">Hire</option>
+                        </optgroup>
+                        <optgroup label="Media">
+                            <option value="media_post" selected="selected">Post</option>
+                        </optgroup>
+                        <optgroup label="People">
+                            <option value="people_date">Date</option>
+                            <option value="people_follow">Follow</option>
+                        </optgroup>
+                    </select>
+                    <button type="button" class="mode ml-16 text-lg focus:outline-none flex items-center justify-center w-36" onclick="showAdvanced()">⚙ Advanced...</button>
+                </span>
+                <div id="wizard_categories">
+                    <div id="com_ad" style="display: none">
+                        <label>
+                            <p class="mt-2">Headline <span class="text-red-600">*</span></p>
+                            <input type="text" class="w-full border focus:shadow-md outline-none" placeholder="New Smartwatch XYZ-2000"/>
+                        </label>
+                        <label>
+                            <p class="mt-2">Detailed Description <span class="text-red-600">*</span></p>
+                            <textarea rows="5" class="w-full" placeholder="Introducing the XYZ-2000, the ultimate smartwatch. Stay connected and "></textarea>
+                        </label>
+                        <label>
+                            <p class="mt-2">Contact Info (Phone, Site Link, etc) <span class="text-red-600">*</span></p>
+                            <input type="text" class="w-full border focus:shadow-md outline-none"/>
+                        </label>
+                        <label>
+                            <p class="mt-2">Image/Video Link</p>
+                            <input type="text" class="w-full border focus:shadow-md outline-none"/>
+                        </label>
+                        <label>
+                            <p class="mt-2">Tags (space separated)</p>
+                            <input type="text" class="w-full border focus:shadow-md outline-none"/>
+                        </label>
+                    </div>
+                    <div id="com_buy" style="display: none">
+                        <h1>Buy</h1>
+                    </div>
+                    <div id="com_sell" style="display: none">
+                        <h1>Sell</h1>
+                    </div>
+                    <div id="job_find" style="display: none">
+                        <h1>Publish your CV</h1>
+                    </div>
+                    <div id="job_hire" style="display: none">
+                        <h1>Publish a job description</h1>
+                    </div>
+                    <div id="media_post" style="display: block">
+                        <h1>Publish article/post</h1>
+                    </div>
+                    <div id="people_date" style="display: none">
+                        <h1>Publish your dating profile</h1>
+                    </div>
+                    <div id="people_follow" style="display: none">
+                        <h1>Follow a person</h1>
+                    </div>
+                </div>
             </div>
+
 
             <div id="advanced" style="display: block">
                 <label for="msg_txt_data">
-                    <span class="py-2 flex content-between">
+                    <span class="flex content-between">
                         <span class="text-lg">Message Text</span>
                         <button type="button" class="mode ml-20 text-lg focus:outline-none flex items-center justify-center w-32" onclick="showWizard()">🪄 Wizard...</button>
                     </span>
