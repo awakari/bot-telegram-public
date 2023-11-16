@@ -19,45 +19,70 @@
 
 <div id="msg_new" class="flex-1 flex flex-col w-[320px] mx-auto" style="display: flex">
     <main>
-        <form class="space-y-2 py-2">
-            <label for="msg_txt_data">
-                <span class="py-2 flex content-between">
-                    <span class="text-lg">Message Text</span>
-                    <button type="button" class="ml-24 text-lg focus:outline-none flex items-center justify-center">🪄 Wizard...</button>
+
+        <form class="py-2" style="display: block">
+
+            <div id="wizard" style="display: none">
+                <select id="awkcategory" class="col-span-2 min-h-[24px]">
+                    <optgroup label="Commerce">
+                        <option value="ad">Advertise</option>
+                        <option value="sell">Sell</option>
+                    </optgroup>
+                    <optgroup label="Employment">
+                        <option value="cv">Find Job</option>
+                        <option value="employ">Hire</option>
+                    </optgroup>
+                    <optgroup label="Media">
+                        <option value="post" selected="selected">Post</option>
+                    </optgroup>
+                    <optgroup label="People">
+                        <option value="date">Date</option>
+                        <option value="date">Follow</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div id="advanced" style="display: block">
+                <label for="msg_txt_data">
+                    <span class="py-2 flex content-between">
+                        <span class="text-lg">Message Text</span>
+                        <button type="button" class="mode ml-20 text-lg focus:outline-none flex items-center justify-center w-32" onclick="showWizard()">🪄 Wizard...</button>
+                    </span>
+                    <textarea
+                            id="msg_txt_data"
+                            rows="5"
+                            class="font-mono text-sm w-full focus:shadow-md outline-none"
+                            placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..."></textarea>
+                </label>
+                <span>
+                    <p class="py-2 text-lg">Custom Attributes</p>
+                    <div id="msg_attrs_form" class="space-y-2"></div>
+                    <span class="grid grid-cols-6 w-full text-sm font-mono items-center mt-2">
+                        <input type="text" placeholder="name" id="msg_attr_name" class="col-span-3 msg-attr-name truncate border focus:shadow-md outline-none"/>
+                        <select id="msg_attr_type" class="col-span-2 ml-1 truncate focus:shadow-md outline-none">
+                            <option>boolean</option>
+                            <option>bytes</option>
+                            <option>integer</option>
+                            <option selected="selected">string</option>
+                            <option>timestamp</option>
+                            <option>uri</option>
+                            <option>uri_ref</option>
+                        </select>
+                        <button type="button" title="Add Attribute" onclick="addMessageAttribute();" class="attr row-span-2 m-2 text-3xl font-mono focus:outline-none flex items-center justify-center">
+                            +
+                        </button>
+                        <input type="text" placeholder="value" id="msg_attr_value" class="col-span-5 w-full font-mono truncate border focus:shadow-md outline-none"/>
+                    </span>
+                    <textarea id="msg_attrs" rows="10" disabled="disabled" hidden="hidden" class="border font-mono text-xs w-full focus:shadow-md outline-none"></textarea>
                 </span>
-                <textarea
-                        id="msg_txt_data"
-                        rows="5"
-                        class="font-mono text-sm w-full focus:shadow-md outline-none"
-                        placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..."></textarea>
-            </label>
-            <span>
-                <p class="py-2 text-lg">Custom Attributes</p>
-                <div id="msg_attrs_form" class="space-y-2"></div>
-                <span class="grid grid-cols-6 w-full text-sm font-mono items-center mt-2">
-                    <input type="text" placeholder="name" id="msg_attr_name" class="col-span-3 msg-attr-name truncate border focus:shadow-md outline-none"/>
-                    <select id="msg_attr_type" class="col-span-2 ml-1 truncate focus:shadow-md outline-none">
-                        <option>boolean</option>
-                        <option>bytes</option>
-                        <option>integer</option>
-                        <option selected="selected">string</option>
-                        <option>timestamp</option>
-                        <option>uri</option>
-                        <option>uri_ref</option>
-                    </select>
-                    <button type="button" title="Add Attribute" onclick="addMessageAttribute();" class="attr row-span-2 m-2 text-3xl font-mono focus:outline-none flex items-center justify-center">
-                        +
-                    </button>
-                    <input type="text" placeholder="value" id="msg_attr_value" class="col-span-5 w-full font-mono truncate border focus:shadow-md outline-none"/>
+                <span class="p-2 space-y-2">
+                    <p class="text-lg">Id</p>
+                    <p>
+                        <input type="text" id="msg_id" disabled="disabled" value="" class="border w-full focus:shadow-md outline-none font-mono text-sm"/>
+                    </p>
                 </span>
-                <textarea id="msg_attrs" rows="10" disabled="disabled" hidden="hidden" class="border font-mono text-xs w-full focus:shadow-md outline-none"></textarea>
-            </span>
-            <span class="p-2 space-y-2">
-                <p class="text-lg">Id</p>
-                <p>
-                    <input type="text" id="msg_id" disabled="disabled" value="" class="border w-full focus:shadow-md outline-none font-mono text-sm"/>
-                </p>
-            </span>
+            </div>
+
         </form>
     </main>
 </div>

@@ -676,8 +676,8 @@ video {
   margin-left: 0.5rem;
 }
 
-.ml-24 {
-  margin-left: 6rem;
+.ml-20 {
+  margin-left: 5rem;
 }
 
 .ml-3 {
@@ -762,6 +762,10 @@ video {
 
 .w-2\/12 {
   width: 16.666667%;
+}
+
+.w-32 {
+  width: 8rem;
 }
 
 .w-\[320px\] {

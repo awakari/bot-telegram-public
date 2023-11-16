@@ -150,6 +150,11 @@ function deleteMessageAttribute(name) {
     document.getElementById(`msg_attr_${name}`).remove();
 }
 
+function showWizard() {
+    document.getElementById("advanced").style.display = "none";
+    document.getElementById("wizard").style.display = "block";
+}
+
 window.Telegram.WebApp.expand();
 window.Telegram.WebApp.MainButton.setText("▷ PUBLISH")
 window.Telegram.WebApp.MainButton.show();
