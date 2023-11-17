@@ -162,16 +162,20 @@ function deleteMessageAttribute(name) {
 
 function showAdvanced() {
     document.getElementById("advanced").style.display = "block";
+    document.getElementById("header_advanced").style.display = "inline";
     document.getElementById("wizard").style.display = "none";
+    document.getElementById("header_wizard").style.display = "none";
 }
 
 function showWizard() {
     document.getElementById("advanced").style.display = "none";
+    document.getElementById("header_advanced").style.display = "none";
     document.getElementById("wizard").style.display = "block";
+    document.getElementById("header_wizard").style.display = "inline";
 }
 
 function showWizardCategory(category) {
-    for(const c of document.getElementById("wizard_categories").children) {
+    for(const c of document.getElementById("wizard").children) {
         c.style.display = "none";
     }
     document.getElementById(category).style.display = "block";
