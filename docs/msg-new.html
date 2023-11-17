@@ -22,11 +22,13 @@
 
         <form class="py-2">
 
-            <label class="switch">
-                <input type="checkbox" checked="checked" id="toggle_mode">
-                <span class="slider round"></span>
-            </label>
-            <span class="ml-2 mt-4 text-lg">Advanced</span>
+            <span class="text-lg">
+                <label class="switch">
+                    <input type="checkbox" checked="checked" id="toggle_mode">
+                    <span class="slider round"></span>
+                </label>
+                <span class="ml-2">Advanced</span>
+            </span>
 
             <div id="wizard" style="display: none">
                 <span class="flex content-between py-2">
@@ -60,7 +62,7 @@
                         <h1 class="text-lg">Advertise</h1>
                         <div class="mt-2 grid grid-cols-2">
                             <span class="pt-2 text-lg">Category <span class="text-red-600">*</span></span>
-                            <input id="subcategory" list="categoryad" type="text" class="w-full border focus:shadow-md outline-none"/>
+                            <input id="subcategory" list="categoryad" type="text" class="pt-2 w-full border focus:shadow-md outline-none"/>
                             <datalist id="categoryad">
                                 <option>Auto</option>
                                 <option>Clothes</option>
