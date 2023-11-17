@@ -760,12 +760,8 @@ video {
   width: 16.666667%;
 }
 
-.w-24 {
-  width: 6rem;
-}
-
-.w-40 {
-  width: 10rem;
+.w-32 {
+  width: 8rem;
 }
 
 .w-\[320px\] {

@@ -28,26 +28,26 @@
                     <span id="header_advanced" style="display: inline">Message Text</span>
                     <span id="header_wizard" class="flex content-between" style="display: none">
                         <div class="dropdown">
-                          <button type="button" onclick="dropdown()" class="dropbtn text-lg w-24">Publish ⌄</button>
+                          <button id="pub_menu" type="button" onclick="dropdown()" class="dropbtn text-lg text-left w-32 min-w-32">Post ⌄</button>
                           <div id="awkpubtype" class="dropdown-content grid grid-cols-2 w-full">
                               <fieldset>
                                   <legend>Commerce</legend>
-                                  <div class="w-full text-left" onclick="showWizardCategory('com_ad')">Advertise</div>
-                                  <div class="w-full text-left" onclick="showWizardCategory('com_buy')">Buy</div>
-                                  <div class="w-full text-left" onclick="showWizardCategory('com_sell')">Sell</div>
+                                  <div class="w-full text-left" onclick="showWizardCategory('com_ad', 'Advertise ⌄')">Advertise</div>
+                                  <div class="w-full text-left" onclick="showWizardCategory('com_buy', 'Buy ⌄')">Buy</div>
+                                  <div class="w-full text-left" onclick="showWizardCategory('com_sell', 'Sell ⌄')">Sell</div>
                               </fieldset>
                               <fieldset>
                                   <legend>Employment</legend>
-                                  <div class="w-full text-left" onclick="showWizardCategory('emp_cv')">CV</div>
-                                  <div class="w-full text-left" onclick="showWizardCategory('emp_job')">Job</div>
+                                  <div class="w-full text-left" onclick="showWizardCategory('emp_cv', 'CV ⌄')">CV</div>
+                                  <div class="w-full text-left" onclick="showWizardCategory('emp_job', 'Job ⌄')">Job</div>
                               </fieldset>
                               <fieldset>
                                   <legend>Media</legend>
-                                  <div class="w-full text-left" onclick="showWizardCategory('media_post')">Post</div>
+                                  <div class="w-full text-left" onclick="showWizardCategory('media_post', 'Post ⌄')">Post</div>
                               </fieldset>
                               <fieldset>
                                   <legend>People</legend>
-                                  <div class="w-full text-left" onclick="showWizardCategory('people_date')">Dating Profile</div>
+                                  <div class="w-full text-left" onclick="showWizardCategory('people_date', 'Dating ⌄')">Dating</div>
                               </fieldset>
                           </div>
                         </div>
@@ -68,7 +68,7 @@
                 <!-- Advertise -->
                 <div id="com_ad" style="display: none" class="space-y-1">
                     <div class="grid grid-cols-3">
-                        <span class="text-lg">Advertise <span class="text-red-600">*</span></span>
+                        <span class="text-lg">Category <span class="text-red-600">*</span></span>
                         <input id="com_ad_category" list="com_ad_category_list" type="text" class="col-span-2 mt-1 border focus:shadow-md outline-none"/>
                         <datalist id="com_ad_category_list">
                             <option>Auto</option>
@@ -127,7 +127,7 @@
                 <!-- Buy -->
                 <div id="com_buy" style="display: none" class="space-y-1">
                     <div class="grid grid-cols-3">
-                        <span class="text-lg">Buy <span class="text-red-600">*</span></span>
+                        <span class="text-lg">Category <span class="text-red-600">*</span></span>
                         <input id="com_buy_category" list="com_buy_category_list" type="text" class="col-span-2 mt-1 border focus:shadow-md outline-none"/>
                         <datalist id="com_buy_category_list">
                             <option>Auto</option>
@@ -207,7 +207,7 @@
                 <!-- Sell -->
                 <div id="com_sell" style="display: none">
                     <div class="grid grid-cols-3">
-                        <span class="text-lg">Sell <span class="text-red-600">*</span></span>
+                        <span class="text-lg">Category <span class="text-red-600">*</span></span>
                         <input id="com_sell_category" list="com_sell_category_list" type="text" class="col-span-2 mt-1 border focus:shadow-md outline-none"/>
                         <datalist id="com_sell_category_list">
                             <option>Auto</option>
@@ -286,9 +286,6 @@
 
                 <!-- CV -->
                 <div id="emp_cv" style="display: none">
-                    <div class="grid grid-cols-3">
-                        <span class="text-lg">CV</span>
-                    </div>
                     <div class="mt-1 grid grid-cols-3">
                         <span class="text-lg">Full Name <span class="text-red-600">*</span></span>
                         <input id="emp_cv_author" type="text" placeholder="John Doe" class="col-span-2 mt-1 border focus:shadow-md outline-none"/>
@@ -345,9 +342,6 @@
 
                 <!-- Job -->
                 <div id="emp_job" style="display: none">
-                    <div class="grid grid-cols-3">
-                        <span class="text-lg">Job</span>
-                    </div>
                     <div class="mt-1 grid grid-cols-3">
                         <span class="text-lg">Company <span class="text-red-600">*</span></span>
                         <input id="emp_job_company" type="text" placeholder="ABC Solutions" class="col-span-2 mt-1 border focus:shadow-md outline-none"/>

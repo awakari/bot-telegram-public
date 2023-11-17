@@ -174,11 +174,12 @@ function showWizard() {
     document.getElementById("header_wizard").style.display = "inline";
 }
 
-function showWizardCategory(category) {
+function showWizardCategory(category, label) {
     for(const c of document.getElementById("wizard").children) {
         c.style.display = "none";
     }
     document.getElementById(category).style.display = "block";
+    document.getElementById("pub_menu").innerText = label;
 }
 
 /* When the user clicks on the button,
