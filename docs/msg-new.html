@@ -26,7 +26,7 @@
                 <input type="checkbox" checked="checked" id="toggle_mode">
                 <span class="slider round"></span>
             </label>
-            <span class="text-lg">Advanced Mode</span>
+            <span class="ml-2 mt-2 text-lg">Advanced</span>
 
             <div id="wizard" style="display: none">
                 <span class="flex content-between py-2">
@@ -58,6 +58,25 @@
                 <div id="wizard_categories">
                     <div id="com_ad" style="display: none" class="space-y-2">
                         <h1 class="text-lg">Advertise</h1>
+                        <div class="mt-2">
+                            <label>
+                                <span class="pt-2 text-lg">Category <span class="text-red-600">*</span></span>
+                                <input id="subcategory" list="categoryad" type="text" class="w-full border focus:shadow-md outline-none"/>
+                                <datalist id="categoryad">
+                                    <option>auto</option>
+                                    <option>care</option>
+                                    <option>clothes</option>
+                                    <option>education</option>
+                                    <option selected="selected">electronics</option>
+                                    <option>finance</option>
+                                    <option>food</option>
+                                    <option>home</option>
+                                    <option>real estate</option>
+                                    <option>services</option>
+                                    <option>travel</option>
+                                </datalist>
+                            </label>
+                        </div>
                         <div class="mt-2">
                             <label>
                                 <span class="pt-2 text-lg">Headline <span class="text-red-600">*</span></span>
