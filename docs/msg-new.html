@@ -60,10 +60,10 @@
                 <div id="wizard_categories">
 
                     <!-- Advertise -->
-                    <div id="com_ad" style="display: none" class="space-y-2">
-                        <div class="mt-2 grid grid-cols-3">
-                            <span class="pt-2 text-lg">Advertise <span class="text-red-600">*</span></span>
-                            <input id="com_ad_category" list="com_ad_category_list" type="text" class="col-span-2 mt-3 border focus:shadow-md outline-none"/>
+                    <div id="com_ad" style="display: none" class="space-y-1">
+                        <div class="grid grid-cols-3">
+                            <span class="text-lg">Advertise <span class="text-red-600">*</span></span>
+                            <input id="com_ad_category" list="com_ad_category_list" type="text" class="col-span-2 mt-1 border focus:shadow-md outline-none"/>
                             <datalist id="com_ad_category_list">
                                 <option>Auto</option>
                                 <option>Clothes</option>
@@ -80,49 +80,49 @@
                                 <option>Travel</option>
                             </datalist>
                         </div>
-                        <div class="mt-2">
+                        <div>
                             <label>
-                                <span class="pt-2 text-lg">Headline <span class="text-red-600">*</span></span>
+                                <span class="text-lg">Headline <span class="text-red-600">*</span></span>
                                 <input id="com_ad_title" type="text" class="w-full border focus:shadow-md outline-none" placeholder="New Smartwatch XYZ-2000"/>
                             </label>
                         </div>
-                        <div class="mt-2">
+                        <div>
                             <label>
-                                <span class="pt-2 text-lg">Detailed Description <span class="text-red-600">*</span></span>
+                                <span class="text-lg">Detailed Description <span class="text-red-600">*</span></span>
                                 <textarea id="com_ad_data" rows="4" class="w-full" placeholder="Introducing the XYZ-2000, the ultimate smartwatch. Stay connected and stylish with XYZ."></textarea>
                             </label>
                         </div>
-                        <div class="mt-2">
+                        <div>
                             <label>
-                                <span class="pt-2 text-lg">Link <span class="text-red-600">*</span></span>
+                                <span class="text-lg">Link <span class="text-red-600">*</span></span>
                                 <input id="com_ad_source" type="text" class="w-full border focus:shadow-md outline-none" placeholder="https://xyz.com"/>
                             </label>
                         </div>
-                        <div class="mt-2">
+                        <div>
                             <label>
-                                <span class="pt-2 text-lg">Image/Video Link</span>
+                                <span class="text-lg">Image/Video Link</span>
                                 <input id="com_ad_imageurl" type="text" class="w-full border focus:shadow-md outline-none" placeholder="https://xyz.com/logo.png"/>
                             </label>
                         </div>
-                        <div class="mt-2">
+                        <div>
                             <label>
-                                <span class="pt-2 text-lg">Contact Info <span style="color: var(--tg-theme-hint-color)">(phone, email, etc)</span></span>
+                                <span class="text-lg">Contact Info <span style="color: var(--tg-theme-hint-color)">(phone, email, etc)</span></span>
                                 <input id="com_ad_contact" type="text" class="w-full border focus:shadow-md outline-none" placeholder="+1234567890"/>
                             </label>
                         </div>
-                        <div class="mt-2">
+                        <div>
                             <label>
-                                <span class="pt-2 text-lg">Tags <span style="color: var(--tg-theme-hint-color)">(space separated)</span></span>
+                                <span class="text-lg">Tags <span style="color: var(--tg-theme-hint-color)">(space separated)</span></span>
                                 <input id="com_add_categories" type="text" class="w-full border focus:shadow-md outline-none" placeholder="smartwatch wearable xyz"/>
                             </label>
                         </div>
                     </div>
 
                     <!-- Buy -->
-                    <div id="com_buy" style="display: none" class="space-y-2">
-                        <div class="mt-2 grid grid-cols-3">
-                            <span class="pt-2 text-lg">Buy <span class="text-red-600">*</span></span>
-                            <input id="com_buy_category" list="com_buy_category_list" type="text" class="col-span-2 mt-3 border focus:shadow-md outline-none"/>
+                    <div id="com_buy" style="display: none" class="space-y-1">
+                        <div class="grid grid-cols-3">
+                            <span class="text-lg">Buy <span class="text-red-600">*</span></span>
+                            <input id="com_buy_category" list="com_buy_category_list" type="text" class="col-span-2 mt-1 border focus:shadow-md outline-none"/>
                             <datalist id="com_buy_category_list">
                                 <option>Auto</option>
                                 <option>Clothes</option>
@@ -139,15 +139,15 @@
                                 <option>Travel</option>
                             </datalist>
                         </div>
-                        <div class="mt-2">
+                        <div>
                             <label>
-                                <span class="pt-2 text-lg">Detailed Description <span class="text-red-600">*</span></span>
+                                <span class="text-lg">Detailed Description <span class="text-red-600">*</span></span>
                                 <textarea id="com_buy_data" rows="4" class="w-full" placeholder="New XYZ-2000 smartwatch"></textarea>
                             </label>
                         </div>
                         <fieldset class="p-2">
                             <legend class="text-lg px-2">Quantity</legend>
-                            <div class="grid grid-cols-2 space-y-2">
+                            <div class="grid grid-cols-2 space-y-1">
                                 <span class="pt-2">Unit</span>
                                 <select id="com_buy_quantityunit">
                                     <option value="item">items</option>
@@ -167,7 +167,7 @@
                         </fieldset>
                         <fieldset class="p-2">
                             <legend class="text-lg px-2">Price <span style="color: var(--tg-theme-hint-color)">(total)</span></legend>
-                            <div class="grid grid-cols-2 space-y-2">
+                            <div class="grid grid-cols-2 space-y-1">
                                 <span class="pt-2">Currency</span>
                                 <select id="com_buy_pricecurrency">
                                     <option value="USD">$ USD</option>
@@ -184,13 +184,13 @@
                                 <input id="com_buy_pricemax" type="number" class="w-full border focus:shadow-md outline-none" placeholder="4.56" min="0"/>
                             </div>
                         </fieldset>
-                        <div class="mt-2">
+                        <div>
                             <label>
                                 <span class="pt-2 text-lg">Contact Info <span style="color: var(--tg-theme-hint-color)">(phone, email, etc)</span></span>
                                 <input id="com_buy_contact" type="text" class="w-full border focus:shadow-md outline-none" placeholder="@JohnDoe"/>
                             </label>
                         </div>
-                        <div class="mt-2">
+                        <div>
                             <label>
                                 <span class="pt-2 text-lg">Tags <span style="color: var(--tg-theme-hint-color)">(space separated)</span></span>
                                 <input id="com_buy_categories" type="text" class="w-full border focus:shadow-md outline-none" placeholder="smartwatch wearable xyz"/>
@@ -198,10 +198,11 @@
                         </div>
                     </div>
 
+                    <!-- Sell -->
                     <div id="com_sell" style="display: none">
-                        <div class="mt-2 grid grid-cols-3">
-                            <span class="pt-2 text-lg">Buy <span class="text-red-600">*</span></span>
-                            <input id="com_sell_category" list="com_sell_category_list" type="text" class="col-span-2 mt-3 border focus:shadow-md outline-none"/>
+                        <div class="grid grid-cols-3">
+                            <span class="text-lg">Sell <span class="text-red-600">*</span></span>
+                            <input id="com_sell_category" list="com_sell_category_list" type="text" class="col-span-2 mt-1 border focus:shadow-md outline-none"/>
                             <datalist id="com_sell_category_list">
                                 <option>Auto</option>
                                 <option>Clothes</option>
@@ -218,15 +219,15 @@
                                 <option>Travel</option>
                             </datalist>
                         </div>
-                        <div class="mt-2">
+                        <div>
                             <label>
-                                <span class="pt-2 text-lg">Detailed Description <span class="text-red-600">*</span></span>
-                                <textarea id="com_sell_data" rows="4" class="w-full" placeholder="New XYZ-2000 smartwatch, not used yet."></textarea>
+                                <span class="text-lg">Detailed Description <span class="text-red-600">*</span></span>
+                                <textarea id="com_sell_data" rows="4" class="w-full" placeholder="New XYZ-2000 smartwatch"></textarea>
                             </label>
                         </div>
                         <fieldset class="p-2">
                             <legend class="text-lg px-2">Quantity</legend>
-                            <div class="grid grid-cols-2 space-y-2">
+                            <div class="grid grid-cols-2 space-y-1">
                                 <span class="pt-2">Unit</span>
                                 <select id="com_sell_quantityunit">
                                     <option value="item">items</option>
@@ -246,7 +247,7 @@
                         </fieldset>
                         <fieldset class="p-2">
                             <legend class="text-lg px-2">Price <span style="color: var(--tg-theme-hint-color)">(total)</span></legend>
-                            <div class="grid grid-cols-2 space-y-2">
+                            <div class="grid grid-cols-2 space-y-1">
                                 <span class="pt-2">Currency</span>
                                 <select id="com_sell_pricecurrency">
                                     <option value="USD">$ USD</option>
@@ -263,13 +264,13 @@
                                 <input id="com_sell_pricemax" type="number" class="w-full border focus:shadow-md outline-none" placeholder="4.56" min="0"/>
                             </div>
                         </fieldset>
-                        <div class="mt-2">
+                        <div>
                             <label>
                                 <span class="pt-2 text-lg">Contact Info <span style="color: var(--tg-theme-hint-color)">(phone, email, etc)</span></span>
                                 <input id="com_sell_contact" type="text" class="w-full border focus:shadow-md outline-none" placeholder="@JohnDoe"/>
                             </label>
                         </div>
-                        <div class="mt-2">
+                        <div>
                             <label>
                                 <span class="pt-2 text-lg">Tags <span style="color: var(--tg-theme-hint-color)">(space separated)</span></span>
                                 <input id="com_sell_categories" type="text" class="w-full border focus:shadow-md outline-none" placeholder="smartwatch wearable xyz"/>
@@ -277,42 +278,116 @@
                         </div>
                     </div>
 
+                    <!-- CV -->
                     <div id="emp_cv" style="display: none">
-                        <div class="mt-2 grid grid-cols-3">
-                            <span class="pt-2 text-lg">CV</span>
+                        <div class="grid grid-cols-3">
+                            <span class="text-lg">CV</span>
                         </div>
-                        <div class="mt-2 grid grid-cols-3">
-                            <span class="pt-2 text-lg">Full Name <span class="text-red-600">*</span></span>
-                            <input id="emp_cv_author" type="text" placeholder="John Doe" class="col-span-2 mt-3 border focus:shadow-md outline-none"/>
+                        <div class="mt-1 grid grid-cols-3">
+                            <span class="text-lg">Full Name <span class="text-red-600">*</span></span>
+                            <input id="emp_cv_author" type="text" placeholder="John Doe" class="col-span-2 mt-1 border focus:shadow-md outline-none"/>
                         </div>
-                        <div class="mt-2">
+                        <div class="mt-1">
                             <label>
-                                <span class="pt-2 text-lg">Title <span class="text-red-600">*</span><span style="color: var(--tg-theme-hint-color)">(current)</span></span>
+                                <span class="text-lg">Title <span class="text-red-600">*</span> <span style="color: var(--tg-theme-hint-color)">(current)</span></span>
                                 <input id="emp_cv_title" type="text" class="w-full border focus:shadow-md outline-none" placeholder="Software Engineer"/>
                             </label>
                         </div>
-                        <div class="mt-2">
+                        <div class="mt-1">
                             <label>
-                                <span class="pt-2 text-lg">Summary <span class="text-red-600">*</span></span>
-                                <textarea id="emp_cv_summary" rows="2" class="w-full" placeholder="New XYZ-2000 smartwatch, not used yet."></textarea>
+                                <span class="text-lg">Summary <span class="text-red-600">*</span></span>
+                                <textarea id="emp_cv_summary" rows="4" class="w-full" placeholder="Enthusiastic and detail-oriented, proficient in full-stack development, with a strong foundation in building scalable web applications and implementing innovative solutions."></textarea>
                             </label>
                         </div>
-                        <div class="mt-2">
+                        <div class="mt-1">
                             <label>
-                                <span class="pt-2 text-lg">Contact Info <span style="color: var(--tg-theme-hint-color)">(phone, email, etc)</span></span>
+                                <span class="text-lg">Skills <span class="text-red-600">*</span></span>
+                                <textarea id="emp_cv_skills" rows="4" class="w-full" placeholder=""></textarea>
+                            </label>
+                        </div>
+                        <div class="mt-1">
+                            <label>
+                                <span class="text-lg">Experience</span>
+                                <textarea id="emp_cv_experience" rows="8" class="w-full" placeholder=""></textarea>
+                            </label>
+                        </div>
+                        <div class="mt-1">
+                            <label>
+                                <span class="text-lg">Education</span>
+                                <textarea id="emp_cv_education" rows="4" class="w-full" placeholder=""></textarea>
+                            </label>
+                        </div>
+                        <div class="mt-1">
+                            <label>
+                                <span class="text-lg">Additional Info <span style="color: var(--tg-theme-hint-color)">(certificates, links, etc)</span></span>
+                                <textarea id="emp_cv_additional" rows="4" class="w-full" placeholder=""></textarea>
+                            </label>
+                        </div>
+                        <div class="mt-1">
+                            <label>
+                                <span class="text-lg">Contact Info <span style="color: var(--tg-theme-hint-color)">(phone, email, etc)</span></span>
                                 <input id="emp_cv_contact" type="text" class="w-full border focus:shadow-md outline-none" placeholder="@JohnDoe"/>
                             </label>
                         </div>
-                        <div class="mt-2">
+                        <div class="mt-1">
                             <label>
-                                <span class="pt-2 text-lg">Tags <span style="color: var(--tg-theme-hint-color)">(space separated)</span></span>
-                                <input id="emp_cv_categories" type="text" class="w-full border focus:shadow-md outline-none" placeholder="smartwatch wearable xyz"/>
+                                <span class="text-lg">Tags <span style="color: var(--tg-theme-hint-color)">(space separated)</span></span>
+                                <input id="emp_cv_categories" type="text" class="w-full border focus:shadow-md outline-none" placeholder="python javascript"/>
                             </label>
                         </div>
                     </div>
 
+                    <!-- Job -->
                     <div id="emp_job" style="display: none">
-                        <h1>Publish a job description</h1>
+                        <div class="grid grid-cols-3">
+                            <span class="text-lg">Job</span>
+                        </div>
+                        <div class="mt-1 grid grid-cols-3">
+                            <span class="text-lg">Company <span class="text-red-600">*</span></span>
+                            <input id="emp_job_company" type="text" placeholder="ABC Solutions" class="col-span-2 mt-1 border focus:shadow-md outline-none"/>
+                        </div>
+                        <div class="mt-1">
+                            <label>
+                                <span class="text-lg">Title <span class="text-red-600">*</span> <span style="color: var(--tg-theme-hint-color)">(current)</span></span>
+                                <input id="emp_job_title" type="text" class="w-full border focus:shadow-md outline-none" placeholder="Software Engineer"/>
+                            </label>
+                        </div>
+                        <div class="mt-1">
+                            <label>
+                                <span class="text-lg">Responsibilities <span class="text-red-600">*</span></span>
+                                <textarea id="emp_job_summary" rows="4" class="w-full" placeholder=""></textarea>
+                            </label>
+                        </div>
+                        <div class="mt-1">
+                            <label>
+                                <span class="text-lg">Skills <span class="text-red-600">*</span></span>
+                                <textarea id="emp_job_skills" rows="4" class="w-full" placeholder=""></textarea>
+                            </label>
+                        </div>
+                        <div class="mt-1">
+                            <label>
+                                <span class="text-lg">Additional Info <span style="color: var(--tg-theme-hint-color)">(certificates, links, etc)</span></span>
+                                <textarea id="emp_job_additional" rows="4" class="w-full" placeholder=""></textarea>
+                            </label>
+                        </div>
+                        <div class="mt-1">
+                            <label>
+                                <span class="text-lg">Link</span>
+                                <input id="emp_job_source" type="text" class="w-full border focus:shadow-md outline-none" placeholder="https://abc.com"/>
+                            </label>
+                        </div>
+                        <div class="mt-1">
+                            <label>
+                                <span class="text-lg">Contact Info <span style="color: var(--tg-theme-hint-color)">(phone, email, etc)</span></span>
+                                <input id="emp_job_contact" type="text" class="w-full border focus:shadow-md outline-none" placeholder="mailto:hr@abc.com"/>
+                            </label>
+                        </div>
+                        <div class="mt-1">
+                            <label>
+                                <span class="text-lg">Tags <span style="color: var(--tg-theme-hint-color)">(space separated)</span></span>
+                                <input id="emp_job_categories" type="text" class="w-full border focus:shadow-md outline-none" placeholder="python javascript"/>
+                            </label>
+                        </div>
                     </div>
 
                     <div id="media_post" style="display: block">
@@ -321,10 +396,6 @@
 
                     <div id="people_date" style="display: none">
                         <h1>Publish your dating profile</h1>
-                    </div>
-
-                    <div id="people_follow" style="display: none">
-                        <h1>Follow a person</h1>
                     </div>
 
                 </div>
