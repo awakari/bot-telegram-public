@@ -177,8 +177,8 @@ button[type=button].dropbtn {
 .switch {
     position: relative;
     display: inline-block;
-    width: 32px;
-    height: 16px;
+    width: 48px;
+    height: 24px;
 }
 
 /* Hide default HTML checkbox */
@@ -204,8 +204,8 @@ button[type=button].dropbtn {
 .slider:before {
     position: absolute;
     content: "";
-    height: 13px;
-    width: 13px;
+    height: 16px;
+    width: 16px;
     left: 2px;
     bottom: 2px;
     background-color: var(--tg-theme-secondary-bg-color);
@@ -229,7 +229,7 @@ input:checked + .slider:before {
 
 /* Rounded sliders */
 .slider.round {
-    border-radius: 16px;
+    border-radius: 24px;
 }
 
 .slider.round:before {
