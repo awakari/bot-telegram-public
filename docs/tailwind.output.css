@@ -672,10 +672,6 @@ video {
   margin-left: 0.25rem;
 }
 
-.ml-16 {
-  margin-left: 4rem;
-}
-
 .ml-2 {
   margin-left: 0.5rem;
 }
@@ -768,16 +764,16 @@ video {
   width: 16.666667%;
 }
 
+.w-24 {
+  width: 6rem;
+}
+
 .w-32 {
   width: 8rem;
 }
 
 .w-36 {
   width: 9rem;
-}
-
-.w-\[160\] {
-  width: 160;
 }
 
 .w-\[320px\] {
