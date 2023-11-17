@@ -24,6 +24,7 @@ input[type=date] {
 textarea, select, fieldset  {
     border-color: var(--tg-theme-hint-color);
     border-width: 1px;
+    outline: none;
 }
 button[type=button] {
     border-radius: 0.25rem;
@@ -222,9 +223,9 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-    -webkit-transform: translateX(22px);
-    -ms-transform: translateX(22px);
-    transform: translateX(22px);
+    -webkit-transform: translateX(24px);
+    -ms-transform: translateX(24px);
+    transform: translateX(24px);
 }
 
 /* Rounded sliders */
