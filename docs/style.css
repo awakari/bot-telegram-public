@@ -177,8 +177,8 @@ button[type=button].dropbtn {
 .switch {
     position: relative;
     display: inline-block;
-    width: 32px;
-    height: 16px;
+    width: 36px;
+    height: 18px;
 }
 
 /* Hide default HTML checkbox */
@@ -196,7 +196,7 @@ button[type=button].dropbtn {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--tg-theme-secondary-bg-color);
+    background-color: var(--tg-theme-bg-color);
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -208,7 +208,7 @@ button[type=button].dropbtn {
     width: 13px;
     left: 2px;
     bottom: 2px;
-    background-color: var(--tg-theme-button-text-color);
+    background-color: var(--tg-theme-secondary-bg-color);
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -229,7 +229,7 @@ input:checked + .slider:before {
 
 /* Rounded sliders */
 .slider.round {
-    border-radius: 16px;
+    border-radius: 18px;
 }
 
 .slider.round:before {
