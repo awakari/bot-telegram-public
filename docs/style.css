@@ -196,7 +196,7 @@ button[type=button].dropbtn {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--tg-theme-button-text-color);
+    background-color: var(--tg-theme-secondary-bg-color);
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -204,8 +204,8 @@ button[type=button].dropbtn {
 .slider:before {
     position: absolute;
     content: "";
-    height: 12px;
-    width: 12px;
+    height: 13px;
+    width: 13px;
     left: 2px;
     bottom: 2px;
     background-color: var(--tg-theme-button-text-color);
@@ -222,9 +222,9 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-    -webkit-transform: translateX(12px);
-    -ms-transform: translateX(12px);
-    transform: translateX(12px);
+    -webkit-transform: translateX(13px);
+    -ms-transform: translateX(13px);
+    transform: translateX(13px);
 }
 
 /* Rounded sliders */
