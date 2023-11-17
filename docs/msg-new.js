@@ -16,7 +16,6 @@ function loadForm() {
     document.getElementById("msg_attrs_form").innerHTML = "";
     document.getElementById("msg_id").value = uuidv4();
     putMessageAttribute("time", "timestamp", new Date().toISOString(), true);
-    document.getElementById("awkpubtype").onchange = showWizardCategory;
 }
 
 function uuidv4() {
@@ -161,8 +160,7 @@ function showWizard() {
     document.getElementById("wizard").style.display = "block";
 }
 
-function showWizardCategory() {
-    const category = document.getElementById("awkpubtype").value;
+function showWizardCategory(category) {
     for(const c of document.getElementById("wizard_categories").children) {
         c.style.display = "none";
     }

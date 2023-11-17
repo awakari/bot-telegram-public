@@ -43,27 +43,26 @@
 <!--                        </optgroup>-->
 <!--                    </select>-->
                     <div class="dropdown">
-                      <button onclick="dropdown()" class="dropbtn text-lg">Choose</button>
+                      <button onclick="dropdown()" class="dropbtn text-lg">Publish...</button>
                       <div id="awkpubtype" class="dropdown-content grid grid-cols-2 w-full">
                           <fieldset>
                               <legend>Commerce</legend>
-                              <button type="button">Advertise</button>
-                              <button type="button">Buy</button>
-                              <button type="button">Sell</button>
+                              <button type="button" onclick="showWizardCategory('com_ad')">Advertise</button>
+                              <button type="button" onclick="showWizardCategory('com_buy')">Buy</button>
+                              <button type="button" onclick="showWizardCategory('com_sell')">Sell</button>
                           </fieldset>
                           <fieldset>
                               <legend>Employment</legend>
-                              <button type="button">Find</button>
-                              <button type="button">Hire</button>
+                              <button type="button" onclick="showWizardCategory('job_find')">CV</button>
+                              <button type="button" onclick="showWizardCategory('job_hire')">Job</button>
                           </fieldset>
                           <fieldset>
                               <legend>Media</legend>
-                              <button type="button">Post</button>
+                              <button type="button" onclick="showWizardCategory('media_post')">Post</button>
                           </fieldset>
                           <fieldset>
                               <legend>People</legend>
-                              <button type="button">Date</button>
-                              <button type="button">Follow</button>
+                              <button type="button" onclick="showWizardCategory('people_date')">Dating Profile</button>
                           </fieldset>
                       </div>
                     </div>
