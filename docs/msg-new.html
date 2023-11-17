@@ -33,7 +33,7 @@
             <div id="wizard" style="display: none">
                 <span class="flex content-between py-2">
                     <div class="dropdown">
-                      <button type="button" onclick="dropdown()" class="dropbtn text-lg w-24">Publish...</button>
+                      <button type="button" onclick="dropdown()" class="dropbtn text-lg w-24">Publish ⌄</button>
                       <div id="awkpubtype" class="dropdown-content grid grid-cols-2 w-full">
                           <fieldset>
                               <legend>Commerce</legend>
@@ -58,11 +58,13 @@
                     </div>
                 </span>
                 <div id="wizard_categories">
+
+                    <!-- Advertise -->
                     <div id="com_ad" style="display: none" class="space-y-2">
                         <div class="mt-2 grid grid-cols-3">
                             <span class="pt-2 text-lg">Advertise <span class="text-red-600">*</span></span>
-                            <input id="subcategory" list="categoryad" type="text" class="col-span-2 mt-3 border focus:shadow-md outline-none"/>
-                            <datalist id="categoryad">
+                            <input id="com_ad_category" list="com_ad_category_list" type="text" class="col-span-2 mt-3 border focus:shadow-md outline-none"/>
+                            <datalist id="com_ad_category_list">
                                 <option>Auto</option>
                                 <option>Clothes</option>
                                 <option>Education</option>
@@ -81,47 +83,73 @@
                         <div class="mt-2">
                             <label>
                                 <span class="pt-2 text-lg">Headline <span class="text-red-600">*</span></span>
-                                <input id="title" type="text" class="w-full border focus:shadow-md outline-none" placeholder="New Smartwatch XYZ-2000"/>
+                                <input id="com_ad_title" type="text" class="w-full border focus:shadow-md outline-none" placeholder="New Smartwatch XYZ-2000"/>
                             </label>
                         </div>
                         <div class="mt-2">
                             <label>
                                 <span class="pt-2 text-lg">Detailed Description <span class="text-red-600">*</span></span>
-                                <textarea id="data" rows="5" class="w-full" placeholder="Introducing the XYZ-2000, the ultimate smartwatch. Stay connected and stylish with XYZ."></textarea>
+                                <textarea id="com_ad_data" rows="5" class="w-full" placeholder="Introducing the XYZ-2000, the ultimate smartwatch. Stay connected and stylish with XYZ."></textarea>
                             </label>
                         </div>
                         <div class="mt-2">
                             <label>
                                 <span class="pt-2 text-lg">Link <span class="text-red-600">*</span></span>
-                                <input id="source" type="text" class="w-full border focus:shadow-md outline-none" placeholder="https://xyz.com"/>
+                                <input id="com_ad_source" type="text" class="w-full border focus:shadow-md outline-none" placeholder="https://xyz.com"/>
                             </label>
                         </div>
                         <div class="mt-2">
                             <label>
                                 <span class="pt-2 text-lg">Image/Video Link</span>
-                                <input id="imageurl" type="text" class="w-full border focus:shadow-md outline-none" placeholder="https://xyz.com/logo.png"/>
+                                <input id="com_ad_imageurl" type="text" class="w-full border focus:shadow-md outline-none" placeholder="https://xyz.com/logo.png"/>
                             </label>
                         </div>
                         <div class="mt-2">
                             <label>
                                 <span class="pt-2 text-lg">Contact Info <span style="color: var(--tg-theme-hint-color)">(Phone, Email)</span></span>
-                                <input id="contact" type="text" class="w-full border focus:shadow-md outline-none" placeholder="+1234567890"/>
+                                <input id="com_ad_contact" type="text" class="w-full border focus:shadow-md outline-none" placeholder="+1234567890"/>
                             </label>
                         </div>
                         <div class="mt-2">
                             <label>
                                 <span class="pt-2 text-lg">Tags <span style="color: var(--tg-theme-hint-color)">(space separated)</span></span>
-                                <input id="categories" type="text" class="w-full border focus:shadow-md outline-none" placeholder="smartwatch wearable xyz"/>
+                                <input id="com_add_categories" type="text" class="w-full border focus:shadow-md outline-none" placeholder="smartwatch wearable xyz"/>
                             </label>
                         </div>
                     </div>
+
+                    <!-- Buy -->
                     <div id="com_buy" style="display: none" class="space-y-2">
-                        <h1 class="text-lg">Buy</h1>
+                        <div class="mt-2 grid grid-cols-3">
+                            <span class="pt-2 text-lg">Buy <span class="text-red-600">*</span></span>
+                            <input id="com_buy_category" list="com_buy_category_list" type="text" class="col-span-2 mt-3 border focus:shadow-md outline-none"/>
+                            <datalist id="com_buy_category_list">
+                                <option>Auto</option>
+                                <option>Clothes</option>
+                                <option>Education</option>
+                                <option selected="selected">Electronics</option>
+                                <option>Entertainment</option>
+                                <option>Finance</option>
+                                <option>Food</option>
+                                <option>Health</option>
+                                <option>Home</option>
+                                <option>Real Estate</option>
+                                <option>Services</option>
+                                <option>Sport</option>
+                                <option>Travel</option>
+                            </datalist>
+                        </div>
+                        <div class="mt-2">
+                            <label>
+                                <span class="pt-2 text-lg">Detailed Description <span class="text-red-600">*</span></span>
+                                <textarea id="com_buy_data" rows="5" class="w-full" placeholder="Introducing the XYZ-2000, the ultimate smartwatch. Stay connected and stylish with XYZ."></textarea>
+                            </label>
+                        </div>
                         <fieldset class="p-2">
                             <legend class="text-lg px-2">Quantity</legend>
                             <div class="grid grid-cols-2 space-y-2">
                                 <span class="pt-2">Unit</span>
-                                <select id="quantityunit">
+                                <select id="com_buy_quantityunit">
                                     <option value="item">items</option>
                                     <option value="kg">kilograms</option>
                                     <option value="m">meters</option>
@@ -132,16 +160,16 @@
                                     <option value="d">days</option>
                                 </select>
                                 <span class="pt-2">Min</span>
-                                <input id="quantitymin" type="number" class="w-full border focus:shadow-md outline-none" placeholder="1" value="1"/>
+                                <input id="com_buy_quantitymin" type="number" class="w-full border focus:shadow-md outline-none" placeholder="1" value="1"/>
                                 <span class="pt-2">Max</span>
-                                <input id="quantitymax" type="number" class="w-full border focus:shadow-md outline-none" placeholder="1" value="1"/>
+                                <input id="com_buy_quantitymax" type="number" class="w-full border focus:shadow-md outline-none" placeholder="1" value="1"/>
                             </div>
                         </fieldset>
                         <fieldset class="p-2">
                             <legend class="text-lg px-2">Price</legend>
                             <div class="grid grid-cols-2 space-y-2">
                                 <span class="pt-2">Currency</span>
-                                <select id="pricecurrency">
+                                <select id="com_buy_pricecurrency">
                                     <option value="USD">$ USD</option>
                                     <option value="EUR">€ EUR</option>
                                     <option value="JPY">¥ JPY</option>
@@ -151,30 +179,37 @@
                                     <option value="RUB">₽ RUB</option>
                                 </select>
                                 <span class="pt-2">Min</span>
-                                <input id="pricemin" type="number" class="w-full border focus:shadow-md outline-none" placeholder="1.2"/>
+                                <input id="com_buy_pricemin" type="number" class="w-full border focus:shadow-md outline-none" placeholder="1.2"/>
                                 <span class="pt-2">Max</span>
-                                <input id="pricemax" type="number" class="w-full border focus:shadow-md outline-none" placeholder="3"/>
+                                <input id="com_buy_pricemax" type="number" class="w-full border focus:shadow-md outline-none" placeholder="3"/>
                             </div>
                         </fieldset>
                     </div>
+
                     <div id="com_sell" style="display: none">
                         <h1>Sell</h1>
                     </div>
+
                     <div id="job_find" style="display: none">
                         <h1>Publish your CV</h1>
                     </div>
+
                     <div id="job_hire" style="display: none">
                         <h1>Publish a job description</h1>
                     </div>
+
                     <div id="media_post" style="display: block">
                         <h1>Publish article/post</h1>
                     </div>
+
                     <div id="people_date" style="display: none">
                         <h1>Publish your dating profile</h1>
                     </div>
+
                     <div id="people_follow" style="display: none">
                         <h1>Follow a person</h1>
                     </div>
+
                 </div>
             </div>
 
