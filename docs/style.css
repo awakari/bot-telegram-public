@@ -161,7 +161,7 @@ button[type=button].dropbtn {
     display: block;
 }
 .dropdown-content button {
-    margin: 0.5rem 0.5rem;
+    margin: 1rem 1rem;
     display: block;
 }
 
