@@ -16,6 +16,16 @@ function loadForm() {
     document.getElementById("msg_attrs_form").innerHTML = "";
     document.getElementById("msg_id").value = uuidv4();
     putMessageAttribute("time", "timestamp", new Date().toISOString(), true);
+    document.getElementById("toggle_mode").onchange = function (evt) {
+        switch (evt.target.checked) {
+            case true:
+                showAdvanced();
+                break;
+            default:
+                showWizard();
+                break;
+        }
+    }
 }
 
 function uuidv4() {

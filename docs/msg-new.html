@@ -22,6 +22,12 @@
 
         <form class="py-2">
 
+            <span class="text-lg">Advanced Mode</span>
+            <label class="switch">
+                <input type="checkbox" checked="checked" id="toggle_mode">
+                <span class="slider round"></span>
+            </label>
+
             <div id="wizard" style="display: none">
                 <span class="flex content-between py-2">
                     <div class="dropdown">
@@ -48,11 +54,10 @@
                           </fieldset>
                       </div>
                     </div>
-                    <button type="button" class="mode ml-20 text-lg focus:outline-none flex items-center justify-center w-36" onclick="showAdvanced()">⚙ Advanced...</button>
                 </span>
                 <div id="wizard_categories">
                     <div id="com_ad" style="display: none" class="space-y-2">
-                        <h1 class="text-xl">Advertise</h1>
+                        <h1 class="text-lg">Advertise</h1>
                         <div class="mt-2">
                             <label>
                                 <span class="pt-2 text-lg">Headline <span class="text-red-600">*</span></span>
@@ -91,7 +96,7 @@
                         </div>
                     </div>
                     <div id="com_buy" style="display: none" class="space-y-2">
-                        <h1 class="text-xl">Buy</h1>
+                        <h1 class="text-lg">Buy</h1>
                         <fieldset class="p-2">
                             <legend class="text-lg px-2">Quantity</legend>
                             <div class="grid grid-cols-2 space-y-2">
@@ -158,7 +163,6 @@
                 <label for="msg_txt_data">
                     <span class="flex content-between py-2">
                         <span class="text-lg">Message Text</span>
-                        <button type="button" class="mode ml-20 text-lg focus:outline-none flex items-center justify-center w-32" onclick="showWizard()">🪄 Wizard...</button>
                     </span>
                     <textarea
                             id="msg_txt_data"
