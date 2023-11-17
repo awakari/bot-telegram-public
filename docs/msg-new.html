@@ -166,9 +166,9 @@
                                 <option value="d">days</option>
                             </select>
                             <span class="pt-2">Min</span>
-                            <input id="com_buy_quantitymin" type="number" class="w-full border focus:shadow-md outline-none" placeholder="1" value="1"/>
+                            <input id="com_buy_quantitymin" type="number" class="w-full border focus:shadow-md outline-none" placeholder="1" value="1" min="1"/>
                             <span class="pt-2">Max</span>
-                            <input id="com_buy_quantitymax" type="number" class="w-full border focus:shadow-md outline-none" placeholder="1" value="1"/>
+                            <input id="com_buy_quantitymax" type="number" class="w-full border focus:shadow-md outline-none" placeholder="1" value="1" min="1"/>
                         </div>
                     </fieldset>
                     <fieldset class="p-2">
@@ -296,6 +296,30 @@
                             <input id="emp_cv_title" type="text" class="w-full border focus:shadow-md outline-none" placeholder="Software Engineer"/>
                         </label>
                     </div>
+                    <fieldset class="p-2">
+                        <legend class="text-lg px-2">Salary</legend>
+                        <div class="grid grid-cols-2 space-y-1">
+                            <span class="pt-2">Currency</span>
+                            <select id="emp_cv_salarycurrency">
+                                <option value="USD">$ USD</option>
+                                <option value="EUR">€ EUR</option>
+                                <option value="RUB">₽ RUB</option>
+                                <option value="JPY">¥ JPY</option>
+                                <option value="GBP">£ GBP</option>
+                                <option value="CNY">¥ CNY</option>
+                                <option value="INR">₹ INR</option>
+                            </select>
+                            <span class="pt-2">Min</span>
+                            <input id="emp_cv_salarymin" type="number" class="w-full border focus:shadow-md outline-none" placeholder="1000" min="0"/>
+                            <span class="pt-2">Period</span>
+                            <select id="emp_cv_salaryperiod">
+                                <option value="h">Hour</option>
+                                <option value="d">Day</option>
+                                <option value="m" selected="selected">Month</option>
+                                <option value="y">Year</option>
+                            </select>
+                        </div>
+                    </fieldset>
                     <div class="mt-1">
                         <label>
                             <span class="text-lg">Summary <span class="text-red-600">*</span></span>
@@ -352,6 +376,32 @@
                             <input id="emp_job_title" type="text" class="w-full border focus:shadow-md outline-none" placeholder="Software Engineer"/>
                         </label>
                     </div>
+                    <fieldset class="p-2">
+                        <legend class="text-lg px-2">Salary</legend>
+                        <div class="grid grid-cols-2 space-y-1">
+                            <span class="pt-2">Currency</span>
+                            <select id="emp_job_salarycurrency">
+                                <option value="USD">$ USD</option>
+                                <option value="EUR">€ EUR</option>
+                                <option value="JPY">¥ JPY</option>
+                                <option value="GBP">£ GBP</option>
+                                <option value="CNY">¥ CNY</option>
+                                <option value="INR">₹ INR</option>
+                                <option value="RUB">₽ RUB</option>
+                            </select>
+                            <span class="pt-2">Min</span>
+                            <input id="emp_job_salarymin" type="number" class="w-full border focus:shadow-md outline-none" placeholder="500" min="0"/>
+                            <span class="pt-2">Max</span>
+                            <input id="emp_job_salarymax" type="number" class="w-full border focus:shadow-md outline-none" placeholder="2000" min="0"/>
+                            <span class="pt-2">Period</span>
+                            <select id="emp_job_salaryperiod">
+                                <option value="h">Hour</option>
+                                <option value="d">Day</option>
+                                <option value="m" selected="selected">Month</option>
+                                <option value="y">Year</option>
+                            </select>
+                        </div>
+                    </fieldset>
                     <div class="mt-1">
                         <label>
                             <span class="text-lg">Responsibilities <span class="text-red-600">*</span></span>
@@ -366,7 +416,7 @@
                     </div>
                     <div class="mt-1">
                         <label>
-                            <span class="text-lg">Additional Info <span style="color: var(--tg-theme-hint-color)">(certificates, links, etc)</span></span>
+                            <span class="text-lg">Additional Info <span style="color: var(--tg-theme-hint-color)">(location, perks, etc)</span></span>
                             <textarea id="emp_job_additional" rows="4" class="w-full" placeholder=""></textarea>
                         </label>
                     </div>
@@ -391,7 +441,46 @@
                 </div>
 
                 <div id="media_post" style="display: block">
-                    <h1>Publish article/post</h1>
+                    <div class="mt-1">
+                        <label>
+                            <span class="text-lg">Title <span class="text-red-600">*</span></span>
+                            <input id="media_post_title" type="text" class="w-full border focus:shadow-md outline-none" placeholder="Capture attention and summarize your idea"/>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <span class="text-lg">Body Text <span class="text-red-600">*</span></span>
+                            <textarea id="media_post_data" rows="8" class="w-full" placeholder="Main content, divided into paragraphs or sections elaborating on the topic."></textarea>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <span class="text-lg">Link</span>
+                            <input id="media_post_source" type="text" class="w-full border focus:shadow-md outline-none" placeholder="https://xyz.com"/>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <span class="text-lg">Image/Video Link</span>
+                            <input id="media_post_imageurl" type="text" class="w-full border focus:shadow-md outline-none" placeholder="https://xyz.com/logo.png"/>
+                        </label>
+                    </div>
+                    <div class="mt-1 grid grid-cols-2">
+                        <span class="text-lg">Author's Name</span>
+                        <input id="media_post_author" type="text" placeholder="John Doe" class="mt-1 border focus:shadow-md outline-none"/>
+                    </div>
+                    <div>
+                        <label>
+                            <span class="text-lg">Contact Info <span style="color: var(--tg-theme-hint-color)">(phone, email, etc)</span></span>
+                            <input id="media_post_contact" type="text" class="w-full border focus:shadow-md outline-none" placeholder="+1234567890"/>
+                        </label>
+                    </div>
+                    <div class="mt-1">
+                        <label>
+                            <span class="text-lg">Tags <span style="color: var(--tg-theme-hint-color)">(space separated)</span></span>
+                            <input id="media_post_categories" type="text" class="w-full border focus:shadow-md outline-none" placeholder="anime meme"/>
+                        </label>
+                    </div>
                 </div>
 
                 <div id="people_date" style="display: none">
