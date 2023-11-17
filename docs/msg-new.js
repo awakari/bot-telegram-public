@@ -16,7 +16,7 @@ function loadForm() {
     document.getElementById("msg_attrs_form").innerHTML = "";
     document.getElementById("msg_id").value = uuidv4();
     putMessageAttribute("time", "timestamp", new Date().toISOString(), true);
-    document.getElementById("awkcategory").onchange = showWizardCategory;
+    document.getElementById("awkpubtype").onchange = showWizardCategory;
 }
 
 function uuidv4() {
@@ -162,11 +162,31 @@ function showWizard() {
 }
 
 function showWizardCategory() {
-    const category = document.getElementById("awkcategory").value;
+    const category = document.getElementById("awkpubtype").value;
     for(const c of document.getElementById("wizard_categories").children) {
         c.style.display = "none";
     }
     document.getElementById(category).style.display = "block";
+}
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function dropdown() {
+    document.getElementById("awkpubtype").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
 }
 
 window.Telegram.WebApp.expand();

@@ -24,47 +24,63 @@
 
             <div id="wizard" style="display: none">
                 <span class="flex content-between py-2">
-                    <select id="awkcategory" class="text-lg">
-                        <optgroup label="Commerce">
-                            <option value="com_ad">Advertise</option>
-                            <option value="com_buy">Buy</option>
-                            <option value="com_sell">Sell</option>
-                        </optgroup>
-                        <optgroup label="Employment">
-                            <option value="job_find">Find</option>
-                            <option value="job_hire">Hire</option>
-                        </optgroup>
-                        <optgroup label="Media">
-                            <option value="media_post" selected="selected">Post</option>
-                        </optgroup>
-                        <optgroup label="People">
-                            <option value="people_date">Date</option>
-                            <option value="people_follow">Follow</option>
-                        </optgroup>
-                    </select>
+<!--                    <select id="awkpubtype" class="text-lg">-->
+<!--                        <optgroup label="Commerce">-->
+<!--                            <option value="com_ad">Advertise</option>-->
+<!--                            <option value="com_buy">Buy</option>-->
+<!--                            <option value="com_sell">Sell</option>-->
+<!--                        </optgroup>-->
+<!--                        <optgroup label="Employment">-->
+<!--                            <option value="job_find">Find</option>-->
+<!--                            <option value="job_hire">Hire</option>-->
+<!--                        </optgroup>-->
+<!--                        <optgroup label="Media">-->
+<!--                            <option value="media_post" selected="selected">Post</option>-->
+<!--                        </optgroup>-->
+<!--                        <optgroup label="People">-->
+<!--                            <option value="people_date">Date</option>-->
+<!--                            <option value="people_follow">Follow</option>-->
+<!--                        </optgroup>-->
+<!--                    </select>-->
+                    <div class="dropdown">
+                      <button onclick="dropdown()" class="dropbtn text-lg">Choose</button>
+                      <div id="awkpubtype" class="dropdown-content">
+                          <fieldset>
+                              <legend>Commerce</legend>
+                              <a href="#">Advertise</a>
+                              <a href="#">Buy</a>
+                              <a href="#">Sell</a>
+                          </fieldset>
+                          <fieldset>
+                              <legend>Employment</legend>
+                              <a href="#">Find</a>
+                              <a href="#">Hire</a>
+                          </fieldset>
+                      </div>
+                    </div>
                     <button type="button" class="mode ml-16 text-lg focus:outline-none flex items-center justify-center w-36" onclick="showAdvanced()">⚙ Advanced...</button>
                 </span>
                 <div id="wizard_categories">
                     <div id="com_ad" style="display: none">
                         <label>
                             <p class="mt-2 text-lg">Headline <span class="text-red-600">*</span></p>
-                            <input type="text" class="w-full border focus:shadow-md outline-none" placeholder="New Smartwatch XYZ-2000"/>
+                            <input id="title" type="text" class="w-full border focus:shadow-md outline-none" placeholder="New Smartwatch XYZ-2000"/>
                         </label>
                         <label>
                             <p class="mt-2 text-lg">Detailed Description <span class="text-red-600">*</span></p>
-                            <textarea rows="5" class="w-full" placeholder="Introducing the XYZ-2000, the ultimate smartwatch. Stay connected and stylish with XYZ."></textarea>
+                            <textarea id="data" rows="5" class="w-full" placeholder="Introducing the XYZ-2000, the ultimate smartwatch. Stay connected and stylish with XYZ."></textarea>
                         </label>
                         <label>
-                            <p class="mt-2 text-lg">Contact Info (Phone, Site Link, etc) <span class="text-red-600">*</span></p>
-                            <input type="text" class="w-full border focus:shadow-md outline-none" placeholder="https://xyz.com"/>
+                            <p class="mt-2 text-lg">Link <span class="text-red-600">*</span></p>
+                            <input id="source" type="text" class="w-full border focus:shadow-md outline-none" placeholder="https://xyz.com"/>
                         </label>
                         <label>
-                            <p class="mt-2 text-lg">Image/Video Link</p>
-                            <input type="text" class="w-full border focus:shadow-md outline-none" placeholder="https://xyz.com/logo.png"/>
+                            <p class="mt-2 text-lg">Contact Info (Phone, Email)</p>
+                            <input id="contact" type="text" class="w-full border focus:shadow-md outline-none" placeholder="+1234567890"/>
                         </label>
                         <label>
                             <p class="mt-2 text-lg">Tags (space separated)</p>
-                            <input type="text" class="w-full border focus:shadow-md outline-none" placeholder="smartwatch wearable xyz"/>
+                            <input id="categories" type="text" class="w-full border focus:shadow-md outline-none" placeholder="smartwatch wearable xyz"/>
                         </label>
                     </div>
                     <div id="com_buy" style="display: none">
