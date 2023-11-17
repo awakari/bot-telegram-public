@@ -37,32 +37,31 @@
                       <div id="awkpubtype" class="dropdown-content grid grid-cols-2 w-full">
                           <fieldset>
                               <legend>Commerce</legend>
-                              <button class="w-full text-left" onclick="showWizardCategory('com_ad')">Advertise</button>
-                              <button class="w-full text-left" onclick="showWizardCategory('com_buy')">Buy</button>
-                              <button class="w-full text-left" onclick="showWizardCategory('com_sell')">Sell</button>
+                              <div class="w-full text-left" onclick="showWizardCategory('com_ad')">Advertise</div>
+                              <div class="w-full text-left" onclick="showWizardCategory('com_buy')">Buy</div>
+                              <div class="w-full text-left" onclick="showWizardCategory('com_sell')">Sell</div>
                           </fieldset>
                           <fieldset>
                               <legend>Employment</legend>
-                              <button class="w-full text-left" onclick="showWizardCategory('job_find')">CV</button>
-                              <button class="w-full text-left" onclick="showWizardCategory('job_hire')">Job</button>
+                              <div class="w-full text-left" onclick="showWizardCategory('job_find')">CV</div>
+                              <div class="w-full text-left" onclick="showWizardCategory('job_hire')">Job</div>
                           </fieldset>
                           <fieldset>
                               <legend>Media</legend>
-                              <button class="w-full text-left" onclick="showWizardCategory('media_post')">Post</button>
+                              <div class="w-full text-left" onclick="showWizardCategory('media_post')">Post</div>
                           </fieldset>
                           <fieldset>
                               <legend>People</legend>
-                              <button class="w-full text-left" onclick="showWizardCategory('people_date')">Dating Profile</button>
+                              <div class="w-full text-left" onclick="showWizardCategory('people_date')">Dating Profile</div>
                           </fieldset>
                       </div>
                     </div>
                 </span>
                 <div id="wizard_categories">
                     <div id="com_ad" style="display: none" class="space-y-2">
-                        <h1 class="text-lg">Advertise</h1>
-                        <div class="mt-2 grid grid-cols-2">
-                            <span class="pt-2 text-lg">Category <span class="text-red-600">*</span></span>
-                            <input id="subcategory" list="categoryad" type="text" class="pt-2 min-w-10 border focus:shadow-md outline-none"/>
+                        <div class="mt-2 grid grid-cols-3">
+                            <span class="pt-2 text-lg">Advertise <span class="text-red-600">*</span></span>
+                            <input id="subcategory" list="categoryad" type="text" class="col-span-2 mt-3 border focus:shadow-md outline-none"/>
                             <datalist id="categoryad">
                                 <option>Auto</option>
                                 <option>Clothes</option>
@@ -105,13 +104,13 @@
                         </div>
                         <div class="mt-2">
                             <label>
-                                <span class="pt-2 text-lg">Contact Info (Phone, Email)</span>
+                                <span class="pt-2 text-lg">Contact Info <span style="color: var(--tg-theme-hint-color)">(Phone, Email)</span></span>
                                 <input id="contact" type="text" class="w-full border focus:shadow-md outline-none" placeholder="+1234567890"/>
                             </label>
                         </div>
                         <div class="mt-2">
                             <label>
-                                <span class="pt-2 text-lg">Tags (space separated)</span>
+                                <span class="pt-2 text-lg">Tags <span style="color: var(--tg-theme-hint-color)">(space separated)</span></span>
                                 <input id="categories" type="text" class="w-full border focus:shadow-md outline-none" placeholder="smartwatch wearable xyz"/>
                             </label>
                         </div>

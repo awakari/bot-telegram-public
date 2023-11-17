@@ -161,7 +161,7 @@ button[type=button].dropbtn {
     text-decoration: none;
     display: block;
 }
-.dropdown-content button {
+.dropdown-content div {
     margin: 1rem 1rem;
     display: block;
 }
@@ -172,7 +172,9 @@ button[type=button].dropbtn {
 }
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:grid;}
+.show {
+    display:grid;
+}
 
 /* The switch - the box around the slider */
 .switch {
