@@ -42,11 +42,41 @@ document.getElementById("toggle_mode").onchange = function (evt) {
 function showAdvanced() {
     document.getElementById("advanced").style.display = "block";
     document.getElementById("wizard").style.display = "none";
+    document.getElementById("wizard_menu").style.display = "none";
 }
 
 function showWizard() {
     document.getElementById("advanced").style.display = "none";
     document.getElementById("wizard").style.display = "block";
+    document.getElementById("wizard_menu").style.display = "block";
+}
+
+function showWizardCategory(category, label) {
+    for(const c of document.getElementById("wizard").children) {
+        c.style.display = "none";
+    }
+    document.getElementById(category).style.display = "block";
+    document.getElementById("sub_menu").innerText = `${label} ⌄`;
+}
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function dropdown() {
+    document.getElementById("awksubtype").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
 }
 
 window.Telegram.WebApp.expand();
