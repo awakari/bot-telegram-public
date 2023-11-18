@@ -21,23 +21,43 @@
 <body>
 
 <div id="sub_new" class="flex-1 flex flex-col w-[320px] mx-auto" style="display: flex">
-    <p class="py-2">New subscription with advanced condition:</p>
-    <form class="space-y-2">
-        <span class="flex">
-            <label for="sub_descr" class="flex w-full">
-                Name
-                <input type="text" id="sub_descr" class="w-full focus:shadow-md outline-none ml-2" placeholder="e.g. Star Wars"/>
+
+    <span class="text-lg grid grid-cols-2 my-2">
+        <span class="text-lg">New Subscription</span>
+        <span class="ml-4">
+            <span>Advanced</span>
+            <label class="ml-1 switch">
+                <input type="checkbox" checked="checked" id="toggle_mode">
+                <span class="slider round"></span>
             </label>
         </span>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div id="sub_cond_editor"></div>
+    </span>
+
+    <form>
+
+        <div id="advanced" style="display: block" class="space-y-2">
+            <span class="flex">
+                <label for="sub_descr" class="flex w-full">
+                    Name
+                    <input type="text" id="sub_descr" class="w-full focus:shadow-md outline-none ml-2" placeholder="e.g. Star Wars"/>
+                </label>
+            </span>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="sub_cond_editor"></div>
+                    </div>
                 </div>
             </div>
         </div>
         <script src="sub-new.js"></script>
+
+        <div id="wizard" style="display: none" class="space-y-2">
+
+        </div>
+
     </form>
+
 </div>
 
 </body>

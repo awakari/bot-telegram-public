@@ -28,6 +28,27 @@ function enableMainButton() {
     mainButton.enable();
 }
 
+document.getElementById("toggle_mode").onchange = function (evt) {
+    switch (evt.target.checked) {
+        case true:
+            showAdvanced();
+            break;
+        default:
+            showWizard();
+            break;
+    }
+}
+
+function showAdvanced() {
+    document.getElementById("advanced").style.display = "block";
+    document.getElementById("wizard").style.display = "none";
+}
+
+function showWizard() {
+    document.getElementById("advanced").style.display = "none";
+    document.getElementById("wizard").style.display = "block";
+}
+
 window.Telegram.WebApp.expand();
 window.Telegram.WebApp.MainButton.show();
 window.Telegram.WebApp.MainButton.onClick(() => {
