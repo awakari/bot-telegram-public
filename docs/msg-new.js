@@ -561,7 +561,7 @@ function datingPayload(payload) {
     // mandatory
     const summary = document.getElementById("people_date_summary").value;
     const interests = document.getElementById("people_date_interests").value;
-    const pref = document.getElementById("people_date_summary").value;
+    const pref = document.getElementById("people_date_pref").value;
     const validationOk = summary !== "" && interests !== "" && pref !== "";
     payload.attributes = {
         "summary": {
