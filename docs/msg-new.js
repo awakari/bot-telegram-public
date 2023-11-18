@@ -179,7 +179,7 @@ function showWizardCategory(category, label) {
         c.style.display = "none";
     }
     document.getElementById(category).style.display = "block";
-    document.getElementById("pub_menu").innerText = label;
+    document.getElementById("pub_menu").innerText = `${label} ⌄`;
 }
 
 /* When the user clicks on the button,
@@ -209,10 +209,70 @@ window.Telegram.WebApp.MainButton.onClick(() => {
     const payload = {
         id: document.getElementById("msg_id").value,
         specVersion: "1.0",
-        source: "awakari.cloud/web",
-        type: "com.github.awakari.webapp",
-        attributes: JSON.parse(document.getElementById("msg_attrs").value),
-        text_data: document.getElementById("msg_txt_data").value,
+    }
+    switch (document.getElementById("advanced").style.display) {
+    case "none": // wizard mode
+        const mode = document.getElementById("pub_menu").innerText;
+        switch (mode) {
+            case "Advertise ⌄":
+                // mandatory
+                const category = document.getElementById("com_ad_category").value;
+                const title = document.getElementById("com_ad_title").value;
+                const data = document.getElementById("com_ad_data").value;
+                const link = document.getElementById("com_ad_source").value;
+                payload.attributes = {
+                    "categories": {
+                        "ce_string": category,
+                    },
+                    "title": {
+                        "ce_string": title,
+                    },
+                    "link": {
+                        "ce_uri": link,
+                    }
+                };
+                payload.text_data = data;
+                // optional
+                const linkImg = document.getElementById("com_ad_imageurl").value;
+                if (linkImg !== "") {
+                    payload.attributes["imageurl"] = {
+                        "ce_uri": linkImg,
+                    }
+                }
+                const contact = document.getElementById("com_ad_contact").value;
+                if (contact !== "") {
+                    payload.attributes["contact"] = {
+                        "ce_uri": contact,
+                    }
+                }
+                const tags = document.getElementById("com_ad_categories").value;
+                if (tags !== "") {
+                    payload.attributes["tags"] = {
+                        "ce_string": tags,
+                    }
+                }
+                break;
+            case "Buy ⌄":
+                break;
+            case "Sell ⌄":
+                break;
+            case "CV ⌄":
+                break;
+            case "Job ⌄":
+                break;
+            case "Post ⌄":
+                break;
+            case "Dating ⌄":
+                break;
+            default:
+                console.log(`unrecognized wizard mode: ${mode}`);
+                break;
+        }
+        break
+    default: // advanced mode
+        payload.attributes = JSON.parse(document.getElementById("msg_attrs").value);
+        payload.text_data = document.getElementById("msg_txt_data").value;
+        break;
     }
     window.Telegram.WebApp.sendData(JSON.stringify(payload));
     window.Telegram.WebApp.close();
