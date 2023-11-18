@@ -356,12 +356,6 @@
                             <input id="emp_cv_contact" type="text" class="w-full border focus:shadow-md outline-none" placeholder="@JohnDoe"/>
                         </label>
                     </div>
-                    <div class="mt-1">
-                        <label>
-                            <span class="text-lg">Tags <span style="color: var(--tg-theme-hint-color)">(space separated)</span></span>
-                            <input id="emp_cv_categories" type="text" class="w-full border focus:shadow-md outline-none" placeholder="python javascript"/>
-                        </label>
-                    </div>
                 </div>
 
                 <!-- Job -->
@@ -432,14 +426,9 @@
                             <input id="emp_job_contact" type="text" class="w-full border focus:shadow-md outline-none" placeholder="mailto:hr@abc.com"/>
                         </label>
                     </div>
-                    <div class="mt-1">
-                        <label>
-                            <span class="text-lg">Tags <span style="color: var(--tg-theme-hint-color)">(space separated)</span></span>
-                            <input id="emp_job_categories" type="text" class="w-full border focus:shadow-md outline-none" placeholder="python javascript"/>
-                        </label>
-                    </div>
                 </div>
 
+                <!-- Post -->
                 <div id="media_post" style="display: block">
                     <div class="mt-1">
                         <label>
@@ -483,8 +472,55 @@
                     </div>
                 </div>
 
+                <!-- Dating -->
                 <div id="people_date" style="display: none">
-                    <h1>Publish your dating profile</h1>
+                    <div>
+                        <label>
+                            <span class="text-lg">About <span class="text-red-600">*</span></span>
+                            <textarea id="people_date_summary" rows="5" class="w-full" placeholder=""></textarea>
+                        </label>
+                    </div>
+                    <div class="grid grid-cols-3">
+                        <span class="text-lg">Gender</span>
+                        <input id="people_date_gender" list="people_date_gender_list" type="text" class="mt-1 col-span-2 border focus:shadow-md outline-none"/>
+                        <datalist id="people_date_gender_list">
+                            <option>male</option>
+                            <option>female</option>
+                            <option>other</option>
+                        </datalist>
+                    </div>
+                    <div>
+                        <label>
+                            <span class="text-lg">Interests <span class="text-red-600">*</span></span>
+                            <textarea id="people_date_interests" rows="5" class="w-full" placeholder=""></textarea>
+                        </label>
+                    </div>
+                    <fieldset class="p-2">
+                        <legend class="text-lg px-2">Looking for <span class="text-red-600">*</span></legend>
+                        <textarea id="people_date_pref" rows="5" class="w-full" placeholder=""></textarea>
+                        <div class="grid grid-cols-3 mt-2">
+                            <span>Gender</span>
+                            <input id="people_date_prefgender" list="people_date_gender_list" type="text" class="col-span-2 border focus:shadow-md outline-none"/>
+                        </div>
+                    </fieldset>
+                    <div>
+                        <label>
+                            <span class="text-lg">Photo Link</span>
+                            <input id="people_date_imageurl" type="text" class="w-full border focus:shadow-md outline-none" placeholder=""/>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <span class="text-lg">Contact Info <span style="color: var(--tg-theme-hint-color)">(phone, email, etc)</span></span>
+                            <input id="people_date_contact" type="text" class="w-full border focus:shadow-md outline-none" placeholder="+1234567890"/>
+                        </label>
+                    </div>
+                    <div class="mt-1">
+                        <label>
+                            <span class="text-lg">Additional Info <span style="color: var(--tg-theme-hint-color)">(location, etc)</span></span>
+                            <textarea id="people_date_additional" rows="4" class="w-full" placeholder=""></textarea>
+                        </label>
+                    </div>
                 </div>
 
             </div>
