@@ -62,7 +62,7 @@ const subCondSchema = {
                         defaultProperties: ["key", "op", "val"],
                         properties: {
                             key: {
-                                title: "Key",
+                                title: "Attribute",
                                 id: "key",
                                 type: "string",
                                 required: true,
@@ -102,7 +102,7 @@ const subCondSchema = {
                         defaultProperties: ["key", "term", "exact"],
                         properties: {
                             key: {
-                                title: "Key",
+                                title: "Attribute",
                                 id: "key",
                                 type: "string",
                                 required: false,
@@ -116,7 +116,7 @@ const subCondSchema = {
                                 },
                             },
                             term: {
-                                title: "Term(s)",
+                                title: "Any of words",
                                 id: "term",
                                 type: "string",
                                 required: true,
