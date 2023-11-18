@@ -216,55 +216,25 @@ window.Telegram.WebApp.MainButton.onClick(() => {
         const mode = document.getElementById("pub_menu").innerText;
         switch (mode) {
             case "Advertise ⌄":
-                // mandatory
-                const category = document.getElementById("com_ad_category").value;
-                const title = document.getElementById("com_ad_title").value;
-                const data = document.getElementById("com_ad_data").value;
-                const link = document.getElementById("com_ad_source").value;
-                validationOk = category !== "" && title !== "" && data !== "" && link !== "";
-                payload.attributes = {
-                    "categories": {
-                        "ce_string": category,
-                    },
-                    "title": {
-                        "ce_string": title,
-                    },
-                    "link": {
-                        "ce_uri": link,
-                    }
-                };
-                payload.text_data = data;
-                // optional
-                const linkImg = document.getElementById("com_ad_imageurl").value;
-                if (linkImg !== "") {
-                    payload.attributes["imageurl"] = {
-                        "ce_uri": linkImg,
-                    }
-                }
-                const contact = document.getElementById("com_ad_contact").value;
-                if (contact !== "") {
-                    payload.attributes["contact"] = {
-                        "ce_uri": contact,
-                    }
-                }
-                const tags = document.getElementById("com_ad_categories").value;
-                if (tags !== "") {
-                    payload.attributes["tags"] = {
-                        "ce_string": tags,
-                    }
-                }
+                validationOk = advertisePayload(payload);
                 break;
             case "Buy ⌄":
+                validationOk = buyPayload(payload);
                 break;
             case "Sell ⌄":
+                validationOk = sellPayload(payload);
                 break;
             case "CV ⌄":
+                validationOk = cvPayload(payload);
                 break;
             case "Job ⌄":
+                validationOk = jobPayload(payload);
                 break;
             case "Post ⌄":
+                validationOk = postPayload(payload);
                 break;
             case "Dating ⌄":
+                validationOk = datingPayload(payload);
                 break;
             default:
                 console.log(`unrecognized wizard mode: ${mode}`);
@@ -283,3 +253,357 @@ window.Telegram.WebApp.MainButton.onClick(() => {
         window.alert("Some mandatory attributes are not set. Please check and retry.");
     }
 });
+
+function advertisePayload(payload) {
+    payload.type = "com.github.awakari.bot-telegram.ad";
+    // mandatory
+    const category = document.getElementById("com_ad_category").value;
+    const title = document.getElementById("com_ad_title").value;
+    const data = document.getElementById("com_ad_data").value;
+    const link = document.getElementById("com_ad_source").value;
+    const validationOk = category !== "" && title !== "" && data !== "" && link !== "";
+    payload.attributes = {
+        "categories": {
+            "ce_string": category,
+        },
+        "title": {
+            "ce_string": title,
+        },
+        "link": {
+            "ce_uri": link,
+        }
+    };
+    payload.text_data = data;
+    // optional
+    const linkImg = document.getElementById("com_ad_imageurl").value;
+    if (linkImg !== "") {
+        payload.attributes["imageurl"] = {
+            "ce_uri": linkImg,
+        }
+    }
+    const contact = document.getElementById("com_ad_contact").value;
+    if (contact !== "") {
+        payload.attributes["contact"] = {
+            "ce_string": contact,
+        }
+    }
+    const tags = document.getElementById("com_ad_categories").value;
+    if (tags !== "") {
+        payload.attributes["tags"] = {
+            "ce_string": tags,
+        }
+    }
+    return validationOk;
+}
+
+function buyPayload(payload) {
+    payload.type = "com.github.awakari.bot-telegram.buy";
+    // mandatory
+    const category = document.getElementById("com_buy_category").value;
+    const data = document.getElementById("com_buy_data").value;
+    const validationOk = category !== "" && data !== "";
+    payload.text_data = data;
+    // optional
+    payload.attributes["currency"] = document.getElementById("com_buy_pricecurrency").value;
+    const priceMin = document.getElementById("com_buy_pricemin");
+    if (priceMin.value !== "") {
+        payload.attributes["pricemin"] = {
+            "ce_integer": Math.floor(100 * priceMin.valueAsNumber),
+        }
+    }
+    const priceMax = document.getElementById("com_buy_pricemax");
+    if (priceMax.value !== "") {
+        payload.attributes["pricemax"] = {
+            "ce_integer": Math.floor(100 * priceMin.valueAsNumber),
+        }
+    }
+    payload.attributes["quantityunit"] = document.getElementById("com_buy_quantityunit").value;
+    const quantityMin = document.getElementById("com_buy_quantitymin");
+    if (quantityMin.value !== "") {
+        payload.attributes["quantitymin"] = {
+            "ce_integer": Math.floor(quantityMin.valueAsNumber),
+        }
+    }
+    const quantityMax = document.getElementById("com_buy_quantitymax");
+    if (quantityMax.value !== "") {
+        payload.attributes["quantitymax"] = {
+            "ce_integer": Math.floor(quantityMax.valueAsNumber),
+        }
+    }
+    const contact = document.getElementById("com_ad_contact").value;
+    if (contact !== "") {
+        payload.attributes["contact"] = {
+            "ce_string": contact,
+        }
+    }
+    const tags = document.getElementById("com_ad_categories").value;
+    if (tags !== "") {
+        payload.attributes["tags"] = {
+            "ce_string": tags,
+        }
+    }
+    return validationOk;
+}
+
+function sellPayload(payload) {
+    payload.type = "com.github.awakari.bot-telegram.sell";
+    // mandatory
+    const category = document.getElementById("com_sell_category").value;
+    const data = document.getElementById("com_sell_data").value;
+    const validationOk = category !== "" && data !== "";
+    payload.text_data = data;
+    // optional
+    payload.attributes["currency"] = document.getElementById("com_sell_pricecurrency").value;
+    const priceMin = document.getElementById("com_sell_pricemin");
+    if (priceMin.value !== "") {
+        payload.attributes["pricemin"] = {
+            "ce_integer": Math.floor(100 * priceMin.valueAsNumber),
+        }
+    }
+    const priceMax = document.getElementById("com_sell_pricemax");
+    if (priceMax.value !== "") {
+        payload.attributes["pricemax"] = {
+            "ce_integer": Math.floor(100 * priceMin.valueAsNumber),
+        }
+    }
+    payload.attributes["quantityunit"] = document.getElementById("com_sell_quantityunit").value;
+    const quantityMin = document.getElementById("com_sell_quantitymin");
+    if (quantityMin.value !== "") {
+        payload.attributes["quantitymin"] = {
+            "ce_integer": Math.floor(quantityMin.valueAsNumber),
+        }
+    }
+    const quantityMax = document.getElementById("com_sell_quantitymax");
+    if (quantityMax.value !== "") {
+        payload.attributes["quantitymax"] = {
+            "ce_integer": Math.floor(quantityMax.valueAsNumber),
+        }
+    }
+    const contact = document.getElementById("com_ad_contact").value;
+    if (contact !== "") {
+        payload.attributes["contact"] = {
+            "ce_string": contact,
+        }
+    }
+    const tags = document.getElementById("com_ad_categories").value;
+    if (tags !== "") {
+        payload.attributes["tags"] = {
+            "ce_string": tags,
+        }
+    }
+    return validationOk;
+}
+
+function cvPayload(payload) {
+    payload.type = "com.github.awakari.bot-telegram.cv";
+    // mandatory
+    const author = document.getElementById("emp_cv_author").value;
+    const title = document.getElementById("emp_cv_title").value;
+    const summary = document.getElementById("emp_cv_summary").value;
+    const skills = document.getElementById("emp_cv_skills").value;
+    const validationOk = author !== "" && title !== "" && summary !== "" && skills !== "";
+    payload.attributes = {
+        "author": {
+            "ce_string": author,
+        },
+        "title": {
+            "ce_string": title,
+        },
+        "summary": {
+            "ce_string": summary,
+        },
+        "skills": {
+            "ce_string": skills,
+        }
+    };
+    // optional
+    payload.attributes["currency"] = document.getElementById("emp_cv_salarycurrency").value;
+    const priceMin = document.getElementById("emp_cv_salarymin");
+    if (priceMin.value !== "") {
+        payload.attributes["pricemin"] = {
+            "ce_integer": Math.floor(priceMin.valueAsNumber),
+        }
+    }
+    payload.attributes["salaryperiod"] = document.getElementById("emp_cv_salaryperiod");
+    const additional = document.getElementById("emp_cv_additional").value;
+    if (additional !== "") {
+        payload.attributes["additional"] = {
+            "ce_string": additional,
+        }
+    }
+    const contact = document.getElementById("emp_cv_contact").value;
+    if (contact !== "") {
+        payload.attributes["contact"] = {
+            "ce_string": contact,
+        }
+    }
+    const education = document.getElementById("emp_cv_education").value;
+    if (education !== "") {
+        payload.attributes["education"] = {
+            "ce_string": education,
+        }
+    }
+    const experience = document.getElementById("emp_cv_experience").value;
+    if (experience !== "") {
+        payload.attributes["experience"] = {
+            "ce_string": experience,
+        }
+    }
+    return validationOk;
+}
+
+function jobPayload(payload) {
+    payload.type = "com.github.awakari.bot-telegram.job";
+    // mandatory
+    const company = document.getElementById("emp_job_company").value;
+    const title = document.getElementById("emp_job_title").value;
+    const summary = document.getElementById("emp_job_summary").value;
+    const skills = document.getElementById("emp_job_skills").value;
+    const validationOk = company !== "" && title !== "" && summary !== "" && skills !== "";
+    payload.attributes = {
+        "company": {
+            "ce_string": company,
+        },
+        "title": {
+            "ce_string": title,
+        },
+        "summary": {
+            "ce_string": summary,
+        },
+        "skills": {
+            "ce_string": skills,
+        }
+    };
+    // optional
+    payload.attributes["currency"] = document.getElementById("emp_job_salarycurrency").value;
+    const priceMin = document.getElementById("emp_job_salarymin");
+    if (priceMin.value !== "") {
+        payload.attributes["pricemin"] = {
+            "ce_integer": Math.floor(priceMin.valueAsNumber),
+        }
+    }
+    const priceMax = document.getElementById("emp_job_salarymax");
+    if (priceMax.value !== "") {
+        payload.attributes["pricemax"] = {
+            "ce_integer": Math.floor(priceMax.valueAsNumber),
+        }
+    }
+    payload.attributes["salaryperiod"] = document.getElementById("emp_job_salaryperiod");
+    const additional = document.getElementById("emp_job_additional").value;
+    if (additional !== "") {
+        payload.attributes["additional"] = {
+            "ce_string": additional,
+        }
+    }
+    const contact = document.getElementById("emp_job_contact").value;
+    if (contact !== "") {
+        payload.attributes["contact"] = {
+            "ce_string": contact,
+        }
+    }
+    const link = document.getElementById("emp_job_source").value;
+    if (link !== "") {
+        payload.attributes["link"] = {
+            "ce_uri": link,
+        }
+    }
+    return validationOk;
+}
+
+function postPayload(payload) {
+    payload.type = "com.github.awakari.bot-telegram.post";
+    // mandatory
+    const title = document.getElementById("media_post_title").value;
+    const body = document.getElementById("media_post_data").value;
+    const validationOk = title !== "" && body !== "";
+    payload.attributes = {
+        "title": {
+            "ce_string": title,
+        },
+    };
+    payload.text_data = body;
+    // optional
+    const author = document.getElementById("media_post_author").value;
+    if (author !== "") {
+        payload.attributes["author"] = {
+            "ce_string": author,
+        }
+    }
+    const contact = document.getElementById("media_post_contact").value;
+    if (contact !== "") {
+        payload.attributes["contact"] = {
+            "ce_string": contact,
+        }
+    }
+    const link = document.getElementById("media_post_source").value;
+    if (link !== "") {
+        payload.attributes["link"] = {
+            "ce_uri": link,
+        }
+    }
+    const linkImg = document.getElementById("media_post_imageurl").value;
+    if (linkImg !== "") {
+        payload.attributes["imageurl"] = {
+            "ce_uri": linkImg,
+        }
+    }
+    const tags = document.getElementById("media_post_categories").value;
+    if (tags !== "") {
+        payload.attributes["tags"] = {
+            "ce_string": tags,
+        }
+    }
+    return validationOk;
+}
+
+function datingPayload(payload) {
+    payload.type = "com.github.awakari.bot-telegram.dating";
+    // mandatory
+    const summary = document.getElementById("people_date_summary").value;
+    const interests = document.getElementById("people_date_interests").value;
+    const pref = document.getElementById("people_date_summary").valueOf();
+    const validationOk = summary !== "" && interests !== "" && pref !== "";
+    payload.attributes = {
+        "summary": {
+            "ce_string": summary,
+        },
+        "interests": {
+            "ce_string": interests,
+        },
+        "pref": {
+            "ce_string": pref,
+        }
+    }
+    // optional
+    const gender = document.getElementById("people_date_gender").value;
+    if (gender !== "") {
+        payload.attributes["gender"] = {
+            "ce_string": gender,
+        }
+    }
+    const genderPref = document.getElementById("people_date_prefgender").value;
+    if (genderPref !== "") {
+        payload.attributes["prefgender"] = {
+            "ce_string": genderPref,
+        }
+    }
+    const linkImg = document.getElementById("people_date_imageurl").value;
+    if (linkImg !== "") {
+        payload.attributes["imageurl"] = {
+            "ce_uri": linkImg,
+        }
+    }
+    const additional = document.getElementById("people_date_additional").value;
+    if (additional !== "") {
+        payload.attributes["additional"] = {
+            "ce_string": additional,
+        }
+    }
+    const contact = document.getElementById("people_date_contact").value;
+    if (contact !== "") {
+        payload.attributes["contact"] = {
+            "ce_string": contact,
+        }
+    }
+    return validationOk;
+}
