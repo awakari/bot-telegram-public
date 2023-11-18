@@ -206,6 +206,7 @@ window.Telegram.WebApp.expand();
 window.Telegram.WebApp.MainButton.setText("▷ PUBLISH")
 window.Telegram.WebApp.MainButton.show();
 window.Telegram.WebApp.MainButton.onClick(() => {
+    let validationOk = true;
     const payload = {
         id: document.getElementById("msg_id").value,
         specVersion: "1.0",
@@ -220,6 +221,7 @@ window.Telegram.WebApp.MainButton.onClick(() => {
                 const title = document.getElementById("com_ad_title").value;
                 const data = document.getElementById("com_ad_data").value;
                 const link = document.getElementById("com_ad_source").value;
+                validationOk = category !== "" && title !== "" && data !== "" && link !== "";
                 payload.attributes = {
                     "categories": {
                         "ce_string": category,
@@ -274,6 +276,10 @@ window.Telegram.WebApp.MainButton.onClick(() => {
         payload.text_data = document.getElementById("msg_txt_data").value;
         break;
     }
-    window.Telegram.WebApp.sendData(JSON.stringify(payload));
-    window.Telegram.WebApp.close();
+    if (validationOk) {
+        window.Telegram.WebApp.sendData(JSON.stringify(payload));
+        window.Telegram.WebApp.close();
+    } else {
+        window.alert("Some mandatory attributes are not set. Please check and retry.");
+    }
 });
