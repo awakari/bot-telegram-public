@@ -155,16 +155,15 @@
                         <legend class="text-lg px-2">Quantity</legend>
                         <div class="grid grid-cols-2 space-y-1">
                             <span class="pt-2">Unit</span>
-                            <select id="com_buy_quantityunit">
-                                <option value="item">items</option>
-                                <option value="kg">kilograms</option>
-                                <option value="m">meters</option>
-                                <option value="l">liters</option>
-                                <option value="s">seconds</option>
-                                <option value="min">minutes</option>
-                                <option value="h">hours</option>
-                                <option value="d">days</option>
-                            </select>
+                            <input id="com_buy_quantityunit" list="com_buy_quantityunit_list" type="text" class="border focus:shadow-md outline-none"/>
+                            <datalist id="com_buy_quantityunit_list">
+                                <option value="items">items</option>
+                                <option value="g">g</option>
+                                <option value="kg">kg</option>
+                                <option value="m">m</option>
+                                <option value="m^2">m^2</option>
+                                <option value="l">l</option>
+                            </datalist>
                             <span class="pt-2">Min</span>
                             <input id="com_buy_quantitymin" type="number" class="w-full border focus:shadow-md outline-none" placeholder="1" value="1" min="1" step="1"/>
                             <span class="pt-2">Max</span>
@@ -184,8 +183,6 @@
                                 <option value="INR">₹ INR</option>
                                 <option value="RUB">₽ RUB</option>
                             </select>
-                            <span class="pt-2">Min</span>
-                            <input id="com_buy_pricemin" type="number" class="w-full border focus:shadow-md outline-none" placeholder="1.23" min="0" step="0.01"/>
                             <span class="pt-2">Max</span>
                             <input id="com_buy_pricemax" type="number" class="w-full border focus:shadow-md outline-none" placeholder="4.56" min="0" step="0.01"/>
                         </div>
@@ -235,16 +232,15 @@
                         <legend class="text-lg px-2">Quantity</legend>
                         <div class="grid grid-cols-2 space-y-1">
                             <span class="pt-2">Unit</span>
-                            <select id="com_sell_quantityunit">
-                                <option value="item">items</option>
-                                <option value="kg">kilograms</option>
-                                <option value="m">meters</option>
-                                <option value="l">liters</option>
-                                <option value="s">seconds</option>
-                                <option value="min">minutes</option>
-                                <option value="h">hours</option>
-                                <option value="d">days</option>
-                            </select>
+                            <input id="com_sell_quantityunit" list="com_sell_quantityunit_list" type="text" class="border focus:shadow-md outline-none"/>
+                            <datalist id="com_sell_quantityunit_list">
+                                <option value="items">items</option>
+                                <option value="g">g</option>
+                                <option value="kg">kg</option>
+                                <option value="m">m</option>
+                                <option value="m^2">m^2</option>
+                                <option value="l">l</option>
+                            </datalist>
                             <span class="pt-2">Min</span>
                             <input id="com_sell_quantitymin" type="number" class="w-full border focus:shadow-md outline-none" placeholder="1" value="1" step="1"/>
                             <span class="pt-2">Max</span>
@@ -266,8 +262,6 @@
                             </select>
                             <span class="pt-2">Min</span>
                             <input id="com_sell_pricemin" type="number" class="w-full border focus:shadow-md outline-none" placeholder="1.23" min="0" step="0.01"/>
-                            <span class="pt-2">Max</span>
-                            <input id="com_sell_pricemax" type="number" class="w-full border focus:shadow-md outline-none" placeholder="4.56" min="0" step="0.01"/>
                         </div>
                     </fieldset>
                     <div>
@@ -383,10 +377,8 @@
                                 <option value="INR">₹ INR</option>
                                 <option value="RUB">₽ RUB</option>
                             </select>
-                            <span class="pt-2">Min</span>
-                            <input id="emp_job_salarymin" type="number" class="w-full border focus:shadow-md outline-none" placeholder="500" min="0" step="1"/>
                             <span class="pt-2">Max</span>
-                            <input id="emp_job_salarymax" type="number" class="w-full border focus:shadow-md outline-none" placeholder="2000" min="0" step="1"/>
+                            <input id="emp_job_salarymax" type="number" class="w-full border focus:shadow-md outline-none" placeholder="1000" min="0" step="1"/>
                             <span class="pt-2">Period</span>
                             <select id="emp_job_salaryperiod">
                                 <option value="h">Hour</option>
