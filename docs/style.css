@@ -164,6 +164,7 @@ button[type=button].dropbtn {
 .dropdown-content div {
     margin: 1rem 1rem;
     display: block;
+    height: 1rem;
 }
 
 /* Change color of dropdown links on hover */
