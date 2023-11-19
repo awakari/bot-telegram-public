@@ -59,7 +59,7 @@
                 <legend class="text-lg px-2">Wizard</legend>
                 <span class="flex content-between">
                     <div class="dropdown">
-                      <button id="sub_menu" type="button" onclick="dropdown()" class="dropbtn text-lg text-left w-36 min-w-36 px-4">Sales ⌄</button>
+                      <button id="sub_menu" type="button" onclick="dropdown()" class="dropbtn text-lg text-left w-36 min-w-36 px-4">None ⌄</button>
                       <div id="awksubtype" class="dropdown-content grid grid-cols-2 w-full">
                           <fieldset>
                               <legend>Commerce</legend>
@@ -79,6 +79,7 @@
                               <legend>People</legend>
                               <div class="w-full text-left" onclick="showWizardCategory('people_date', 'Dating')">Dating</div>
                           </fieldset>
+                          <div class="w-full text-left" onclick="showWizardCategory('none', 'None')">None</div>
                       </div>
                     </div>
                 </span>
@@ -89,7 +90,7 @@
 
                     </div>
 
-                    <div id="com_sell" style="display: block" class="space-y-1 grid grid-cols-3">
+                    <div id="com_sell" style="display: none" class="space-y-1 grid grid-cols-3">
                         <span class="text-lg">Category</span>
                         <input id="com_sell_category" list="com_sell_category_list" type="text" class="col-span-2 mt-1 border focus:shadow-md outline-none"/>
                         <datalist id="com_sell_category_list">
@@ -121,6 +122,9 @@
                     <div id="people_date" style="display: none" class="space-y-1">
                     </div>
 
+                    <div id="none" style="display: block" class="space-y-1">
+                    </div>
+
                 </div>
             </fieldset>
 
@@ -128,15 +132,13 @@
                 <legend class="text-lg px-2">Additional Filters <span style="color: var(--tg-theme-hint-color)">(up to 4)</span></legend>
                 <div class="grid grid-cols-1">
                     <div>
-                        <span class="mr-20">And then any of keywords:</span>
-                        <input type="checkbox" id="cond_extra1_not"/>
-                        <span>Not</span>
+                        <span>And then any of keywords:</span>
                     </div>
                     <input id="cond_extra1" type="text" placeholder="" class="mt-1 border focus:shadow-md outline-none col-span-2"/>
                 </div>
                 <div class="grid grid-cols-1 mt-2">
                     <div>
-                        <span class="mr-20">And then any of keywords:</span>
+                        <span class="mr-16">And then any of keywords:</span>
                         <input type="checkbox" id="cond_extra2_not"/>
                         <span>Not</span>
                     </div>
@@ -144,7 +146,7 @@
                 </div>
                 <div class="grid grid-cols-1 mt-2">
                     <div>
-                        <span class="mr-20">And then any of keywords:</span>
+                        <span class="mr-16">And then any of keywords:</span>
                         <input type="checkbox" id="cond_extra3_not"/>
                         <span>Not</span>
                     </div>
@@ -152,7 +154,7 @@
                 </div>
                 <div class="grid grid-cols-1 mt-2">
                     <div>
-                        <span class="mr-20">And then any of keywords:</span>
+                        <span class="mr-16">And then any of keywords:</span>
                         <input type="checkbox" id="cond_extra4_not"/>
                         <span>Not</span>
                     </div>
