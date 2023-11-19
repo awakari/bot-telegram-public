@@ -53,7 +53,7 @@ function showWizardCategory(category, label) {
     for(const c of document.getElementById("wizard_categories").children) {
         c.style.display = "none";
     }
-    document.getElementById(category).style.display = "block";
+    document.getElementById(category).style.display = "grid";
     document.getElementById("sub_menu").innerText = `${label} ⌄`;
 }
 
