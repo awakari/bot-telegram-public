@@ -83,20 +83,20 @@ window.Telegram.WebApp.MainButton.show();
 window.Telegram.WebApp.MainButton.onClick(() => {
     let validationErr = "";
     const descr = document.getElementById("sub_descr").value;
+    let payload = {
+        description: descr,
+        enabled: true,
+        cond: {
+            not: false,
+            gc: {
+                logic: 0,
+                group: []
+            }
+        }
+    }
     if (descr === "") {
         validationErr = "empty description";
     } else {
-        let payload = {
-            description: descr,
-            enabled: true,
-            cond: {
-                not: false,
-                gc: {
-                    logic: 0,
-                    group: []
-                }
-            }
-        }
         switch (document.getElementById("advanced").style.display) {
             case "none": // wizard mode
                 const mode = document.getElementById("sub_menu").innerText;
