@@ -138,7 +138,7 @@
                         <input id="com_buy_quantity" type="number" min="0" step="1" class="mr-2 mt-2"/>
                         <input id="com_buy_quantityunit" list="com_buy_quantityunit_list" type="text" class="mt-2 border focus:shadow-md outline-none"/>
                         <datalist id="com_buy_quantityunit_list">
-                            <option value="items">items</option>
+                            <option value=""></option>
                             <option value="g">g</option>
                             <option value="kg">kg</option>
                             <option value="m">m</option>
@@ -200,7 +200,7 @@
                         <input id="com_sell_quantity" type="number" min="0" step="1" class="mr-2 mt-2"/>
                         <input id="com_sell_quantityunit" list="com_sell_quantityunit_list" type="text" class="mt-2 border focus:shadow-md outline-none"/>
                         <datalist id="com_sell_quantityunit_list">
-                            <option value="items">items</option>
+                            <option value=""></option>
                             <option value="g">g</option>
                             <option value="kg">kg</option>
                             <option value="m">m</option>
@@ -240,6 +240,12 @@
                             </div>
                         </fieldset>
 
+                        <span class="text-lg col-span-3 mt-2">Summary <span style="color: var(--tg-theme-hint-color)">(keywords)</span></span>
+                        <input id="emp_cv_summary" type="text" class="col-span-3 w-full border focus:shadow-md outline-none" placeholder=""/>
+
+                        <span class="text-lg col-span-3 mt-2">Skills <span style="color: var(--tg-theme-hint-color)">(keywords)</span></span>
+                        <input id="emp_cv_skills" type="text" class="col-span-3 w-full border focus:shadow-md outline-none" placeholder=""/>
+
                     </div>
 
                     <div id="emp_job" style="display: none" class="grid grid-cols-3">
@@ -272,6 +278,12 @@
                             </div>
                         </fieldset>
 
+                        <span class="text-lg col-span-3 mt-2">Responsibilities <span style="color: var(--tg-theme-hint-color)">(keywords)</span></span>
+                        <input id="emp_job_summary" type="text" class="col-span-3 w-full border focus:shadow-md outline-none" placeholder=""/>
+
+                        <span class="text-lg col-span-3 mt-2">Skills <span style="color: var(--tg-theme-hint-color)">(keywords)</span></span>
+                        <input id="emp_job_skills" type="text" class="col-span-3 w-full border focus:shadow-md outline-none" placeholder=""/>
+
                     </div>
 
                     <div id="media_post" style="display: none" class="grid grid-cols-2">
@@ -284,7 +296,24 @@
 
                     </div>
 
-                    <div id="people_date" style="display: none" class="grid">
+                    <div id="people_date" style="display: none" class="grid grid-cols-3">
+
+                        <span class="text-lg">Gender</span>
+                        <input id="people_date_gender" list="people_date_gender_list" type="text" class="mt-1 col-span-2 border focus:shadow-md outline-none"/>
+                        <datalist id="people_date_gender_list">
+                            <option>male</option>
+                            <option>female</option>
+                            <option>other</option>
+                        </datalist>
+
+                        <span class="text-lg col-span-3 mt-2">Interests <span style="color: var(--tg-theme-hint-color)">(keywords)</span></span>
+                        <input id="people_date_interests" type="text" class="col-span-3 border focus:shadow-md outline-none"/>
+
+                        <span class="text-lg col-span-3 mt-2">
+                            <input type="checkbox" class="mt-2 w-4 h-4"/>
+                            With Photo Only
+                        </span>
+
                     </div>
 
                     <div id="none" style="display: block" class="grid">
