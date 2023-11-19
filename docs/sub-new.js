@@ -42,17 +42,15 @@ document.getElementById("toggle_mode").onchange = function (evt) {
 function showAdvanced() {
     document.getElementById("advanced").style.display = "block";
     document.getElementById("wizard").style.display = "none";
-    document.getElementById("wizard_menu").style.display = "none";
 }
 
 function showWizard() {
     document.getElementById("advanced").style.display = "none";
     document.getElementById("wizard").style.display = "block";
-    document.getElementById("wizard_menu").style.display = "block";
 }
 
 function showWizardCategory(category, label) {
-    for(const c of document.getElementById("wizard").children) {
+    for(const c of document.getElementById("wizard_categories").children) {
         c.style.display = "none";
     }
     document.getElementById(category).style.display = "block";
