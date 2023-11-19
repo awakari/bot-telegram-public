@@ -35,13 +35,14 @@
 
     <form>
 
+        <span class="flex">
+            <label for="sub_descr" class="flex w-full">
+                <span class="text-lg">Name</span>
+                <input type="text" id="sub_descr" class="mt-1 w-full focus:shadow-md outline-none ml-2" placeholder="e.g. Star Wars"/>
+            </label>
+        </span>
+
         <div id="advanced" style="display: block" class="space-y-2">
-            <span class="flex">
-                <label for="sub_descr" class="flex w-full">
-                    Name
-                    <input type="text" id="sub_descr" class="w-full focus:shadow-md outline-none ml-2" placeholder="e.g. Star Wars"/>
-                </label>
-            </span>
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -82,14 +83,30 @@
                     </div>
                 </span>
 
-                <div style="display: none" class="space-y-2" id="wizard_categories">
+                <div class="space-y-2" id="wizard_categories">
 
                     <div id="com_buy" style="display: none" class="space-y-1">
 
                     </div>
 
-                    <div id="com_sell" style="display: block" class="space-y-1">
-
+                    <div id="com_sell" style="display: block" class="space-y-1 grid grid-cols-3">
+                        <span class="text-lg">Category</span>
+                        <input id="com_sell_category" list="com_sell_category_list" type="text" class="col-span-2 mt-1 border focus:shadow-md outline-none"/>
+                        <datalist id="com_sell_category_list">
+                            <option>Auto</option>
+                            <option>Clothes</option>
+                            <option>Education</option>
+                            <option selected="selected">Electronics</option>
+                            <option>Entertainment</option>
+                            <option>Finance</option>
+                            <option>Food</option>
+                            <option>Health</option>
+                            <option>Home</option>
+                            <option>Real Estate</option>
+                            <option>Services</option>
+                            <option>Sport</option>
+                            <option>Travel</option>
+                        </datalist>
                     </div>
 
                     <div id="emp_cv" style="display: none" class="space-y-1">
