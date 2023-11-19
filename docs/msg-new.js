@@ -305,12 +305,6 @@ function buyPayload(payload) {
     payload.text_data = data;
     // optional
     payload.attributes["currency"] = document.getElementById("com_buy_pricecurrency").value;
-    const priceMin = document.getElementById("com_buy_pricemin");
-    if (priceMin.value !== "") {
-        payload.attributes["pricemin"] = {
-            "ce_integer": Math.floor(100 * priceMin.valueAsNumber),
-        }
-    }
     const priceMax = document.getElementById("com_buy_pricemax");
     if (priceMax.value !== "") {
         payload.attributes["pricemax"] = {
@@ -357,12 +351,6 @@ function sellPayload(payload) {
     const priceMin = document.getElementById("com_sell_pricemin");
     if (priceMin.value !== "") {
         payload.attributes["pricemin"] = {
-            "ce_integer": Math.floor(100 * priceMin.valueAsNumber),
-        }
-    }
-    const priceMax = document.getElementById("com_sell_pricemax");
-    if (priceMax.value !== "") {
-        payload.attributes["pricemax"] = {
             "ce_integer": Math.floor(100 * priceMin.valueAsNumber),
         }
     }
@@ -476,12 +464,6 @@ function jobPayload(payload) {
     };
     // optional
     payload.attributes["currency"] = document.getElementById("emp_job_salarycurrency").value;
-    const priceMin = document.getElementById("emp_job_salarymin");
-    if (priceMin.value !== "") {
-        payload.attributes["pricemin"] = {
-            "ce_integer": Math.floor(priceMin.valueAsNumber),
-        }
-    }
     const priceMax = document.getElementById("emp_job_salarymax");
     if (priceMax.value !== "") {
         payload.attributes["pricemax"] = {

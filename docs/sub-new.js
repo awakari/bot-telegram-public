@@ -47,6 +47,7 @@ function showAdvanced() {
 function showWizard() {
     document.getElementById("advanced").style.display = "none";
     document.getElementById("wizard").style.display = "block";
+    enableMainButton();
 }
 
 function showWizardCategory(category, label) {
@@ -80,11 +81,162 @@ window.onclick = function(event) {
 window.Telegram.WebApp.expand();
 window.Telegram.WebApp.MainButton.show();
 window.Telegram.WebApp.MainButton.onClick(() => {
-    let payload = {
-        description: document.getElementById("sub_descr").value,
-        enabled: true,
-        cond: editor.getValue(0),
+    let validationErr = "";
+    const descr = document.getElementById("sub_descr").value;
+    if (descr === "") {
+        validationErr = "empty description";
+    } else {
+        let payload = {
+            description: descr,
+            enabled: true,
+            cond: {
+                not: false,
+                gc: {
+                    logic: 0,
+                    group: []
+                }
+            }
+        }
+        switch (document.getElementById("advanced").style.display) {
+            case "none": // wizard mode
+                const mode = document.getElementById("sub_menu").innerText;
+                switch (mode) {
+                    case "Buyers ⌄":
+                        validationErr = buyersConds(payload.cond.gc.group);
+                        break;
+                    case "Sales ⌄":
+                        validationErr = salesConds(payload.cond.gc.group);
+                        break;
+                    case "Candidates ⌄":
+                        validationErr = candidatesConds(payload.cond.gc.group);
+                        break;
+                    case "Jobs ⌄":
+                        validationErr = jobsConds(payload.cond.gc.group);
+                        break;
+                    case "Posts ⌄":
+                        validationErr = postsConds(payload.cond.gc.group);
+                        break;
+                    case "Dating ⌄":
+                        validationErr = datingConds(payload.cond.gc.group);
+                        break;
+                    case "None ⌄":
+                        validationErr = extraConds(payload.cond.gc.group);
+                        break;
+                    default:
+                        console.log(`unrecognized wizard mode: ${mode}`);
+                        break;
+                }
+                break
+            default: // advanced mode
+                payload.cond = editor.getValue(0);
+        }
     }
-    window.Telegram.WebApp.sendData(JSON.stringify(payload));
-    window.Telegram.WebApp.close();
+    if (validationErr === "") {
+        window.Telegram.WebApp.sendData(JSON.stringify(payload));
+        window.Telegram.WebApp.close();
+    } else {
+        window.alert(`Validation error: ${validationErr}`);
+    }
 });
+
+function buyersConds(rootGroupConds) {
+
+    let validationErr = "";
+
+    const cat = document.getElementById("com_buy_category").value;
+    if (cat !== "") {
+        rootGroupConds.push({
+            not: false,
+            tc: {
+                exact: false,
+                key: "category",
+                term: cat,
+            }
+        })
+    }
+
+    const priceOp = document.getElementById("com_buy_price_operator").valueAsNumber;
+    const price = document.getElementById("com_buy_price").valueAsNumber;
+    if (priceOp > 0 && priceOp < 6 && price > 0) {
+        rootGroupConds.push({
+            not: false,
+            nc: {
+                key: "pricemax",
+                val: Math.floor(price * 100),
+                op: priceOp,
+            }
+        })
+    }
+    const priceCurrency = document.getElementById("com_buy_pricecurrency").value;
+    if (priceCurrency !== "") {
+        rootGroupConds.push({
+            not: false,
+            tc: {
+                exact: true,
+                key: "currency",
+                term: priceCurrency,
+            }
+        })
+    }
+
+    const quantityOp = document.getElementById("com_buy_quantity_operator").valueAsNumber;
+    const quantity = document.getElementById("com_buy_quantity").valueAsNumber;
+    if (quantityOp > 0 && quantityOp < 6 && quantity > 0) {
+        rootGroupConds.push({
+            not: false,
+            nc: {
+                key: "quantitymin",
+                op: 4,
+                val: quantity,
+            }
+        })
+        rootGroupConds.push({
+            not: false,
+            nc: {
+                key: "quantitymax",
+                op: 2,
+                val: quantity,
+            }
+        })
+    }
+    const quantityUnit = document.getElementById("com_buy_quantityunit").value;
+    if (quantityUnit !== "") {
+        rootGroupConds.push({
+            not: false,
+            tc: {
+                exact: true,
+                key: "quantityunit",
+                term: quantityUnit,
+            }
+        })
+    }
+
+    validationErr = extraConds(rootGroupConds);
+
+    return validationErr;
+}
+
+function extraConds(rootGroupConds) {
+
+    let validationErr = "";
+
+    for (let i = 1; i <= 4; i ++) {
+        let not = false;
+        const extraTerms = document.getElementById(`cond_extra${i}`);
+        if (extraTerms.length > 2) {
+            if (i > 1) {
+                not = document.getElementById(`cond_extra${i}_not`).checked;
+            }
+            rootGroupConds.push({
+                not: not,
+                tc: {
+                    exact: false,
+                    key: "",
+                    term: extraTerms,
+                }
+            })
+        }
+    }
+
+    return validationErr;
+}
