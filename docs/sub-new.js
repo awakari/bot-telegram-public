@@ -308,6 +308,8 @@ function salesConds(rootGroupConds) {
         })
     }
 
+    validationErr = extraConds(rootGroupConds);
+
     return validationErr;
 }
 
