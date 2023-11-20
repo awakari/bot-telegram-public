@@ -235,7 +235,7 @@
                                     <option value="RUB">₽ RUB</option>
                                 </select>
                                 <span class="pt-2">Salary &ge;</span>
-                                <input id="emp_job_salarymin" type="number" class="col-span-2 w-full border focus:shadow-md outline-none" placeholder="1000" min="0" step="1"/>
+                                <input id="emp_job_salarymax" type="number" class="col-span-2 w-full border focus:shadow-md outline-none" placeholder="1000" min="0" step="1"/>
                                 <span class="pt-2">Period</span>
                                 <select id="emp_job_salaryperiod" class="col-span-2">
                                     <option value="h">Hour</option>
@@ -274,11 +274,14 @@
                             <option>other</option>
                         </datalist>
 
+                        <span class="text-lg">Prefers</span>
+                        <input id="people_date_prefgender" list="people_date_gender_list" type="text" class="mt-1 col-span-2 border focus:shadow-md outline-none"/>
+
                         <span class="text-lg col-span-3 mt-2">Interests <span style="color: var(--tg-theme-hint-color)">(keywords)</span></span>
                         <input id="people_date_interests" type="text" class="col-span-3 border focus:shadow-md outline-none"/>
 
                         <span class="text-lg col-span-3 mt-2">
-                            <input type="checkbox" class="mt-2 w-4 h-4"/>
+                            <input type="checkbox" class="mt-2 w-4 h-4" id="people_date_photo_required"/>
                             With Photo Only
                         </span>
 

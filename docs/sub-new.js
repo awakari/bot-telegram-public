@@ -201,18 +201,26 @@ function buyersConds(rootGroupConds) {
     if (quantity > 0) {
         rootGroupConds.push({
             not: false,
-            nc: {
-                key: "quantitymin",
-                op: 4,
-                val: quantity,
-            }
-        })
-        rootGroupConds.push({
-            not: false,
-            nc: {
-                key: "quantitymax",
-                op: 2,
-                val: quantity,
+            gc: {
+                logic: 1,
+                group: [
+                    {
+                        not: false,
+                        nc: {
+                            key: "quantitymin",
+                            op: 4,
+                            val: quantity,
+                        }
+                    },
+                    {
+                        not: false,
+                        nc: {
+                            key: "quantitymax",
+                            op: 2,
+                            val: quantity,
+                        }
+                    },
+                ]
             }
         })
         const quantityUnit = document.getElementById("com_buy_quantityunit").value;
@@ -283,18 +291,26 @@ function salesConds(rootGroupConds) {
     if (quantity > 0) {
         rootGroupConds.push({
             not: false,
-            nc: {
-                key: "quantitymin",
-                op: 4,
-                val: quantity,
-            }
-        })
-        rootGroupConds.push({
-            not: false,
-            nc: {
-                key: "quantitymax",
-                op: 2,
-                val: quantity,
+            gc: {
+                logic: 1,
+                group: [
+                    {
+                        not: false,
+                        nc: {
+                            key: "quantitymin",
+                            op: 4,
+                            val: quantity,
+                        }
+                    },
+                    {
+                        not: false,
+                        nc: {
+                            key: "quantitymax",
+                            op: 2,
+                            val: quantity,
+                        }
+                    },
+                ]
             }
         })
         const quantityUnit = document.getElementById("com_sell_quantityunit").value;
@@ -304,6 +320,281 @@ function salesConds(rootGroupConds) {
                 exact: true,
                 key: "quantityunit",
                 term: quantityUnit,
+            }
+        })
+    }
+
+    validationErr = extraConds(rootGroupConds);
+
+    return validationErr;
+}
+
+function candidatesConds(rootGroupConds) {
+
+    let validationErr = "";
+
+    rootGroupConds.push({
+        not: false,
+        tc: {
+            exact: true,
+            key: "type",
+            term: "com.github.awakari.bot-telegram.cv",
+        }
+    })
+
+    const title = document.getElementById("emp_cv_title").value;
+    if (title !== "") {
+        rootGroupConds.push({
+            not: false,
+            tc: {
+                exact: false,
+                key: "title",
+                term: title,
+            }
+        })
+    }
+
+    const summary = document.getElementById("emp_cv_summary").value;
+    if (summary !== "") {
+        rootGroupConds.push({
+            not: false,
+            tc: {
+                exact: false,
+                key: "summary",
+                term: summary,
+            }
+        })
+    }
+
+    const skills = document.getElementById("emp_cv_skills").value;
+    if (skills !== "") {
+        rootGroupConds.push({
+            not: false,
+            tc: {
+                exact: false,
+                key: "skills",
+                term: skills,
+            }
+        })
+    }
+
+    const price = document.getElementById("emp_cv_salarymin").valueAsNumber;
+    if (price > 0) {
+        rootGroupConds.push({
+            not: false,
+            nc: {
+                key: "pricemin",
+                op: 4,
+                val: Math.floor(price),
+            }
+        })
+        const priceCurrency = document.getElementById("emp_cv_salarycurrency").value;
+        rootGroupConds.push({
+            not: false,
+            tc: {
+                exact: true,
+                key: "currency",
+                term: priceCurrency,
+            }
+        })
+        const salaryPeriod = document.getElementById("emp_cv_salaryperiod").value;
+        rootGroupConds.push({
+            not: false,
+            tc: {
+                exact: true,
+                key: "salaryperiod",
+                term: salaryPeriod,
+            }
+        })
+    }
+
+    validationErr = extraConds(rootGroupConds);
+
+    return validationErr;
+}
+
+function jobsConds(rootGroupConds) {
+
+    let validationErr = "";
+
+    rootGroupConds.push({
+        not: false,
+        tc: {
+            exact: true,
+            key: "type",
+            term: "com.github.awakari.bot-telegram.job",
+        }
+    })
+
+    const title = document.getElementById("emp_job_title").value;
+    if (title !== "") {
+        rootGroupConds.push({
+            not: false,
+            tc: {
+                exact: false,
+                key: "title",
+                term: title,
+            }
+        })
+    }
+
+    const summary = document.getElementById("emp_job_summary").value;
+    if (summary !== "") {
+        rootGroupConds.push({
+            not: false,
+            tc: {
+                exact: false,
+                key: "summary",
+                term: summary,
+            }
+        })
+    }
+
+    const skills = document.getElementById("emp_job_skills").value;
+    if (skills !== "") {
+        rootGroupConds.push({
+            not: false,
+            tc: {
+                exact: false,
+                key: "skills",
+                term: skills,
+            }
+        })
+    }
+
+    const price = document.getElementById("emp_job_salarymax").valueAsNumber;
+    if (price > 0) {
+        rootGroupConds.push({
+            not: false,
+            nc: {
+                key: "pricemax",
+                op: 2,
+                val: Math.floor(price),
+            }
+        })
+        const priceCurrency = document.getElementById("emp_cv_salarycurrency").value;
+        rootGroupConds.push({
+            not: false,
+            tc: {
+                exact: true,
+                key: "currency",
+                term: priceCurrency,
+            }
+        })
+        const salaryPeriod = document.getElementById("emp_cv_salaryperiod").value;
+        rootGroupConds.push({
+            not: false,
+            tc: {
+                exact: true,
+                key: "salaryperiod",
+                term: salaryPeriod,
+            }
+        })
+    }
+
+    validationErr = extraConds(rootGroupConds);
+
+    return validationErr;
+}
+
+function postsConds(rootGroupConds) {
+
+    let validationErr = "";
+
+    rootGroupConds.push({
+        not: false,
+        tc: {
+            exact: true,
+            key: "type",
+            term: "com.github.awakari.bot-telegram.post",
+        }
+    })
+
+    const author = document.getElementById("media_post_author").value;
+    if (author !== "") {
+        rootGroupConds.push({
+            not: false,
+            tc: {
+                exact: false,
+                key: "author",
+                term: author,
+            }
+        })
+    }
+
+    const title = document.getElementById("media_post_title").value;
+    if (title !== "") {
+        rootGroupConds.push({
+            not: false,
+            tc: {
+                exact: false,
+                key: "title",
+                term: title,
+            }
+        })
+    }
+
+    validationErr = extraConds(rootGroupConds);
+
+    return validationErr;
+}
+
+function datingConds(rootGroupConds) {
+
+    let validationErr = "";
+
+    rootGroupConds.push({
+        not: false,
+        tc: {
+            exact: true,
+            key: "type",
+            term: "com.github.awakari.bot-telegram.dating",
+        }
+    })
+
+    const gender = document.getElementById("people_date_gender").value;
+    if (gender !== "") {
+        rootGroupConds.push({
+            not: false,
+            tc: {
+                exact: true,
+                key: "gender",
+                term: gender,
+            }
+        })
+    }
+
+    const prefGender = document.getElementById("people_date_prefgender").value;
+    if (prefGender !== "") {
+        rootGroupConds.push({
+            not: false,
+            tc: {
+                exact: true,
+                key: "prefgender",
+                term: prefGender,
+            }
+        })
+    }
+
+    const interests = document.getElementById("people_date_interests").value;
+    if (interests !== "") {
+        rootGroupConds.push({
+            not: false,
+            tc: {
+                exact: false,
+                key: "interests",
+                term: interests,
+            }
+        })
+    }
+
+    if (document.getElementById("people_date_photo_required").checked) {
+        rootGroupConds.push({
+            not: true,
+            tc: {
+                exact: true,
+                key: "imageurl",
+                term: "",
             }
         })
     }

@@ -569,11 +569,8 @@ function datingPayload(payload) {
             "ce_string": genderPref,
         }
     }
-    const linkImg = document.getElementById("people_date_imageurl").value;
-    if (linkImg !== "") {
-        payload.attributes["imageurl"] = {
-            "ce_uri": linkImg,
-        }
+    payload.attributes["imageurl"] = {
+        "ce_uri": document.getElementById("people_date_imageurl").value,
     }
     const additional = document.getElementById("people_date_additional").value;
     if (additional !== "") {
