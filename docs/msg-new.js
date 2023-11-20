@@ -302,6 +302,11 @@ function buyPayload(payload) {
     const category = document.getElementById("com_buy_category").value;
     const data = document.getElementById("com_buy_data").value;
     const validationOk = category !== "" && data !== "";
+    payload.attributes = {
+        "categories": {
+            "ce_string": category,
+        },
+    };
     payload.text_data = data;
     // optional
     payload.attributes["currency"] = document.getElementById("com_buy_pricecurrency").value;
@@ -345,16 +350,25 @@ function sellPayload(payload) {
     const category = document.getElementById("com_sell_category").value;
     const data = document.getElementById("com_sell_data").value;
     const validationOk = category !== "" && data !== "";
+    payload.attributes = {
+        "categories": {
+            "ce_string": category,
+        },
+    };
     payload.text_data = data;
     // optional
-    payload.attributes["currency"] = document.getElementById("com_sell_pricecurrency").value;
+    payload.attributes["currency"] = {
+        ce_string: document.getElementById("com_sell_pricecurrency").value,
+    };
     const priceMin = document.getElementById("com_sell_pricemin");
     if (priceMin.value !== "") {
         payload.attributes["pricemin"] = {
             "ce_integer": Math.floor(100 * priceMin.valueAsNumber),
         }
     }
-    payload.attributes["quantityunit"] = document.getElementById("com_sell_quantityunit").value;
+    payload.attributes["quantityunit"] = {
+        ce_string: document.getElementById("com_sell_quantityunit").value,
+    };
     const quantityMin = document.getElementById("com_sell_quantitymin");
     if (quantityMin.value !== "") {
         payload.attributes["quantitymin"] = {
@@ -405,14 +419,18 @@ function cvPayload(payload) {
         }
     };
     // optional
-    payload.attributes["currency"] = document.getElementById("emp_cv_salarycurrency").value;
+    payload.attributes["currency"] = {
+        ce_string: document.getElementById("emp_cv_salarycurrency").value,
+    };
     const priceMin = document.getElementById("emp_cv_salarymin");
     if (priceMin.value !== "") {
         payload.attributes["pricemin"] = {
             "ce_integer": Math.floor(priceMin.valueAsNumber),
         }
     }
-    payload.attributes["salaryperiod"] = document.getElementById("emp_cv_salaryperiod");
+    payload.attributes["salaryperiod"] = {
+        ce_string: document.getElementById("emp_cv_salaryperiod").value,
+    };
     const additional = document.getElementById("emp_cv_additional").value;
     if (additional !== "") {
         payload.attributes["additional"] = {
@@ -463,14 +481,18 @@ function jobPayload(payload) {
         }
     };
     // optional
-    payload.attributes["currency"] = document.getElementById("emp_job_salarycurrency").value;
+    payload.attributes["currency"] = {
+        ce_string: document.getElementById("emp_job_salarycurrency").value,
+    };
     const priceMax = document.getElementById("emp_job_salarymax");
     if (priceMax.value !== "") {
         payload.attributes["pricemax"] = {
             "ce_integer": Math.floor(priceMax.valueAsNumber),
         }
     }
-    payload.attributes["salaryperiod"] = document.getElementById("emp_job_salaryperiod");
+    payload.attributes["salaryperiod"] = {
+        ce_string: document.getElementById("emp_job_salaryperiod").value,
+    };
     const additional = document.getElementById("emp_job_additional").value;
     if (additional !== "") {
         payload.attributes["additional"] = {
