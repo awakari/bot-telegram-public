@@ -55,261 +55,22 @@
 
         <!-- wizard -->
         <div id="wizard" style="display: none">
-            <fieldset class="p-2">
-                <legend class="text-lg px-2">Wizard</legend>
-                <span class="flex content-between">
-                    <div class="dropdown">
-                      <button id="sub_menu" type="button" onclick="dropdown()" class="dropbtn text-lg text-left w-36 min-w-36 px-4">None ⌄</button>
-                      <div id="awksubtype" class="dropdown-content grid grid-cols-2 w-full">
-                          <fieldset>
-                              <legend>Commerce</legend>
-                              <div class="w-full text-left" onclick="showWizardCategory('com_buy', 'Buyers')">Buyers</div>
-                              <div class="w-full text-left" onclick="showWizardCategory('com_sell', 'Sales')">Sales</div>
-                          </fieldset>
-                          <fieldset>
-                              <legend>Employment</legend>
-                              <div class="w-full text-left" onclick="showWizardCategory('emp_cv', 'Candidates')">Candidates</div>
-                              <div class="w-full text-left" onclick="showWizardCategory('emp_job', 'Jobs')">Jobs</div>
-                          </fieldset>
-                          <fieldset>
-                              <legend>Media</legend>
-                              <div class="w-full text-left" onclick="showWizardCategory('media_post', 'Posts')">Posts</div>
-                          </fieldset>
-                          <fieldset>
-                              <legend>People</legend>
-                              <div class="w-full text-left" onclick="showWizardCategory('people_date', 'Dating')">Dating</div>
-                          </fieldset>
-                          <div class="w-full text-left" onclick="showWizardCategory('none', 'None')">None</div>
-                      </div>
-                    </div>
-                </span>
 
-                <div class="space-y-2" id="wizard_categories">
-
-                    <div id="com_buy" style="display: none" class="grid grid-cols-3">
-
-                        <span class="text-md mt-3">Category</span>
-                        <input id="com_buy_category" list="com_buy_category_list" type="text" class="mt-2 col-span-2 border focus:shadow-md outline-none"/>
-                        <datalist id="com_buy_category_list">
-                            <option>Auto</option>
-                            <option>Clothes</option>
-                            <option>Education</option>
-                            <option selected="selected">Electronics</option>
-                            <option>Entertainment</option>
-                            <option>Finance</option>
-                            <option>Food</option>
-                            <option>Health</option>
-                            <option>Home</option>
-                            <option>Real Estate</option>
-                            <option>Services</option>
-                            <option>Sport</option>
-                            <option>Travel</option>
-                        </datalist>
-
-                        <span class="text-md mt-3">Total price &ge;</span>
-                        <input id="com_buy_price" type="number" min="0" step="1" class="mr-2 mt-2"/>
-                        <select id="com_buy_pricecurrency" class="mt-2">
-                            <option value="USD">$ USD</option>
-                            <option value="EUR">€ EUR</option>
-                            <option value="JPY">¥ JPY</option>
-                            <option value="GBP">£ GBP</option>
-                            <option value="CNY">¥ CNY</option>
-                            <option value="INR">₹ INR</option>
-                            <option value="RUB">₽ RUB</option>
-                        </select>
-
-                        <span class="text-md mt-3">Quantity</span>
-                        <input id="com_buy_quantity" type="number" min="0" step="1" class="mr-2 mt-2"/>
-                        <input id="com_buy_quantityunit" list="com_buy_quantityunit_list" type="text" class="mt-2 border focus:shadow-md outline-none"/>
-                        <datalist id="com_buy_quantityunit_list">
-                            <option value=""></option>
-                            <option value="g">g</option>
-                            <option value="kg">kg</option>
-                            <option value="m">m</option>
-                            <option value="m^2">m^2</option>
-                            <option value="l">l</option>
-                        </datalist>
-
-                    </div>
-
-                    <div id="com_sell" style="display: none" class="grid grid-cols-3">
-
-                        <span class="text-md mt-1">Category</span>
-                        <input id="com_sell_category" list="com_sell_category_list" type="text" class="col-span-2 border focus:shadow-md outline-none"/>
-                        <datalist id="com_sell_category_list">
-                            <option>Auto</option>
-                            <option>Clothes</option>
-                            <option>Education</option>
-                            <option selected="selected">Electronics</option>
-                            <option>Entertainment</option>
-                            <option>Finance</option>
-                            <option>Food</option>
-                            <option>Health</option>
-                            <option>Home</option>
-                            <option>Real Estate</option>
-                            <option>Services</option>
-                            <option>Sport</option>
-                            <option>Travel</option>
-                        </datalist>
-
-                        <span class="text-md mt-3">Total Price &le;</span>
-                        <input id="com_sell_price" type="number" min="0" step="1" class="mr-2 mt-2"/>
-                        <select id="com_sell_pricecurrency" class="mt-2">
-                            <option value="USD">$ USD</option>
-                            <option value="EUR">€ EUR</option>
-                            <option value="JPY">¥ JPY</option>
-                            <option value="GBP">£ GBP</option>
-                            <option value="CNY">¥ CNY</option>
-                            <option value="INR">₹ INR</option>
-                            <option value="RUB">₽ RUB</option>
-                        </select>
-
-                        <span class="text-md mt-3">Quantity</span>
-                        <input id="com_sell_quantity" type="number" min="0" step="1" class="mr-2 mt-2"/>
-                        <input id="com_sell_quantityunit" list="com_sell_quantityunit_list" type="text" class="mt-2 border focus:shadow-md outline-none"/>
-                        <datalist id="com_sell_quantityunit_list">
-                            <option value=""></option>
-                            <option value="g">g</option>
-                            <option value="kg">kg</option>
-                            <option value="m">m</option>
-                            <option value="m^2">m^2</option>
-                            <option value="l">l</option>
-                        </datalist>
-
-                    </div>
-
-                    <div id="emp_cv" style="display: none" class="grid grid-cols-3">
-
-                        <span class="text-lg">Title</span>
-                        <input id="emp_cv_title" type="text" class="mt-1 col-span-2 w-full border focus:shadow-md outline-none" placeholder="Software Engineer"/>
-
-                        <fieldset class="p-2 col-span-3">
-                            <legend class="text-lg px-2">Salary</legend>
-                            <div class="grid grid-cols-3 space-y-1">
-                                <span class="pt-2">Currency</span>
-                                <select id="emp_cv_salarycurrency" class="col-span-2">
-                                    <option value="USD">$ USD</option>
-                                    <option value="EUR">€ EUR</option>
-                                    <option value="JPY">¥ JPY</option>
-                                    <option value="GBP">£ GBP</option>
-                                    <option value="CNY">¥ CNY</option>
-                                    <option value="INR">₹ INR</option>
-                                    <option value="RUB">₽ RUB</option>
-                                </select>
-                                <span class="pt-2">Salary &le;</span>
-                                <input id="emp_cv_salarymin" type="number" class="col-span-2 w-full border focus:shadow-md outline-none" placeholder="1000" min="0" step="1"/>
-                                <span class="pt-2">Period</span>
-                                <select id="emp_cv_salaryperiod" class="col-span-2">
-                                    <option value="h">Hour</option>
-                                    <option value="d">Day</option>
-                                    <option value="m" selected="selected">Month</option>
-                                    <option value="y">Year</option>
-                                </select>
-                            </div>
-                        </fieldset>
-
-                        <span class="text-lg col-span-3 mt-2">Summary <span style="color: var(--tg-theme-hint-color)">(keywords)</span></span>
-                        <input id="emp_cv_summary" type="text" class="col-span-3 w-full border focus:shadow-md outline-none" placeholder=""/>
-
-                        <span class="text-lg col-span-3 mt-2">Skills <span style="color: var(--tg-theme-hint-color)">(keywords)</span></span>
-                        <input id="emp_cv_skills" type="text" class="col-span-3 w-full border focus:shadow-md outline-none" placeholder=""/>
-
-                    </div>
-
-                    <div id="emp_job" style="display: none" class="grid grid-cols-3">
-
-                        <span class="text-lg">Title</span>
-                        <input id="emp_job_title" type="text" class="mt-1 col-span-2 w-full border focus:shadow-md outline-none" placeholder="Software Engineer"/>
-
-                        <fieldset class="p-2 col-span-3">
-                            <legend class="text-lg px-2">Salary</legend>
-                            <div class="grid grid-cols-3 space-y-1">
-                                <span class="pt-2">Currency</span>
-                                <select id="emp_job_salarycurrency" class="col-span-2">
-                                    <option value="USD">$ USD</option>
-                                    <option value="EUR">€ EUR</option>
-                                    <option value="JPY">¥ JPY</option>
-                                    <option value="GBP">£ GBP</option>
-                                    <option value="CNY">¥ CNY</option>
-                                    <option value="INR">₹ INR</option>
-                                    <option value="RUB">₽ RUB</option>
-                                </select>
-                                <span class="pt-2">Salary &ge;</span>
-                                <input id="emp_job_salarymax" type="number" class="col-span-2 w-full border focus:shadow-md outline-none" placeholder="1000" min="0" step="1"/>
-                                <span class="pt-2">Period</span>
-                                <select id="emp_job_salaryperiod" class="col-span-2">
-                                    <option value="h">Hour</option>
-                                    <option value="d">Day</option>
-                                    <option value="m" selected="selected">Month</option>
-                                    <option value="y">Year</option>
-                                </select>
-                            </div>
-                        </fieldset>
-
-                        <span class="text-lg col-span-3 mt-2">Responsibilities <span style="color: var(--tg-theme-hint-color)">(keywords)</span></span>
-                        <input id="emp_job_summary" type="text" class="col-span-3 w-full border focus:shadow-md outline-none" placeholder=""/>
-
-                        <span class="text-lg col-span-3 mt-2">Skills <span style="color: var(--tg-theme-hint-color)">(keywords)</span></span>
-                        <input id="emp_job_skills" type="text" class="col-span-3 w-full border focus:shadow-md outline-none" placeholder=""/>
-
-                    </div>
-
-                    <div id="media_post" style="display: none" class="grid grid-cols-2">
-
-                        <span class="text-lg">Author's Name</span>
-                        <input id="media_post_author" type="text" placeholder="John Doe" class="mt-1 border focus:shadow-md outline-none"/>
-
-                        <span class="text-lg mt-2">Title Keywords</span>
-                        <input id="media_post_title" type="text" class="mt-3 w-full border focus:shadow-md outline-none" placeholder=""/>
-
-                    </div>
-
-                    <div id="people_date" style="display: none" class="grid grid-cols-3">
-
-                        <span class="text-lg">Gender</span>
-                        <input id="people_date_gender" list="people_date_gender_list" type="text" class="mt-1 col-span-2 border focus:shadow-md outline-none"/>
-                        <datalist id="people_date_gender_list">
-                            <option>male</option>
-                            <option>female</option>
-                            <option>other</option>
-                        </datalist>
-
-                        <span class="text-lg">Prefers</span>
-                        <input id="people_date_prefgender" list="people_date_gender_list" type="text" class="mt-1 col-span-2 border focus:shadow-md outline-none"/>
-
-                        <span class="text-lg col-span-3 mt-2">Interests <span style="color: var(--tg-theme-hint-color)">(keywords)</span></span>
-                        <input id="people_date_interests" type="text" class="col-span-3 border focus:shadow-md outline-none"/>
-
-                        <span class="text-lg col-span-3 mt-2">
-                            <input type="checkbox" class="mt-2 w-4 h-4" id="people_date_photo_required"/>
-                            With Photo Only
-                        </span>
-
-                    </div>
-
-                    <div id="none" style="display: block" class="grid">
-                    </div>
-
+            <legend class="text-lg my-2">Matching Conditions:</legend>
+            <div>
+                <div class="grid">
+                    <p>Any of keywords:</p>
+                    <input id="cond_extra1" type="text" placeholder="" class="mt-1 border focus:shadow-md outline-none"/>
                 </div>
-            </fieldset>
-
-            <fieldset class="p-2 mt-2">
-                <legend class="text-lg px-2">Additional Filters <span style="color: var(--tg-theme-hint-color)">(up to 4)</span></legend>
-                <div class="grid grid-cols-1">
-                    <div>
-                        <span>And then any of keywords:</span>
-                    </div>
-                    <input id="cond_extra1" type="text" placeholder="" class="mt-1 border focus:shadow-md outline-none col-span-2"/>
-                </div>
-                <div class="grid grid-cols-1 mt-4">
+                <div class="grid mt-2">
                     <div>
                         <span class="mr-16">And then any of keywords:</span>
                         <input type="checkbox" id="cond_extra2_not"/>
                         <span>Not</span>
                     </div>
-                    <input id="cond_extra2" type="text" placeholder="" class="mt-1 border focus:shadow-md outline-none col-span-2"/>
+                    <input id="cond_extra2" type="text" placeholder="" class="mt-1 border focus:shadow-md outline-none"/>
                 </div>
-                <div class="grid grid-cols-1 mt-4">
+                <div class="grid grid-cols-1 mt-2">
                     <div>
                         <span class="mr-16">And then any of keywords:</span>
                         <input type="checkbox" id="cond_extra3_not"/>
@@ -317,7 +78,7 @@
                     </div>
                     <input id="cond_extra3" type="text" placeholder="" class="mt-1 border focus:shadow-md outline-none col-span-2"/>
                 </div>
-                <div class="grid grid-cols-1 mt-4">
+                <div class="grid grid-cols-1 mt-2">
                     <div>
                         <span class="mr-16">And then any of keywords:</span>
                         <input type="checkbox" id="cond_extra4_not"/>
@@ -325,7 +86,7 @@
                     </div>
                     <input id="cond_extra4" type="text" placeholder="" class="mt-1 border focus:shadow-md outline-none col-span-2"/>
                 </div>
-            </fieldset>
+            </div>
         </div>
 
     </form>
