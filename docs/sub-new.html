@@ -86,10 +86,10 @@
 
                 <div class="space-y-2" id="wizard_categories">
 
-                    <div id="com_buy" style="display: none" class="grid grid-cols-4">
+                    <div id="com_buy" style="display: none" class="grid grid-cols-3">
 
                         <span class="text-md mt-3">Category</span>
-                        <input id="com_buy_category" list="com_buy_category_list" type="text" class="mt-2 col-span-3 border focus:shadow-md outline-none"/>
+                        <input id="com_buy_category" list="com_buy_category_list" type="text" class="mt-2 col-span-2 border focus:shadow-md outline-none"/>
                         <datalist id="com_buy_category_list">
                             <option>Auto</option>
                             <option>Clothes</option>
@@ -106,15 +106,7 @@
                             <option>Travel</option>
                         </datalist>
 
-                        <span class="text-md mt-3">Price <span style="color: var(--tg-theme-hint-color)">(total)</span></span>
-                        <select id="com_buy_price_operator" class="mr-2 mt-2">
-                            <option value="0"></option>
-                            <option value="1">&gt;</option>
-                            <option value="2">&ge;</option>
-                            <option value="3">=</option>
-                            <option value="4">&le;</option>
-                            <option value="5">&lt;</option>
-                        </select>
+                        <span class="text-md mt-3">Total price &ge;</span>
                         <input id="com_buy_price" type="number" min="0" step="1" class="mr-2 mt-2"/>
                         <select id="com_buy_pricecurrency" class="mt-2">
                             <option value="USD">$ USD</option>
@@ -127,7 +119,7 @@
                         </select>
 
                         <span class="text-md mt-3">Quantity</span>
-                        <input id="com_buy_quantity" type="number" min="0" step="1" class="mr-2 mt-2 col-span-2"/>
+                        <input id="com_buy_quantity" type="number" min="0" step="1" class="mr-2 mt-2"/>
                         <input id="com_buy_quantityunit" list="com_buy_quantityunit_list" type="text" class="mt-2 border focus:shadow-md outline-none"/>
                         <datalist id="com_buy_quantityunit_list">
                             <option value=""></option>
@@ -140,10 +132,10 @@
 
                     </div>
 
-                    <div id="com_sell" style="display: none" class="grid grid-cols-4">
+                    <div id="com_sell" style="display: none" class="grid grid-cols-3">
 
                         <span class="text-md mt-1">Category</span>
-                        <input id="com_sell_category" list="com_sell_category_list" type="text" class="col-span-3 border focus:shadow-md outline-none"/>
+                        <input id="com_sell_category" list="com_sell_category_list" type="text" class="col-span-2 border focus:shadow-md outline-none"/>
                         <datalist id="com_sell_category_list">
                             <option>Auto</option>
                             <option>Clothes</option>
@@ -160,15 +152,7 @@
                             <option>Travel</option>
                         </datalist>
 
-                        <span class="text-md mt-3">Price <span style="color: var(--tg-theme-hint-color)">(total)</span></span>
-                        <select id="com_sell_price_operator" class="mr-2 mt-2">
-                            <option value="0"></option>
-                            <option value="1">&gt;</option>
-                            <option value="2">&ge;</option>
-                            <option value="3">=</option>
-                            <option value="4">&le;</option>
-                            <option value="5">&lt;</option>
-                        </select>
+                        <span class="text-md mt-3">Total Price &le;</span>
                         <input id="com_sell_price" type="number" min="0" step="1" class="mr-2 mt-2"/>
                         <select id="com_sell_pricecurrency" class="mt-2">
                             <option value="USD">$ USD</option>
@@ -181,14 +165,6 @@
                         </select>
 
                         <span class="text-md mt-3">Quantity</span>
-                        <select id="com_sell_quantity_operator" class="mr-2 mt-2">
-                            <option value="0"></option>
-                            <option value="1">&gt;</option>
-                            <option value="2">&ge;</option>
-                            <option value="3">=</option>
-                            <option value="4">&le;</option>
-                            <option value="5">&lt;</option>
-                        </select>
                         <input id="com_sell_quantity" type="number" min="0" step="1" class="mr-2 mt-2"/>
                         <input id="com_sell_quantityunit" list="com_sell_quantityunit_list" type="text" class="mt-2 border focus:shadow-md outline-none"/>
                         <datalist id="com_sell_quantityunit_list">
@@ -220,7 +196,7 @@
                                     <option value="INR">₹ INR</option>
                                     <option value="RUB">₽ RUB</option>
                                 </select>
-                                <span class="pt-2">Max</span>
+                                <span class="pt-2">Salary &le;</span>
                                 <input id="emp_cv_salarymin" type="number" class="col-span-2 w-full border focus:shadow-md outline-none" placeholder="1000" min="0" step="1"/>
                                 <span class="pt-2">Period</span>
                                 <select id="emp_cv_salaryperiod" class="col-span-2">
@@ -258,7 +234,7 @@
                                     <option value="INR">₹ INR</option>
                                     <option value="RUB">₽ RUB</option>
                                 </select>
-                                <span class="pt-2">Min</span>
+                                <span class="pt-2">Salary &ge;</span>
                                 <input id="emp_job_salarymin" type="number" class="col-span-2 w-full border focus:shadow-md outline-none" placeholder="1000" min="0" step="1"/>
                                 <span class="pt-2">Period</span>
                                 <select id="emp_job_salaryperiod" class="col-span-2">

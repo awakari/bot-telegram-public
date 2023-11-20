@@ -126,6 +126,16 @@ window.Telegram.WebApp.MainButton.onClick(() => {
                         console.log(`unrecognized wizard mode: ${mode}`);
                         break;
                 }
+                if (validationErr === "") {
+                    switch (payload.cond.gc.group.length) {
+                        case 0:
+                            validationErr = "no conditions defined"
+                            break
+                        case 1:
+                            payload.cond = payload.cond.gc.group[0]
+                            break
+                    }
+                }
                 break
             default: // advanced mode
                 payload.cond = editor.getValue(0);
@@ -143,6 +153,15 @@ function buyersConds(rootGroupConds) {
 
     let validationErr = "";
 
+    rootGroupConds.push({
+        not: false,
+        tc: {
+            exact: true,
+            key: "type",
+            term: "com.github.awakari.bot-telegram.buy",
+        }
+    })
+
     const cat = document.getElementById("com_buy_category").value;
     if (cat !== "") {
         rootGroupConds.push({
@@ -155,15 +174,14 @@ function buyersConds(rootGroupConds) {
         })
     }
 
-    const priceOp = parseInt(document.getElementById("com_buy_price_operator").value);
     const price = document.getElementById("com_buy_price").valueAsNumber;
-    if (priceOp > 0 && priceOp < 6 && price > 0) {
+    if (price > 0) {
         rootGroupConds.push({
             not: false,
             nc: {
                 key: "pricemax",
+                op: 2,
                 val: Math.floor(price * 100),
-                op: priceOp,
             }
         })
     }
@@ -213,13 +231,93 @@ function buyersConds(rootGroupConds) {
     return validationErr;
 }
 
+function salesConds(rootGroupConds) {
+
+    let validationErr = "";
+
+    rootGroupConds.push({
+        not: false,
+        tc: {
+            exact: true,
+            key: "type",
+            term: "com.github.awakari.bot-telegram.sell",
+        }
+    })
+
+    const cat = document.getElementById("com_sell_category").value;
+    if (cat !== "") {
+        rootGroupConds.push({
+            not: false,
+            tc: {
+                exact: false,
+                key: "category",
+                term: cat,
+            }
+        })
+    }
+
+    const price = document.getElementById("com_sell_price").valueAsNumber;
+    if (price > 0) {
+        rootGroupConds.push({
+            not: false,
+            nc: {
+                key: "pricemin",
+                op: 4,
+                val: Math.floor(price * 100),
+            }
+        })
+    }
+    const priceCurrency = document.getElementById("com_sell_pricecurrency").value;
+    if (priceCurrency !== "") {
+        rootGroupConds.push({
+            not: false,
+            tc: {
+                exact: true,
+                key: "currency",
+                term: priceCurrency,
+            }
+        })
+    }
+
+    const quantity = document.getElementById("com_sell_quantity").valueAsNumber;
+    if (quantity > 0) {
+        rootGroupConds.push({
+            not: false,
+            nc: {
+                key: "quantitymin",
+                op: 4,
+                val: quantity,
+            }
+        })
+        rootGroupConds.push({
+            not: false,
+            nc: {
+                key: "quantitymax",
+                op: 2,
+                val: quantity,
+            }
+        })
+        const quantityUnit = document.getElementById("com_sell_quantityunit").value;
+        rootGroupConds.push({
+            not: false,
+            tc: {
+                exact: true,
+                key: "quantityunit",
+                term: quantityUnit,
+            }
+        })
+    }
+
+    return validationErr;
+}
+
 function extraConds(rootGroupConds) {
 
     let validationErr = "";
 
     for (let i = 1; i <= 4; i ++) {
         let not = false;
-        const extraTerms = document.getElementById(`cond_extra${i}`);
+        const extraTerms = document.getElementById(`cond_extra${i}`).value;
         if (extraTerms.length > 2) {
             if (i > 1) {
                 not = document.getElementById(`cond_extra${i}_not`).checked;
