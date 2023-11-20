@@ -155,7 +155,7 @@ function buyersConds(rootGroupConds) {
         })
     }
 
-    const priceOp = document.getElementById("com_buy_price_operator").valueAsNumber;
+    const priceOp = parseInt(document.getElementById("com_buy_price_operator").value);
     const price = document.getElementById("com_buy_price").valueAsNumber;
     if (priceOp > 0 && priceOp < 6 && price > 0) {
         rootGroupConds.push({
@@ -179,9 +179,8 @@ function buyersConds(rootGroupConds) {
         })
     }
 
-    const quantityOp = document.getElementById("com_buy_quantity_operator").valueAsNumber;
     const quantity = document.getElementById("com_buy_quantity").valueAsNumber;
-    if (quantityOp > 0 && quantityOp < 6 && quantity > 0) {
+    if (quantity > 0) {
         rootGroupConds.push({
             not: false,
             nc: {
@@ -198,9 +197,7 @@ function buyersConds(rootGroupConds) {
                 val: quantity,
             }
         })
-    }
-    const quantityUnit = document.getElementById("com_buy_quantityunit").value;
-    if (quantityUnit !== "") {
+        const quantityUnit = document.getElementById("com_buy_quantityunit").value;
         rootGroupConds.push({
             not: false,
             tc: {
