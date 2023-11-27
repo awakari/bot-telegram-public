@@ -313,7 +313,7 @@ function buyPayload(payload) {
     const priceMax = document.getElementById("com_buy_pricemax");
     if (priceMax.value !== "") {
         payload.attributes["pricemax"] = {
-            "ce_integer": Math.floor(100 * priceMin.valueAsNumber),
+            "ce_integer": Math.floor(100 * priceMax.valueAsNumber),
         }
     }
     payload.attributes["quantityunit"] = document.getElementById("com_buy_quantityunit").value;
